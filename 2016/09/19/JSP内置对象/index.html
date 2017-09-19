@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh_Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="jsp,内置对象," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="JSP内置对象Jsp内置对象是Web容器创建的一组对象，是不使用new关键字就可以使用的内置对象。常用的JSP九大内置对象：out、request、response、session、application、page、pageContext、exception、config 1、out对象：out对象是JspWriter类的实例，是向客户端输出内容常用的对象。【缓冲区：Buffer，缓冲区就是内存的">
+<meta name="keywords" content="jsp,内置对象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSP内置对象">
+<meta property="og:url" content="http://yoursite.com/2016/09/19/JSP内置对象/index.html">
+<meta property="og:site_name" content="Aeris‘s">
+<meta property="og:description" content="JSP内置对象Jsp内置对象是Web容器创建的一组对象，是不使用new关键字就可以使用的内置对象。常用的JSP九大内置对象：out、request、response、session、application、page、pageContext、exception、config 1、out对象：out对象是JspWriter类的实例，是向客户端输出内容常用的对象。【缓冲区：Buffer，缓冲区就是内存的">
+<meta property="og:locale" content="zh_Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-03fd54c4e8aa8218?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-1663c90e1d6c803e?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-fbfa3549af89d049?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-4a2ab7a49d59c750?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-337c9061fb3614ee?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-4eb3bac1767644ae?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-863da169a582f3a8?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-746404be49b17837?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-846f9e6bd7763291?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-dcb827a5e9fe4f62?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-3d76b2d7ae4c61b9?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-a72e89cafa566d5a?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-0a6d29b23deaef2d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-1bd63405be162f08?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-784c18836a1273cc?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-24fd3dc426d7e476?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-0c0217fe256c441e?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-80fe5f97746cf081?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-553c4a0275fe96ac?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-03b256053d850f25?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-1ce7bec384471d90?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-1d3cc899e26475d1?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-5bc65abde6a41c36?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-f0ca8ce5684337e3?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-9fe88197acb86930?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-b12fd39354949586?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-e05974f873376d10?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-7a6614244591adda?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-fb9a5a88017f7d60?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-1a0e4b950cb48489?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-6a10cec5ee902142?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-7953f072865b3ee4?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-51e3a87878e206a0?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-09-19T02:44:40.764Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JSP内置对象">
+<meta name="twitter:description" content="JSP内置对象Jsp内置对象是Web容器创建的一组对象，是不使用new关键字就可以使用的内置对象。常用的JSP九大内置对象：out、request、response、session、application、page、pageContext、exception、config 1、out对象：out对象是JspWriter类的实例，是向客户端输出内容常用的对象。【缓冲区：Buffer，缓冲区就是内存的">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4731173-03fd54c4e8aa8218?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/09/19/JSP内置对象/"/>
+
+
+
+
+
+  <title>JSP内置对象 | Aeris‘s</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Aeris‘s</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/19/JSP内置对象/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aeris">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aeris‘s">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JSP内置对象</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-19T10:42:00+08:00">
+                2016-09-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="JSP内置对象"><a href="#JSP内置对象" class="headerlink" title="JSP内置对象"></a>JSP内置对象</h1><p>Jsp内置对象是Web容器创建的一组对象，是不使用new关键字就可以使用的内置对象。<br><strong>常用的JSP九大内置对象</strong>：out、request、response、session、application、page、pageContext、exception、config</p>
+<h2 id="1、out对象："><a href="#1、out对象：" class="headerlink" title="1、out对象："></a>1、out对象：</h2><p>out对象是JspWriter类的实例，是向客户端输出内容常用的对象。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-03fd54c4e8aa8218?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"><br>【缓冲区：Buffer，缓冲区就是内存的一块区域用来保存临时数据。】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">&lt;%--浏览器不识别out.println()写入的换行符，应写入&lt;br&gt;来实现换行 --%&gt;</div><div class="line">&lt;%out.println(&quot;hello,world!&quot;); %&gt;</div><div class="line">&lt;%out.print(&quot;Hello,World!&quot;); %&gt;</div><div class="line">&lt;%out.print(&quot;&lt;br&gt;&quot;); %&gt;</div><div class="line">&lt;%out.print(&quot;Hello,World!&quot;); %&gt;</div><div class="line">&lt;%out.print(&quot;&lt;br&gt;&quot;); %&gt;</div><div class="line"></div><div class="line">&lt;%--out的getBufferSize()方法和getRemaining()方法 --%&gt;</div><div class="line">&lt;%out.println(&quot;缓冲区大小：&quot;+out.getBufferSize()); %&gt;</div><div class="line">&lt;%out.print(&quot;&lt;br&gt;&quot;); %&gt;</div><div class="line">&lt;%out.println(&quot;剩余缓冲区大小：&quot;+out.getRemaining()); %&gt;</div><div class="line">&lt;%for(int i=0;i&lt;5000;i++)&#123;</div><div class="line">	out.print(&quot;a&quot;);</div><div class="line">&#125; %&gt;</div><div class="line">&lt;%out.print(&quot;&lt;br&gt;&quot;); %&gt;</div><div class="line">&lt;%out.println(&quot;剩余缓冲区大小：&quot;+out.getRemaining()); %&gt;</div><div class="line"></div><div class="line">&lt;%--out的flush()方法 --%&gt;</div><div class="line">&lt;%out.flush(); %&gt;</div><div class="line">&lt;%out.print(&quot;&lt;br&gt;&quot;); %&gt;</div><div class="line">&lt;%out.println(&quot;剩余缓冲区大小：&quot;+out.getRemaining()); %&gt;</div><div class="line"></div><div class="line">&lt;%--out的close()方法 :关闭输出流--%&gt;</div><div class="line">&lt;%out.print(&quot;&lt;br&gt;&quot;); %&gt;</div><div class="line">&lt;%out.println(&quot;你好！&quot;); %&gt;</div><div class="line">&lt;%out.println(&quot;小明！&quot;); %&gt;</div><div class="line">&lt;%out.flush(); %&gt;</div><div class="line">&lt;%out.close(); %&gt;//这里会抛出异常</div><div class="line">&lt;%out.print(&quot;&lt;br&gt;&quot;); %&gt;</div><div class="line">&lt;%out.println(&quot;你好！&quot;); %&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<p>注意：</p>
+<ul>
+<li>浏览器不识别out.println()写入的换行符，应写入<br>来实现换行</li>
+<li>clear()用在flush()后会抛出异常，而clearBuffer()不会。</li>
+</ul>
+<h2 id="2、request对象"><a href="#2、request对象" class="headerlink" title="2、request对象"></a>2、request对象</h2><p><strong>【get和post区别】</strong></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-1663c90e1d6c803e?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p><strong>【中文乱码问题】</strong></p>
+<ul>
+<li>post方式</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;%</div><div class="line">	//post方式中文乱码处理：对request请求进行解码，解决提交表单或者post方式传递参数时的中文乱码问题。但无法解决URL传递中文参数出现的乱码问题。</div><div class="line">	</div><div class="line">	request.setCharacterEncoding(&quot;utf-8&quot;);</div><div class="line">	</div><div class="line">	//服务器告知浏览器，以什么方式打开文件以及编码格式是什么。</div><div class="line">	</div><div class="line">	response.setContentType(&quot;text/html;charset=utf-8&quot;);</div><div class="line">	</div><div class="line">%&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>get方式<br>①找到Servers中的server.xml,在Connector标签中添加URIEncoding=”utf-8”属性。（重启TomCat服务器）<br>//可以解决URL传递中文参数出现的乱码问题<br>②单解码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;%</div><div class="line">	String name=request.getParameter(&quot;name&quot;);</div><div class="line">	name=new String(name.getBytes(&quot;ISO-8859-1&quot;),&quot;utf-8&quot;);</div><div class="line">%&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-fbfa3549af89d049?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<hr>
+<h2 id="3、response对象"><a href="#3、response对象" class="headerlink" title="3、response对象"></a>3、response对象</h2><p>（1）<br><img src="http://upload-images.jianshu.io/upload_images/4731173-4a2ab7a49d59c750?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*,java.io.*&quot; comtentType=&quot;text/html;charset=utf-8&quot;%&gt;</div><div class="line">&lt;%</div><div class="line">	response.setContentType(&quot;text/html;charset=utf-8&quot;);//设置相应的MIME类型</div><div class="line">	out.println(&quot;&lt;h1&gt;response内置对象&lt;/h1&gt;&quot;);</div><div class="line">	out.println(&quot;&lt;hr&gt;&quot;);</div><div class="line">	//response获得PrintWriter对象输出的内容总是在内置的out对象输出的内容之前(如下图).</div><div class="line">	//解决方式：</div><div class="line">	out.flush();</div><div class="line"></div><div class="line">	PrintWriter outer=response.getWriter();//获得输出流对象</div><div class="line">	outer.println(&quot;大家好，我是response对象生成的输出流outer对象&quot;);</div><div class="line"></div><div class="line">	response.sendRedirect(&quot;index.jsp&quot;);//请求重定向，会立刻跳转到index.jsp页面。</div><div class="line">%&gt;</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-337c9061fb3614ee?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<hr>
+<p><strong>（2）【请求转发与请求重定向的区别】</strong></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-4eb3bac1767644ae?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p><strong>示例：</strong><br>//请求重定向<br><img src="http://upload-images.jianshu.io/upload_images/4731173-863da169a582f3a8?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"><br><img src="http://upload-images.jianshu.io/upload_images/4731173-746404be49b17837?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p>测试：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-846f9e6bd7763291?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p>效果：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-dcb827a5e9fe4f62?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p>//请求转发<br><img src="http://upload-images.jianshu.io/upload_images/4731173-3d76b2d7ae4c61b9?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p>效果：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-a72e89cafa566d5a?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<h2 id="4、session对象"><a href="#4、session对象" class="headerlink" title="4、session对象"></a>4、session对象</h2><p>（1）</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-0a6d29b23deaef2d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<ul>
+<li>会话保存在<strong>服务器</strong>的内存里。</li>
+<li>服务器内存中保存着不同用户的session。每个session都有一个唯一的sessionId.</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-1bd63405be162f08?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"><br><img src="http://upload-images.jianshu.io/upload_images/4731173-784c18836a1273cc?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">&lt;%@ page import=&quot;java.util.Date&quot; %&gt;</div><div class="line">//……</div><div class="line">&lt;body&gt;</div><div class="line">&lt;%</div><div class="line">	if(session.isNew())&#123;</div><div class="line">		session.setAttribute(&quot;n&quot;, 0);</div><div class="line">	&#125;else&#123;</div><div class="line">		int n=(Integer)session.getAttribute(&quot;n&quot;);</div><div class="line">		n++;</div><div class="line">		session.setAttribute(&quot;n&quot;, n);</div><div class="line">	&#125;</div><div class="line">%&gt;</div><div class="line">&lt;table width=&quot;500&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;1&quot; bordercolor=&quot;#c0c0c0&quot;&gt;</div><div class="line">	&lt;tr&gt;</div><div class="line">		&lt;td&gt;Session ID:&lt;/td&gt;</div><div class="line">		&lt;td&gt;&lt;%=session.getId() %&gt;&lt;/td&gt;</div><div class="line">	&lt;/tr&gt;</div><div class="line">	&lt;tr&gt;</div><div class="line">		&lt;td&gt;创建时间:&lt;/td&gt;</div><div class="line">		&lt;td&gt;&lt;%=new Date(session.getCreationTime()) %&gt;&lt;/td&gt;</div><div class="line">	&lt;/tr&gt;</div><div class="line">	&lt;tr&gt;</div><div class="line">		&lt;td&gt;上次访问时间:&lt;/td&gt;</div><div class="line">		&lt;td&gt;&lt;%=new Date(session.getLastAccessedTime()) %&gt;&lt;/td&gt;</div><div class="line">	&lt;/tr&gt;</div><div class="line">	&lt;tr&gt;</div><div class="line">		&lt;td&gt;访问次数:&lt;/td&gt;</div><div class="line">		&lt;td&gt;&lt;%=session.getAttribute(&quot;n&quot;) %&gt;&lt;/td&gt;</div><div class="line">	&lt;/tr&gt;</div><div class="line">&lt;/table&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<p><strong>（2）session对象的生命周期</strong><br><img src="http://upload-images.jianshu.io/upload_images/4731173-24fd3dc426d7e476?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"><br><img src="http://upload-images.jianshu.io/upload_images/4731173-0c0217fe256c441e?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"><br><img src="http://upload-images.jianshu.io/upload_images/4731173-80fe5f97746cf081?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p>【销毁方式】<br><img src="http://upload-images.jianshu.io/upload_images/4731173-553c4a0275fe96ac?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<h2 id="5、application对象"><a href="#5、application对象" class="headerlink" title="5、application对象"></a>5、application对象</h2><p><img src="http://upload-images.jianshu.io/upload_images/4731173-03b256053d850f25?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"><br><img src="http://upload-images.jianshu.io/upload_images/4731173-1ce7bec384471d90?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p>示例：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-1d3cc899e26475d1?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写代码片"></p>
+<p>效果：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-5bc65abde6a41c36?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<h2 id="6、page对象"><a href="#6、page对象" class="headerlink" title="6、page对象"></a>6、page对象</h2><p>与Object类差不多。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-f0ca8ce5684337e3?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<h2 id="7、pageContext对象"><a href="#7、pageContext对象" class="headerlink" title="7、pageContext对象"></a>7、pageContext对象</h2><p><img src="http://upload-images.jianshu.io/upload_images/4731173-9fe88197acb86930?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"><br><img src="http://upload-images.jianshu.io/upload_images/4731173-b12fd39354949586?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<h2 id="8、Config对象"><a href="#8、Config对象" class="headerlink" title="8、Config对象"></a>8、Config对象</h2><p><img src="http://upload-images.jianshu.io/upload_images/4731173-e05974f873376d10?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<h2 id="9、Exception对象"><a href="#9、Exception对象" class="headerlink" title="9、Exception对象"></a>9、Exception对象</h2><p><img src="http://upload-images.jianshu.io/upload_images/4731173-7a6614244591adda?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p><strong>示例：</strong></p>
+<p>//编写exception_test.jsp</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-fb9a5a88017f7d60?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"><br><img src="http://upload-images.jianshu.io/upload_images/4731173-1a0e4b950cb48489?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p>//编写exception.jsp</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-6a10cec5ee902142?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"><br><img src="http://upload-images.jianshu.io/upload_images/4731173-7953f072865b3ee4?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p><strong>测试：</strong></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-51e3a87878e206a0?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/jsp-内置对象/" rel="tag"># jsp,内置对象</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/16/JSP基本语法/" rel="next" title="JSP基本语法">
+                <i class="fa fa-chevron-left"></i> JSP基本语法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/26/Servlet/" rel="prev" title="Servlet">
+                Servlet <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <p class="site-author-name" itemprop="name">Aeris</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JSP内置对象"><span class="nav-number">1.</span> <span class="nav-text">JSP内置对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、out对象："><span class="nav-number">1.1.</span> <span class="nav-text">1、out对象：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、request对象"><span class="nav-number">1.2.</span> <span class="nav-text">2、request对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、response对象"><span class="nav-number">1.3.</span> <span class="nav-text">3、response对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、session对象"><span class="nav-number">1.4.</span> <span class="nav-text">4、session对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、application对象"><span class="nav-number">1.5.</span> <span class="nav-text">5、application对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、page对象"><span class="nav-number">1.6.</span> <span class="nav-text">6、page对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、pageContext对象"><span class="nav-number">1.7.</span> <span class="nav-text">7、pageContext对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8、Config对象"><span class="nav-number">1.8.</span> <span class="nav-text">8、Config对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9、Exception对象"><span class="nav-number">1.9.</span> <span class="nav-text">9、Exception对象</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Aeris</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh_Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="排序：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253//快速排序法、选择排序法、冒泡排序法import java.util.Arrays;public class ArraySort &amp;#123;	public static void main(Str">
+<meta property="og:type" content="article">
+<meta property="og:title" content="排序、二维数组">
+<meta property="og:url" content="http://yoursite.com/2016/08/03/排序、二维数组/index.html">
+<meta property="og:site_name" content="Aeris‘s">
+<meta property="og:description" content="排序：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253//快速排序法、选择排序法、冒泡排序法import java.util.Arrays;public class ArraySort &amp;#123;	public static void main(Str">
+<meta property="og:locale" content="zh_Hans">
+<meta property="og:updated_time" content="2017-09-19T02:40:54.423Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="排序、二维数组">
+<meta name="twitter:description" content="排序：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253//快速排序法、选择排序法、冒泡排序法import java.util.Arrays;public class ArraySort &amp;#123;	public static void main(Str">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/08/03/排序、二维数组/"/>
+
+
+
+
+
+  <title>排序、二维数组 | Aeris‘s</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Aeris‘s</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/03/排序、二维数组/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aeris">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aeris‘s">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">排序、二维数组</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-03T10:39:00+08:00">
+                2016-08-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="排序："><a href="#排序：" class="headerlink" title="排序："></a>排序：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">//快速排序法、选择排序法、冒泡排序法</div><div class="line"></div><div class="line">import java.util.Arrays;</div><div class="line"></div><div class="line">public class ArraySort &#123;</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		int arr[]=&#123;5,4,3,2,1&#125;;</div><div class="line">//		//快速排序法</div><div class="line">//		System.out.println(&quot;快速排序法：&quot;);</div><div class="line">//		Arrays.sort(arr);</div><div class="line">//		for (int i = 0; i &lt; arr.length; i++) &#123;</div><div class="line">//			System.out.print(arr[i]+&quot;  &quot;);</div><div class="line">//		&#125;</div><div class="line">//		System.out.println();</div><div class="line">//		//选择排序法</div><div class="line">//		System.out.println(&quot;选择排序法：&quot;);</div><div class="line">//		for (int i = 0; i &lt; arr.length-1; i++) &#123;</div><div class="line">//			int min=i;</div><div class="line">//			for (int j = i+1; j &lt; arr.length; j++) &#123;</div><div class="line">//				if(arr[min]&gt;arr[j])&#123;</div><div class="line">//					min=j;</div><div class="line">//				&#125;</div><div class="line">//			&#125;</div><div class="line">//			if(min!=i)&#123;</div><div class="line">//				int temp=arr[i];</div><div class="line">//				arr[i]=arr[min];</div><div class="line">//				arr[min]=temp;</div><div class="line">//			&#125;</div><div class="line">//		&#125;</div><div class="line">//		for (int i = 0; i &lt; arr.length; i++) &#123;</div><div class="line">//			System.out.print(arr[i]+&quot;  &quot;);</div><div class="line">//		&#125;</div><div class="line">//		System.out.println();</div><div class="line">//		</div><div class="line">		//冒泡排序法（输出排序过程）</div><div class="line">		System.out.println(&quot;冒泡排序法：&quot;);</div><div class="line">		for (int i = 0; i &lt; arr.length-1; i++) &#123;</div><div class="line">			for (int j = 0; j &lt; arr.length-1-i; j++) &#123;</div><div class="line">				if(arr[j+1]&lt;arr[j])&#123;</div><div class="line">					int temp=0;</div><div class="line">					temp=arr[j+1];</div><div class="line">					arr[j+1]=arr[j];</div><div class="line">					arr[j]=temp;</div><div class="line">				&#125;</div><div class="line">				for (int k = 0; k &lt; arr.length; k++) &#123;</div><div class="line">					System.out.print(arr[k]+&quot; &quot;);</div><div class="line">				&#125;</div><div class="line">				System.out.println();</div><div class="line">			&#125;</div><div class="line">			System.out.println();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">//运行结果：</div><div class="line"></div><div class="line">冒泡排序法：</div><div class="line">4 5 3 2 1 </div><div class="line">4 3 5 2 1 </div><div class="line">4 3 2 5 1 </div><div class="line">4 3 2 1 5 </div><div class="line"></div><div class="line">3 4 2 1 5 </div><div class="line">3 2 4 1 5 </div><div class="line">3 2 1 4 5 </div><div class="line"></div><div class="line">2 3 1 4 5 </div><div class="line">2 1 3 4 5 </div><div class="line"></div><div class="line">1 2 3 4 5</div></pre></td></tr></table></figure>
+<hr>
+<p><strong>( 3 ) 二维数组</strong></p>
+<p>1)    定义</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">数据类型[][] 数组名</div><div class="line">数据类型 数组名[][]</div></pre></td></tr></table></figure>
+<p>2)    初始化</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">int arr[][] =&#123;&#123;1,2&#125;,&#123;1,2,3&#125;,&#123;4,5,6,7&#125;&#125;;</div><div class="line">int arr2[][]= new int[3][];</div><div class="line">int arr3[][]=new int&#123;&#123;1,2&#125;,&#123;1,2,3&#125;,&#123;4,5,6,7&#125;&#125;;</div></pre></td></tr></table></figure>
+<p>【除了定义的值，其他值是否为null？】</p>
+<p>3）遍历数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">for(int i=0;i&lt;arr.length;i++)&#123;</div><div class="line">	for(int j=0;j&lt;arr[i].length;j++)&#123;</div><div class="line">		System.out.println(arr[i][j]);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="Test："><a href="#Test：" class="headerlink" title="Test："></a>Test：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">//1、二维数组的定义、初始化、遍历public class Test1 </div><div class="line"></div><div class="line">public class Test1 &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		//二维数组的定义</div><div class="line">		/*int arr1[][];</div><div class="line">		int [][] arr2;*/</div><div class="line">		//初始化</div><div class="line">		int arr1[][] =&#123;&#123;1,2&#125;,&#123;1,2,3&#125;,&#123;4,5,6,7&#125;&#125;;</div><div class="line">		int arr2[][]=new int[3][];</div><div class="line">		int arr3[][]=new int[][]&#123;&#123;1,2&#125;,&#123;1,2,3&#125;,&#123;4,5,6,7&#125;&#125;;</div><div class="line">		//遍历</div><div class="line">		for (int i = 0; i &lt; arr1.length; i++) &#123;</div><div class="line">			for (int j = 0; j &lt; arr1[i].length; j++) &#123;</div><div class="line">				System.out.print(arr1[i][j]+&quot;\t&quot;);</div><div class="line">			&#125;</div><div class="line">			System.out.println();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//运行结果：</div><div class="line"></div><div class="line">1	2	</div><div class="line">1	2	3	</div><div class="line">4	5	6	7</div></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//2、计算三个班级的总成绩。</div><div class="line"></div><div class="line">public class Test2 &#123;</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		</div><div class="line">		int [][]arr=&#123;&#123;66,95&#125;,&#123;98,42,75&#125;,&#123;23,86,65&#125;&#125;;</div><div class="line">		for (int i = 0; i &lt; arr.length; i++) &#123;</div><div class="line">			int total=0;</div><div class="line">			for (int j = 0; j &lt; arr[i].length; j++) &#123;</div><div class="line">				total+=arr[i][j];</div><div class="line">			&#125;</div><div class="line">			System.out.println(&quot;第&quot;+(i+1)+&quot;个班级的总成绩为：&quot;+total);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//运行结果：</div><div class="line"></div><div class="line">第1个班级的总成绩为：161</div><div class="line">第2个班级的总成绩为：215</div><div class="line">第3个班级的总成绩为：174</div></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">//3、根据输入的城市查询省份</div><div class="line"></div><div class="line">import java.util.*;</div><div class="line"></div><div class="line">public class Test3 &#123;</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		</div><div class="line">		String findCity;</div><div class="line">		boolean isFound=false;</div><div class="line">		Scanner scanner=new Scanner(System.in);</div><div class="line">		String [][] citys = &#123;</div><div class="line">				&#123;&quot;广东省&quot;,&quot;广州&quot;,&quot;深圳&quot;,&quot;珠海&quot;&#125;,</div><div class="line">				&#123;&quot;江苏省&quot;,&quot;南京&quot;,&quot;无锡&quot;,&quot;苏州&quot;&#125;,</div><div class="line">				&#123;&quot;浙江省&quot;,&quot;杭州&quot;,&quot;宁波&quot;,&quot;温州&quot;&#125;,</div><div class="line">				&#123;&quot;河南省&quot;,&quot;洛阳&quot;,&quot;南阳&quot;,&quot;信阳&quot;&#125;</div><div class="line">				&#125;;</div><div class="line">		System.out.print(&quot;请输入您要找的城市：&quot;);</div><div class="line">		findCity= scanner.next();</div><div class="line">		outer:for (int i = 0; i &lt; citys.length; i++) &#123;</div><div class="line">			for (int j = 1; j &lt; citys[i].length; j++) &#123;</div><div class="line">				if(findCity.equals(citys[i][j]))&#123;</div><div class="line">					isFound=true;</div><div class="line">					System.out.println(findCity+&quot;位于&quot;+citys[i][0]);</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		if(!isFound)&#123;</div><div class="line">			System.out.println(&quot;暂不支持该城市查询！&quot;);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//运行结果：</div><div class="line"></div><div class="line">请输入您要找的城市：深圳</div><div class="line">深圳位于广东省</div></pre></td></tr></table></figure>
+<hr>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/31/while循环、一维数组、Arrays类方法及练习/" rel="next" title="while循环、一维数组、Arrays类方法及练习">
+                <i class="fa fa-chevron-left"></i> while循环、一维数组、Arrays类方法及练习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/10/JAVAWEB概述/" rel="prev" title="JAVAWEB概述">
+                JAVAWEB概述 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <p class="site-author-name" itemprop="name">Aeris</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#排序："><span class="nav-number">1.</span> <span class="nav-text">排序：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Test："><span class="nav-number">2.</span> <span class="nav-text">Test：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Aeris</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

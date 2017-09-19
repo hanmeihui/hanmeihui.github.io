@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh_Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="运算符,获取输入," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="二、基础语法(day2)5、运算符  算数运算符：+、-、、/、%、++、–、 (   a%b=a-(a/b)b  ) 关系运算符：==  、！=、&amp;gt;、&amp;lt;、&amp;gt;=、&amp;lt;= ①    &amp;gt;、&amp;lt;、&amp;gt;=、&amp;lt;=运算符的优先级别高于==  、！=。 ②    &amp;gt;、&amp;lt;、&amp;gt;=、&amp;lt;=运算符值支持数据类型的数据比较。   逻辑运算符：&amp;amp;、|、">
+<meta name="keywords" content="运算符,获取输入">
+<meta property="og:type" content="article">
+<meta property="og:title" content="运算符、键盘输入">
+<meta property="og:url" content="http://yoursite.com/2016/07/27/JAVA基础语法【运算符、键盘输入】/index.html">
+<meta property="og:site_name" content="Aeris‘s">
+<meta property="og:description" content="二、基础语法(day2)5、运算符  算数运算符：+、-、、/、%、++、–、 (   a%b=a-(a/b)b  ) 关系运算符：==  、！=、&amp;gt;、&amp;lt;、&amp;gt;=、&amp;lt;= ①    &amp;gt;、&amp;lt;、&amp;gt;=、&amp;lt;=运算符的优先级别高于==  、！=。 ②    &amp;gt;、&amp;lt;、&amp;gt;=、&amp;lt;=运算符值支持数据类型的数据比较。   逻辑运算符：&amp;amp;、|、">
+<meta property="og:locale" content="zh_Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-d88baf85112a4689?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-f9ea568996007155.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-09-19T02:38:34.797Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="运算符、键盘输入">
+<meta name="twitter:description" content="二、基础语法(day2)5、运算符  算数运算符：+、-、、/、%、++、–、 (   a%b=a-(a/b)b  ) 关系运算符：==  、！=、&amp;gt;、&amp;lt;、&amp;gt;=、&amp;lt;= ①    &amp;gt;、&amp;lt;、&amp;gt;=、&amp;lt;=运算符的优先级别高于==  、！=。 ②    &amp;gt;、&amp;lt;、&amp;gt;=、&amp;lt;=运算符值支持数据类型的数据比较。   逻辑运算符：&amp;amp;、|、">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4731173-d88baf85112a4689?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/07/27/JAVA基础语法【运算符、键盘输入】/"/>
+
+
+
+
+
+  <title>运算符、键盘输入 | Aeris‘s</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Aeris‘s</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/27/JAVA基础语法【运算符、键盘输入】/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aeris">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aeris‘s">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">运算符、键盘输入</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-27T10:26:00+08:00">
+                2016-07-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="二、基础语法-day2"><a href="#二、基础语法-day2" class="headerlink" title="二、基础语法(day2)"></a>二、基础语法(day2)</h3><p><strong>5、运算符</strong><br><img src="http://upload-images.jianshu.io/upload_images/4731173-d88baf85112a4689?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/4731173-f9ea568996007155.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li><strong>算数运算符</strong>：+、-、<em>、/、%、++、–、<br> (   a%b=a-(a/b)</em>b  )</li>
+<li><strong>关系运算符</strong>：==  、！=、&gt;、&lt;、&gt;=、&lt;=<ul>
+<li>①    &gt;、&lt;、&gt;=、&lt;=运算符的优先级别高于==  、！=。</li>
+<li>②    &gt;、&lt;、&gt;=、&lt;=运算符值支持数据类型的数据比较。</li>
+</ul>
+</li>
+<li><strong>逻辑运算符</strong>：&amp;、|、^、！、&amp;&amp; 、 ||<ul>
+<li>①    操作数据类型只能是布尔类型，操作结果也是布尔值。<br>　　优先级别：！ &gt; &amp; &gt; ^异或 &gt;   |   &gt;  &amp;&amp;  &gt;  ||  。</li>
+<li>②&amp;、| 与 &amp;&amp;、|| 的区别<br>　　&amp;和|运算是把逻辑表达式全部计算完，而&amp;&amp;和||运算具有短路计算功能。即系统从左至右进行逻辑表达式的计算，一旦出现计算结果已经确定的情况，则计算过程即被终止。短路计算功能可以提高程序的运行速度。 </li>
+<li>③    异或:＾两值相同结果为false，两值不同结果为true。<br>位运算符：&amp;位与、|位或、~位非、^位异或、&gt;&gt;右移、&lt;&lt;左移<br>赋值运算符：=、+=、-=、*=、/=、%=</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>三目运算符</strong>：表达式1？表达式2：表达式3<pre><code>eg：int a=1,b=2,max;
+　　    max=a&gt;b?a:b;
+　　    //max等于2
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">//三目运算符练习</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>import java.util.*;<br>public class CompareDemo {<br>    public static void main(String[] args){<br>        double first;<br>        double second;<br>        Scanner scanner=new Scanner(System.in);<br>        System.out.print(“请输入第一个数：”);<br>        first=scanner.nextDouble();<br>        System.out.print(“请输入第二个数：”);<br>        second=scanner.nextDouble();<br>        System.out.println(“最小值为：”+(first&lt;second?first:second));<br>    }<br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<p>//CompareDemo运行结果：<br>请输入第一个数：4<br>请输入第二个数：6<br>最小值为：4.0<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"> - **运算符的优先级**：</div><div class="line"></div><div class="line"> | 优先级 | 运算符 | 描述 | </div><div class="line"> |:-------------:|:-------------:|:-----|</div><div class="line"> | 1 | （） | 括号 | </div><div class="line"> | 2 | +、-	 | 正负号 | </div><div class="line"> | 3 | ++、- -、！ | 单目运算符 | </div><div class="line"> | 4 | *、/、% | 乘、除、取余 | </div><div class="line"> | 5 | +、-	 | 加减 | </div><div class="line"> | 6 | &lt;&lt;、&gt;&gt;、&gt;&gt;&gt; | 移位运算 | </div><div class="line"> | 7 | &lt;&lt;、&gt;&gt;、&gt;、&gt;=	 | 比较大小 | </div><div class="line"> | 8 | ==、！= | 是否相等 | </div><div class="line"> | 9 | &amp; | 按位于运算 | </div><div class="line"> | 10 | 	^ | 按位异或运算 | </div><div class="line"> | 11 | \| | 按位或运算 | </div><div class="line"> | 12	 | &amp;&amp; | 非简洁逻辑与运算 | </div><div class="line"> | 13 | 双竖线 | 非简介逻辑或运算 | </div><div class="line"> | 14 | = | 赋值运算 | </div><div class="line"></div><div class="line"></div><div class="line">【</div><div class="line">**左移**:5&lt;&lt;2     将值5转换为二进制101后，左移2位，右边自动补0，即10100，计算得20</div><div class="line">**右移**：x&gt;&gt;y　　正数：将值x的二进制右移y位，左边自动补y个0</div><div class="line">		　　　　　　　     负数：将值x的二进制右移y位，左边自动补y个1</div><div class="line"> **无符号右移:**&gt;&gt;&gt;    无论正数还是负数，移动后都自动补0</div><div class="line">】</div><div class="line"></div><div class="line">**总结：**</div><div class="line">　①	单目运算符包括！、^、++、- -优先级别高</div><div class="line">　②	优先级别最低的是赋值运算符</div><div class="line">　③	()优先级最高，可通过()控制表达式的运算顺序。</div><div class="line">　④	从右向左结合性的只有赋值运算符、三目运算符和多目运算符。</div><div class="line">　⑤	算术运算符&gt;关系运算符&gt;逻辑运算符</div></pre></td></tr></table></figure></p>
+<p>//练习运算符<br>public class Test {<br>    public static void main(String[] args) {</p>
+<pre><code>    int i=0;
+    double x=2.3;
+    System.out.println(&quot;Result 1:&quot;+(--i+i+i++));
+    System.out.println(&quot;Result 2:&quot;+(i+++i));
+    i+=i+(i=4);
+    System.out.println(&quot;Result 3:&quot;+i);
+    i=3+3*2%i--;
+    System.out.println(&quot;Result 4:&quot;+i);
+    x=x++;
+    System.out.println(&quot;Result 5:&quot;+x);
+    x+=1.2*3+x++;
+    System.out.println(&quot;Result 6:&quot;+x);
+    x=x%3+4*2+x--;
+    System.out.println(&quot;Result 7:&quot;+x);
+
+}
+</code></pre><p>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<p>//运行结果<br>Result 1:-3<br>Result 2:1<br>Result 3:6<br>Result 4:3<br>Result 5:2.3<br>Result 6:8.2<br>Result 7:18.4<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">**6、键盘输入**</div><div class="line">　使用Scanner可以接收用户键盘输入的字符。</div><div class="line">　步骤：</div><div class="line">　①导入Scanner类：</div></pre></td></tr></table></figure></p>
+<p>Import java.util.*;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">②创建Scanner对象：</div></pre></td></tr></table></figure></p>
+<p>Scanner input=new Scanner(System.in);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">③获得键盘输入的数据</div></pre></td></tr></table></figure></p>
+<p>int n=input.nextInt();<br>String m=input.next();<br>```</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/运算符-获取输入/" rel="tag"># 运算符,获取输入</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/24/Javayufa/" rel="next" title="标识符、数据类型、常量变量、内存分析">
+                <i class="fa fa-chevron-left"></i> 标识符、数据类型、常量变量、内存分析
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/27/练习01/" rel="prev" title="练习01">
+                练习01 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <p class="site-author-name" itemprop="name">Aeris</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#二、基础语法-day2"><span class="nav-number">1.</span> <span class="nav-text">二、基础语法(day2)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Aeris</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

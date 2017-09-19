@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh_Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="EL表达式,JavaWeb," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="一、EL表达式：Expression Language EL表达式提供了获取对象以及属性的简单方法  二、EL表达式语法： Jsp写法：         &amp;lt;%= session.getAttribute(“name”) %&amp;gt;。 EL表达式写法：            “${sessionScope.name}” EL表达式格式：${表达式}  EL 提供.和[]两种运算符来存取数据。通">
+<meta name="keywords" content="EL表达式,JavaWeb">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EL表达式">
+<meta property="og:url" content="http://yoursite.com/2016/09/28/EL表达式/index.html">
+<meta property="og:site_name" content="Aeris‘s">
+<meta property="og:description" content="一、EL表达式：Expression Language EL表达式提供了获取对象以及属性的简单方法  二、EL表达式语法： Jsp写法：         &amp;lt;%= session.getAttribute(“name”) %&amp;gt;。 EL表达式写法：            “${sessionScope.name}” EL表达式格式：${表达式}  EL 提供.和[]两种运算符来存取数据。通">
+<meta property="og:locale" content="zh_Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-94f37da8798672e1?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-7088fd999a9895f0?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-09-19T02:46:13.232Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="EL表达式">
+<meta name="twitter:description" content="一、EL表达式：Expression Language EL表达式提供了获取对象以及属性的简单方法  二、EL表达式语法： Jsp写法：         &amp;lt;%= session.getAttribute(“name”) %&amp;gt;。 EL表达式写法：            “${sessionScope.name}” EL表达式格式：${表达式}  EL 提供.和[]两种运算符来存取数据。通">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4731173-94f37da8798672e1?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/09/28/EL表达式/"/>
+
+
+
+
+
+  <title>EL表达式 | Aeris‘s</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Aeris‘s</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/28/EL表达式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aeris">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aeris‘s">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">EL表达式</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-28T10:44:00+08:00">
+                2016-09-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="一、EL表达式：Expression-Language"><a href="#一、EL表达式：Expression-Language" class="headerlink" title="一、EL表达式：Expression Language"></a>一、EL表达式：Expression Language</h2><ul>
+<li>EL表达式提供了获取对象以及属性的简单方法</li>
+</ul>
+<h2 id="二、EL表达式语法："><a href="#二、EL表达式语法：" class="headerlink" title="二、EL表达式语法："></a>二、EL表达式语法：</h2><ul>
+<li>Jsp写法：         &lt;%= session.getAttribute(“name”) %&gt;。</li>
+<li>EL表达式写法：            “${sessionScope.name}”</li>
+<li><p>EL表达式格式：${表达式}</p>
+</li>
+<li><p>EL 提供.和[]两种运算符来存取数据。通常情况下两者是通用的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$&#123;user.name&#125;</div><div class="line">$&#123;user[“name”]&#125;</div><div class="line">“[]”还可以用来对集合元素进行定位：$&#123;booklist[0].price</div><div class="line"></div><div class="line">//以下两种情况必须使用”[]”：</div><div class="line">1.包含特殊符号：</div><div class="line">$&#123;user.first-name&#125;  错误写法</div><div class="line">$&#123;user[“first-name”]&#125;  正确写法</div><div class="line">2.通过变量动态取值：</div><div class="line">$&#123;user[param]&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="三、EL变量"><a href="#三、EL变量" class="headerlink" title="三、EL变量"></a>三、EL变量</h2><p><img src="http://upload-images.jianshu.io/upload_images/4731173-94f37da8798672e1?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">//示例：login.jsp</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;form action=&quot;&quot;&gt;</div><div class="line">		用户名：&lt;input type=&quot;text&quot; name=&quot;name&quot; /&gt;&lt;br/&gt;</div><div class="line">		&lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;1&quot;&gt;读书&lt;/input&gt;</div><div class="line">		&lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;2&quot;&gt;游泳&lt;/input&gt;</div><div class="line">		&lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;3&quot;&gt;旅行&lt;/input&gt;</div><div class="line">		&lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;4&quot;&gt;跳舞&lt;/input&gt;</div><div class="line">		&lt;input type=&quot;submit&quot; value=&quot;提交&quot; /&gt;</div><div class="line">	&lt;/form&gt;</div><div class="line">	&lt;%</div><div class="line">		String name=request.getParameter(&quot;name&quot;);</div><div class="line">		pageContext.setAttribute(&quot;name&quot;,&quot;zhangsan&quot;);//页面范围</div><div class="line">		//pageContext.removeAttribute(&quot;name&quot;);//运行后默认获取request的name属性</div><div class="line">		request.setAttribute(&quot;name&quot;,&quot;lisi&quot;);//请求范围</div><div class="line">		//request.removeAttribute(&quot;name&quot;);</div><div class="line">		session.setAttribute(&quot;name&quot;,&quot;wangwu&quot;);//会话范围</div><div class="line">		//session.removeAttribute(&quot;name&quot;);</div><div class="line">		application.setAttribute(&quot;name&quot;,&quot;zhaoliu&quot;);//应用范围</div><div class="line">		Cookie ck=new Cookie(&quot;name&quot;,name);</div><div class="line">		response.addCookie(ck);</div><div class="line">		</div><div class="line">	%&gt;</div><div class="line">	欢迎$&#123;param.name &#125;登录！&lt;br/&gt;//无法改变默认字符集，因此无法获取中文参数。</div><div class="line">	我的爱好是$&#123;paramValues.hobby[0]&#125;.&lt;br/&gt;</div><div class="line">	</div><div class="line">	&lt;!-- 与request.getHeader()相同： --&gt;</div><div class="line">	$&#123;header[&quot;Accept-Language&quot;] &#125;&lt;br/&gt;</div><div class="line">	$&#123;headerValues.Cookie[0] &#125;&lt;br/&gt;</div><div class="line">	从Cookie中取出值： $&#123;cookie.name.value&#125;</div><div class="line">	</div><div class="line">	&lt;hr/&gt;</div><div class="line">	</div><div class="line">	$&#123; name &#125;//默认pageContext&lt;br/&gt;</div><div class="line">	$&#123; pageScope.name &#125;&lt;br/&gt;</div><div class="line">	$&#123; requestScope.name &#125;&lt;br/&gt;</div><div class="line">	$&#123; sessionScope.name &#125;&lt;br/&gt;</div><div class="line">	$&#123; applicationScope.name &#125;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<hr>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-7088fd999a9895f0?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">	&lt;!-- EL的加减乘除模运算 --&gt;</div><div class="line">	&lt;br /&gt; EL的加减乘除模运算：</div><div class="line">	&lt;br /&gt; 1+2 = &amp;&#123;1+2&#125;</div><div class="line">	&lt;br /&gt; 1.2+1.4=$&#123;1.2+1.4&#125;</div><div class="line">	&lt;br /&gt;</div><div class="line">	&lt;%</div><div class="line">		BigDecimal a1 = new BigDecimal(Double.toString(1.2));</div><div class="line">		BigDecimal a2 = new BigDecimal(Double.toString(1.4));</div><div class="line">		out.print(&quot;1.2+1.4=&quot; + a1.add(a2) + &quot;&lt;br/&gt;&quot;);</div><div class="line">	%&gt;</div><div class="line">	&lt;br /&gt; 5 - 3 = $&#123;5-3&#125;</div><div class="line">	&lt;br /&gt; 5 + 3 = $&#123;5+3&#125;</div><div class="line">	&lt;br /&gt; 9 / 3 = $&#123;9/3&#125; 或者 9 div 3=$&#123;9 div 3 &#125;</div><div class="line">	&lt;br /&gt; 7 % 2 = $&#123;7%2&#125; 或者 7 mod 2=$&#123;7 mod 2 &#125;</div><div class="line">	&lt;br /&gt;</div><div class="line"></div><div class="line">	&lt;!-- 关系运算 --&gt;</div><div class="line">	&lt;br /&gt; 关系运算：</div><div class="line">	&lt;br /&gt;3 &gt; 2 = $&#123; 3 &gt; 2 &#125; 或者 3 gt 2 = $&#123; 3 gt 2 &#125;</div><div class="line">	&lt;br /&gt;2 &gt;= 3 = $&#123; 2 &gt;= 3 &#125; 或者 2 ge 3 = $&#123; 2 ge 3 &#125;</div><div class="line">	&lt;br /&gt; 1 &lt;2 = $&#123;1&lt;2 &#125; 或者 1 lt 2 = $&#123; 1 lt 2 &#125;</div><div class="line">	&lt;br /&gt;1 &lt;=2 = $&#123; 1&lt;=2 &#125; 或者 1 le 2 =$&#123; 1 le 2 &#125;</div><div class="line">	&lt;br /&gt;1 !=2 = $&#123;1 != 2&#125; 或者 1 ne 2 = $&#123; 1 ne 2 &#125;</div><div class="line">	&lt;!-- greater than、lesser than、greater equal、lesser equal --&gt;</div><div class="line">	&lt;br /&gt; </div><div class="line"></div><div class="line">	&lt;!-- 逻辑运算 --&gt;</div><div class="line">	&lt;br /&gt; 逻辑运算：</div><div class="line">	&lt;br /&gt; 1&gt;2 &amp;&amp; 1&lt;4 = $&#123; 1&gt;2 &amp;&amp; 1&lt;4 &#125; 或者 1&gt;2 and 1&lt;4 = $&#123; 1&gt;2 and 1&lt;4 &#125;</div><div class="line">	&lt;br /&gt; 1&gt;2 || 1&lt;4 = $&#123; 1&gt;2 || 1&lt;4 &#125; 或者 1&gt;2 or 1&lt;4 = $&#123; 1&gt;2 or 1&lt;4 &#125;</div><div class="line">	&lt;br /&gt; !(1&gt;2) = $&#123; !(1&gt;2) &#125; 或者 not (1&gt;2) = $&#123; not (1&gt;2) &#125;</div><div class="line">	&lt;br /&gt; </div><div class="line">	</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<hr>
+<p><strong>特殊运算符：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 特殊运算符 --&gt;</div><div class="line">&lt;br /&gt; 特殊运算符：</div><div class="line">&lt;br /&gt; $&#123;empty sessionScope.name &#125;</div><div class="line">&lt;br /&gt; $&#123;1&gt;2?&quot;真&quot;:&quot;假&quot;&#125;</div></pre></td></tr></table></figure>
+<hr>
+<p><strong>获取javaBean属性的三种方法：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">&lt;jsp:useBean id=&quot;user&quot; class=&quot;com.test.vo.UserBean&quot;&gt;&lt;/jsp:useBean&gt;</div><div class="line">&lt;jsp:setProperty property=&quot;name&quot; name=&quot;user&quot; value=&quot;haha&quot;/&gt;</div><div class="line"></div><div class="line">&lt;%-- 获取Bean的属性--%&gt;</div><div class="line">&lt;jsp:getProperty property=&quot;name&quot; name=&quot;user&quot;/&gt;</div><div class="line">$&#123;user.name &#125;</div><div class="line">&lt;%=user.getName() %&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/EL表达式-JavaWeb/" rel="tag"># EL表达式,JavaWeb</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/26/Servlet/" rel="next" title="Servlet">
+                <i class="fa fa-chevron-left"></i> Servlet
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/30/【转】二进制数的运算方法/" rel="prev" title="【转】二进制数的运算方法">
+                【转】二进制数的运算方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <p class="site-author-name" itemprop="name">Aeris</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、EL表达式：Expression-Language"><span class="nav-number">1.</span> <span class="nav-text">一、EL表达式：Expression Language</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、EL表达式语法："><span class="nav-number">2.</span> <span class="nav-text">二、EL表达式语法：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、EL变量"><span class="nav-number">3.</span> <span class="nav-text">三、EL变量</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Aeris</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

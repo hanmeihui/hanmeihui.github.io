@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh_Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Jsp," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="一、JSP简介：1、JSP JSP是指Java服务器端页面，由HTML+JSP标记+Java代码组成。 2、特点： ①降低了程序设计的难度  ②可以使用可视化工具，减少了开发工作量  ③不需要手动编译  ④包含相关的内置对象、指令元素与动作元素，简化了编写servlet程序的过程。  ⑤可运用Java所提供的各类包 3、执行过程： ①请求（Request）  ②翻译（Servlet即.java文件">
+<meta name="keywords" content="Jsp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSP基本语法">
+<meta property="og:url" content="http://yoursite.com/2016/09/16/JSP基本语法/index.html">
+<meta property="og:site_name" content="Aeris‘s">
+<meta property="og:description" content="一、JSP简介：1、JSP JSP是指Java服务器端页面，由HTML+JSP标记+Java代码组成。 2、特点： ①降低了程序设计的难度  ②可以使用可视化工具，减少了开发工作量  ③不需要手动编译  ④包含相关的内置对象、指令元素与动作元素，简化了编写servlet程序的过程。  ⑤可运用Java所提供的各类包 3、执行过程： ①请求（Request）  ②翻译（Servlet即.java文件">
+<meta property="og:locale" content="zh_Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-1f6ee1cdf2676771?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-c77413404c0e7876?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-92cc4637ae19211c?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-c8b4e9e27a7db4c5?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-c4338dcdd89d3786?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-541337f1b7c23e6b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-f445fa755caf8078?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-09-19T02:42:05.232Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JSP基本语法">
+<meta name="twitter:description" content="一、JSP简介：1、JSP JSP是指Java服务器端页面，由HTML+JSP标记+Java代码组成。 2、特点： ①降低了程序设计的难度  ②可以使用可视化工具，减少了开发工作量  ③不需要手动编译  ④包含相关的内置对象、指令元素与动作元素，简化了编写servlet程序的过程。  ⑤可运用Java所提供的各类包 3、执行过程： ①请求（Request）  ②翻译（Servlet即.java文件">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4731173-1f6ee1cdf2676771?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/09/16/JSP基本语法/"/>
+
+
+
+
+
+  <title>JSP基本语法 | Aeris‘s</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Aeris‘s</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/16/JSP基本语法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aeris">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aeris‘s">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JSP基本语法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-16T10:41:00+08:00">
+                2016-09-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="一、JSP简介："><a href="#一、JSP简介：" class="headerlink" title="一、JSP简介："></a>一、JSP简介：</h2><p><strong>1、JSP</strong></p>
+<p>JSP是指Java服务器端页面，由HTML+JSP标记+Java代码组成。</p>
+<p><strong>2、特点：</strong></p>
+<pre><code>①降低了程序设计的难度
+
+②可以使用可视化工具，减少了开发工作量
+
+③不需要手动编译
+
+④包含相关的内置对象、指令元素与动作元素，简化了编写servlet程序的过程。
+
+⑤可运用Java所提供的各类包
+</code></pre><p><strong>3、执行过程：</strong></p>
+<pre><code>①请求（Request）
+
+②翻译（Servlet即.java文件）
+
+③编译（.class文件）
+
+④执行
+
+⑤响应（Response）
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/4731173-1f6ee1cdf2676771?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p><strong>4、基本元素：</strong><br><img src="http://upload-images.jianshu.io/upload_images/4731173-c77413404c0e7876?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<hr>
+<hr>
+<hr>
+<h2 id="二、JSP基本元素"><a href="#二、JSP基本元素" class="headerlink" title="二、JSP基本元素"></a>二、JSP基本元素</h2><p><a href="参考wugewuge的博客：http://blog.csdn.net/wugewuge/article/details/7979274">参考wugewuge的博客：http://blog.csdn.net/wugewuge/article/details/7979274</a></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-92cc4637ae19211c?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<hr>
+<p><strong>1、jsp注释</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;%-- annotation --%&gt; //jsp注释：不经过翻译阶段，客户端不可见</div><div class="line"></div><div class="line">&lt;% //annotation  %&gt;  //单行注释：经过翻译阶段，客户端不可见</div><div class="line"></div><div class="line">&lt;% /* annotation</div><div class="line">	  annotation</div><div class="line">	  annotation*/%&gt; //多行注释：经过翻译阶段，客户端不可见</div><div class="line"></div><div class="line">&lt;!--  --&gt;            //html注释：经过翻译、编译阶段，客户端可见</div></pre></td></tr></table></figure>
+<hr>
+<p><strong>2、JSP脚本元素</strong></p>
+<p>（1）JSP声明<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;%! int a=0; %&gt; //成员变量</div><div class="line">&lt;% int b=0; %&gt;  //局部变量</div><div class="line">……				//还有成员方法和局部方法</div></pre></td></tr></table></figure></p>
+<p>（2）JSP脚本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;% Java代码 %&gt;</div></pre></td></tr></table></figure>
+<p>（3）JSP表达式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;%=表达式 %&gt;</div><div class="line"></div><div class="line">//注意：表达式后无分号</div><div class="line">//	   表达式返回结果为字符串。</div></pre></td></tr></table></figure>
+<hr>
+<p><strong>3、JSP指令元素</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;%@ include / page / tablib %&gt;//三大指令元素</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-c8b4e9e27a7db4c5?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<hr>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-c4338dcdd89d3786?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<hr>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-541337f1b7c23e6b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<hr>
+<p><strong>4、JSP动作元素</strong></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-f445fa755caf8078?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p>（1）include动作元素</p>
+<ul>
+<li><p>作用：</p>
+<p> include动作元素用来在JSP页面中包含其他静态页面和动态页面。</p>
+</li>
+</ul>
+<ul>
+<li>无参数格式：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;jsp:include page=”文件路径” flush=”true|false”/&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>带参数格式：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;jsp:include page=”文件路径” flush=”true|false”/&gt;</div><div class="line">        &lt;jsp:param name=”参数名1” value=”参数1的值”&gt;</div><div class="line">       &lt;jsp:param name=”参数名2” value=”参数2的值”/&gt;</div><div class="line">       &lt;jsp:param name=”参数名3” value=”参数3的值”/&gt;</div><div class="line">        …</div><div class="line">       &lt;jsp:param name=”参数名n” value=”参数n的值”/&gt;</div><div class="line">&lt;/jsp:include&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>示例：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">&lt;!-- 动态包含静态文件 --&gt;</div><div class="line">&lt;jsp:include page=&quot;1.html&quot; flush=&quot;true&quot;&gt;&lt;/jsp:include&gt;</div><div class="line">&lt;% String name=request.getParameter(&quot;name&quot;);</div><div class="line">   if(name==null||name==&quot;&quot;)&#123;</div><div class="line">	  name=&quot;0&quot;;</div><div class="line">   &#125;</div><div class="line">%&gt;</div><div class="line">&lt;!-- 动态包含文件并传递参数 --&gt;</div><div class="line">&lt;jsp:include page=&quot;2.jsp&quot; flush=&quot;true&quot;&gt;</div><div class="line">    &lt;jsp:param name=&quot;r&quot; value=&quot;&lt;%=name %&gt;&quot; /&gt;</div><div class="line">&lt;/jsp:include&gt;</div><div class="line"></div><div class="line">&lt;!-- 动态包含文件并不传递参数 --&gt;</div><div class="line">&lt;jsp:include page=&quot;3.jsp&quot; flush=&quot;true&quot;&gt;&lt;/jsp:include&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<p>（2）forward动作元素</p>
+<ul>
+<li><p>作用：</p>
+<p> forward动作元素用来跳转网页，即将当前页面跳转到其他指定页面。转向的目标页面可以是静态HTML页面、JSP页面或Servlet类。</p>
+</li>
+</ul>
+<ul>
+<li>无参数格式：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;jsp:forward page=”文件路径” flush=”true|false”/&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>带参数格式：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;jsp:forward page=”文件路径” flush=”true|false”/&gt;</div><div class="line">     &lt;jsp:param name=”参数名1” value=”参数1的值”&gt;</div><div class="line">     &lt;jsp:param name=”参数名2” value=”参数2的值”/&gt;</div><div class="line">     &lt;jsp:param name=”参数名3” value=”参数3的值”/&gt;</div><div class="line">     …</div><div class="line">    &lt;jsp:param name=”参数名n” value=”参数n的值”/&gt;</div><div class="line">&lt;/jsp:forward&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>示例：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">//用户登录页面，登录成功跳转到sucess.jsp，否则跳转到error.jsp</div><div class="line">&lt;body&gt;</div><div class="line">&lt;% String name=request.getParameter(&quot;name&quot;);</div><div class="line">   String pwd=request.getParameter(&quot;pwd&quot;);</div><div class="line"></div><div class="line">   if(name.equals(&quot;sa&quot;)&amp;&amp;pwd.equals(&quot;123&quot;))&#123;</div><div class="line">%&gt;</div><div class="line">&lt;jsp:forward page=&quot;sucess.jsp&quot;&gt;</div><div class="line">     &lt;jsp:param value=&quot;&lt;%=name%&gt;&quot; name=&quot;name&quot;/&gt;</div><div class="line">     &lt;jsp:param value=&quot;&lt;%=pwd%&gt;&quot; name=&quot;pwd&quot;/&gt;</div><div class="line">&lt;/jsp:forward&gt;</div><div class="line"></div><div class="line">&lt;% &#125;else&#123;%&gt;</div><div class="line">	&lt;jsp:forward page=&quot;error.jsp&quot;&gt;&lt;/jsp:forward&gt;</div><div class="line">&lt;% &#125;%&gt;	</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<p>（3）param动作元素</p>
+<ul>
+<li><p>作用：</p>
+<p> param动作元素主要用来向需要包含的动态页面或要跳转的动态页面传递参数。</p>
+</li>
+<li><p>语法：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;jsp:param name=”属性名” value=”属性值”/&gt;</div><div class="line"></div><div class="line">//注意：param动作元素必须配合include动作元素、forward动作元素和plugin等元素，在加载外部程序或是网页转换的时候，传递参数给另外一个JSP程序。</div></pre></td></tr></table></figure>
+<ul>
+<li>示例：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">&lt;% String str=null;</div><div class="line">   str=&quot;Hello World!&quot;;</div><div class="line">%&gt;</div><div class="line"></div><div class="line">&lt;jsp:forward page=&quot;1.jsp&quot; &gt;</div><div class="line">    &lt;jsp:param name=&quot;str&quot; value=&quot;&lt;%=str%&gt;&quot; /&gt;</div><div class="line">&lt;/jsp:forward&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<p>（4）useBean动作元素</p>
+<ul>
+<li><p>作用：<br> useBean动作元素用来在JSP中创建并使用一个JavaBean。实际工作中常用JavaBean做组件开发，而在JSP中只需要声明并使用这个组件，这样可以较大限度地实现静态内容和动态内容的分离。</p>
+</li>
+<li><p>语法：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;jsp:useBean id=”bean的名称” scope=”有效范围” class=”包名.类名”&gt;&lt;/useBean&gt;</div><div class="line"></div><div class="line">//useBean动作元素有id、class、scope、type和beanName五种属性</div></pre></td></tr></table></figure>
+<ul>
+<li>示例：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">//圆形实体类</div><div class="line">public class CircleBean &#123;</div><div class="line">	private double radius=1.0;</div><div class="line">	private double perimeter;</div><div class="line">	private double area;</div><div class="line">                      private double  PI=3.14;</div><div class="line">	public CircleBean()&#123;  &#125;</div><div class="line">	public void setRadius(double r)&#123;</div><div class="line">		radius=r;</div><div class="line">	&#125;</div><div class="line">	public double getRadius()&#123;</div><div class="line">		return radius;</div><div class="line">	&#125;</div><div class="line">	public double getPerimeter()&#123;</div><div class="line">		perimeter=radius*2*PI;</div><div class="line">		return perimeter;</div><div class="line">	&#125;</div><div class="line">	public double getArea()&#123;</div><div class="line">		area=radius*radius*PI;</div><div class="line">		return area;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">//jsp页面</div><div class="line"></div><div class="line">&lt;body&gt;</div><div class="line">&lt;form id=&quot;form1&quot; name=&quot;form1&quot; method=&quot;post&quot; action=&quot;&quot;&gt;</div><div class="line">  请输入圆的半径：</div><div class="line">  &lt;input type=&quot;text&quot; name=&quot;radius1&quot; /&gt;</div><div class="line">  &lt;input type=&quot;submit&quot; name=&quot;Submit&quot; value=&quot;提交&quot; /&gt;</div><div class="line">&lt;/form&gt;</div><div class="line"></div><div class="line">&lt;!-- 加载JavaBean --&gt;</div><div class="line">&lt;jsp:useBean id=&quot;cicle&quot; class=&quot;ch07.CircleBean&quot; &gt;&lt;/jsp:useBean&gt;</div><div class="line">&lt;!-- 使用setProperty属性设置JavaBean属性 --&gt;</div><div class="line">&lt;jsp:setProperty property=&quot;*&quot;  name=&quot;cicle&quot; /&gt;</div><div class="line">&lt;jsp:setProperty property=&quot; radius&quot;  name=&quot;cicle“ param=“radius1” /&gt;</div><div class="line"></div><div class="line">&lt;!-- 使用getProperty属性获取JavaBean属性 --&gt;</div><div class="line">&lt;p&gt;圆的半径：&lt;jsp:getProperty property=&quot;radius&quot; name=&quot;cicle&quot;/&gt; &lt;/p&gt;</div><div class="line">&lt;p&gt;圆的面积：&lt;jsp:getProperty property=&quot;area&quot; name=&quot;cicle&quot;/&gt; &lt;/p&gt;</div><div class="line">&lt;p&gt;圆的周长：&lt;jsp:getProperty property=&quot;perimeter&quot; name=&quot;cicle&quot;/&gt; &lt;/p&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<p>（5）setProperty</p>
+<ul>
+<li><p>作用：</p>
+<p> 设置Bean中的属性值。</p>
+</li>
+<li><p>语法：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;jsp:setProperty name=&quot;bean的名称&quot; property=&quot;*&quot;  /&gt;</div><div class="line"></div><div class="line">&lt;jsp:setProperty name=&quot;bean的名称&quot; property=&quot;属性名称&quot;  /&gt;</div><div class="line"></div><div class="line">&lt;jsp:setProperty name=&quot;bean的名称&quot; property=&quot;属性名称&quot;  param=”参数名称” /&gt;</div><div class="line"></div><div class="line">&lt;jsp:setProperty name=&quot;bean的名称&quot; property=&quot;属性名称&quot;  value=”属性值” /&gt;</div></pre></td></tr></table></figure>
+<p>（6）getProperty</p>
+<ul>
+<li><p>作用：</p>
+<p> getProperty动作元素获取Bean中的属性值并将其转换为字符串，用于在页面中显示。</p>
+</li>
+</ul>
+<ul>
+<li>语法：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;jsp:getProperty name=&quot;bean的名称&quot; property=&quot;属性名称&quot;  /&gt;</div></pre></td></tr></table></figure>
+<p>（7）plugin动作元素</p>
+<ul>
+<li><p>作用：</p>
+<p> plugin动作元素用来在JSP网页中加载Java Applet或JavaBean程序组件。</p>
+</li>
+<li><p>语法：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;jsp:plugin</div><div class="line">      type=”bean|applet”</div><div class="line">      code=”加载Java程序编译后的类名称”</div><div class="line">      codebase=” 编译后Java程序类所在目录”</div><div class="line">      name=”名称”</div><div class="line">      align=”top|right|bottom|left”</div><div class="line">      height=”加载的程序在窗口中显示的高度”</div><div class="line">      width=”加载的程序在窗口中显示的宽度”</div><div class="line">      hspace=”加载的显示区与网页其他内容的水平间隔”</div><div class="line">      vspace=”加载的显示区与网页其他内容的垂直间隔”&gt;</div><div class="line">&lt;jsp:params&gt;</div><div class="line">     &lt;jsp:param name=”参数名1” value=”参数1的值”&gt;</div><div class="line">     &lt;jsp:param name=”参数名2” value=”参数2的值”/&gt;</div><div class="line">     …</div><div class="line">     &lt;jsp:param name=”参数名n” value=”参数n的值”/&gt;</div><div class="line">&lt;/jsp:params&gt;</div><div class="line">&lt;/jsp:plugin&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>示例：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;form id=&quot;form1&quot; name=&quot;form1&quot; method=&quot;post&quot; action=&quot;&quot;&gt;</div><div class="line">  请输入圆的半径：</div><div class="line">  &lt;input type=&quot;text&quot; name=&quot;name&quot; /&gt;</div><div class="line">  &lt;input type=&quot;submit&quot; name=&quot;Submit&quot; value=&quot;提交&quot; /&gt;</div><div class="line">&lt;/form&gt;</div><div class="line">&lt;%String str=request.getParameter(&quot;radius&quot;);</div><div class="line">  if(str==null||str==&quot;&quot;)&#123;str=&quot;30&quot;; &#125;</div><div class="line">%&gt;</div><div class="line"></div><div class="line">&lt;!-- 加载Java Applet --&gt;</div><div class="line">&lt;jsp:plugin code=&quot;CircleApplet.class&quot;  type=&quot;applet&quot;  width=&quot;300&quot; height=&quot;300&quot;&gt;</div><div class="line">	&lt;jsp:params&gt;</div><div class="line">		&lt;jsp:param name=&quot;width&quot; value=&quot;300&quot;/&gt;</div><div class="line">	    &lt;jsp:param name=&quot;height&quot; value=&quot;300&quot;/&gt;</div><div class="line">	    &lt;jsp:param name=&quot;radius&quot; value=&quot;&lt;%=str%&gt;&quot;/&gt;</div><div class="line">	&lt;/jsp:params&gt;</div><div class="line">&lt;/jsp:plugin&gt;</div></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Jsp/" rel="tag"># Jsp</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/10/JAVAWEB概述/" rel="next" title="JAVAWEB概述">
+                <i class="fa fa-chevron-left"></i> JAVAWEB概述
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/19/JSP内置对象/" rel="prev" title="JSP内置对象">
+                JSP内置对象 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <p class="site-author-name" itemprop="name">Aeris</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、JSP简介："><span class="nav-number">1.</span> <span class="nav-text">一、JSP简介：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、JSP基本元素"><span class="nav-number">2.</span> <span class="nav-text">二、JSP基本元素</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Aeris</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
