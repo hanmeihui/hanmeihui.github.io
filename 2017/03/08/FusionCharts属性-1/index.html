@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh_Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="FusionCharts," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="一.FusionCharts的分类1.FusionCharts。跨平台、跨浏览器的JavaScript/HTML图表组件 FusionCharts XT作为FusionCharts图表套包的主打产品，它提供了所有通用的图表类型，同时它还支持 ASP、ASP.NET、 PHP、 JSP、 ColdFusion、 Ruby on Rails、JavaScript、甚至简单的HTML页面。Fusionc">
+<meta name="keywords" content="FusionCharts">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FusionCharts属性">
+<meta property="og:url" content="http://yoursite.com/2017/03/08/FusionCharts属性-1/index.html">
+<meta property="og:site_name" content="Aeris‘s">
+<meta property="og:description" content="一.FusionCharts的分类1.FusionCharts。跨平台、跨浏览器的JavaScript/HTML图表组件 FusionCharts XT作为FusionCharts图表套包的主打产品，它提供了所有通用的图表类型，同时它还支持 ASP、ASP.NET、 PHP、 JSP、 ColdFusion、 Ruby on Rails、JavaScript、甚至简单的HTML页面。Fusionc">
+<meta property="og:locale" content="zh_Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-ee689d2a5a71f179.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-bacfe8b9b50f3b99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-3c47b27e481fe07b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-2f8524a8ee9d8a4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-09-19T09:56:47.632Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FusionCharts属性">
+<meta name="twitter:description" content="一.FusionCharts的分类1.FusionCharts。跨平台、跨浏览器的JavaScript/HTML图表组件 FusionCharts XT作为FusionCharts图表套包的主打产品，它提供了所有通用的图表类型，同时它还支持 ASP、ASP.NET、 PHP、 JSP、 ColdFusion、 Ruby on Rails、JavaScript、甚至简单的HTML页面。Fusionc">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4731173-ee689d2a5a71f179.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/08/FusionCharts属性-1/"/>
+
+
+
+
+
+  <title>FusionCharts属性 | Aeris‘s</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Aeris‘s</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/08/FusionCharts属性-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aeris">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aeris‘s">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">FusionCharts属性</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-08T17:51:00+08:00">
+                2017-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工作笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">工作笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="一-FusionCharts的分类"><a href="#一-FusionCharts的分类" class="headerlink" title="一.FusionCharts的分类"></a>一.FusionCharts的分类</h4><p><strong>1.FusionCharts。</strong>跨平台、跨浏览器的JavaScript/HTML图表组件</p>
+<p>FusionCharts XT作为FusionCharts图表套包的主打产品，它提供了所有通用的图表类型，同时它还支持 ASP、ASP.NET、 PHP、 JSP、 ColdFusion、 Ruby on Rails、JavaScript、甚至简单的HTML页面。Fusioncharts来制作专业的JavaScript图表。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-ee689d2a5a71f179.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>2.FusionMaps。</strong></p>
+<p>FusionMaps是一款JavaScript (HTML5) &amp;Flash地图工具。可以根据内容、地区来展现地理数据或者其他实体。你可以使用FusionMaps有效地描绘业务数据，例如地区利润、地区人口分布情况、竞选结果、航班路线、办公地点、调查结果等。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-bacfe8b9b50f3b99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>3.FusionWidgets。</strong></p>
+<p>FusionWidget是所有图表完美的附加组件，即时股票监视器，对KPI和其他重要数据进行实时监视，处理监控应用程序和财务应用程序。通过使用各种易于操作的组件，它将带给你一个程序员和信息可视化相结合的体验。借助JavaScript (HTML5)和Flash, FusionWidgetsXT可在PCs、Macs、iPads, iPhones以及其他移动设备上无缝操作。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-3c47b27e481fe07b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>4.PowerCharts。</strong>适用于专业领域的高级图表控件。</p>
+<p>PowerCharts XT是一套用在特定领域如：网络图、盈亏分析、财务规划、股价图以及层次结构图的高级图表库。它还提供了视觉上可编辑的图表来模拟假设情景和雷达图表上的多个实体的多个参数间的比较。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-2f8524a8ee9d8a4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="二、FusionCharts"><a href="#二、FusionCharts" class="headerlink" title="二、FusionCharts"></a>二、FusionCharts</h4><p>FusionCharts的FusionCharts分类有很多种。</p>
+<p><strong>按数据类型分类有:</strong></p>
+<p>1.单组数据类型图表(Single Data Charts)   </p>
+<p>2.多组数据类型图表(Multi-Data Charts)</p>
+<p><strong>按图的展示类型分类(也是官方分类)有:</strong></p>
+<p>1.单系列图表(Single Series Charts) </p>
+<p>2.多系列图表(Multi-Series Charts)</p>
+<p>3.堆积式图表(Stacked Charts)   </p>
+<p>4.组合图表(Combination Charts)</p>
+<p>5.分布图(XY Plot Charts)   </p>
+<p>6.滚动图(Scroll Charts)</p>
+<h4 id="三-关于FusionCharts的FusionCharts的Attributes-属性"><a href="#三-关于FusionCharts的FusionCharts的Attributes-属性" class="headerlink" title="三.关于FusionCharts的FusionCharts的Attributes(属性)"></a>三.关于FusionCharts的FusionCharts的Attributes(属性)</h4><p><strong>1、功能特性</strong></p>
+<p>animation                    是否动画显示数据，默认为 1(True)</p>
+<p>showNames                    是否显示横向坐标轴(x轴)标签名称</p>
+<p>rotateNames                是否旋转显示标签，默认为0(False):横向显示</p>
+<p>showValues                    是否在图表显示对应的数据值，默认为1(True)</p>
+<p>yAxisMinValue                指定纵轴(y轴)最小值，数字</p>
+<p>yAxisMaxValue                 指定纵轴(y轴)最大值，数字</p>
+<p>showLimits                    是否显示图表限值(y轴最大、最小值)，默认为1(True)</p>
+<p>showColumnShadow     是否显示各条形图间的阴影（若柱面图在一起并列的话）</p>
+<p>showAlternateHGridColor 是否隔行显示不同颜色</p>
+<p><strong>2、图表标题和轴名称</strong></p>
+<p>caption                    图表主标题</p>
+<p>subCaption                    图表副标题</p>
+<p>xAxisName                    横向坐标轴(x轴)名称</p>
+<p>yAxisName                    纵向坐标轴(y轴)名称</p>
+<p>imageSave=’1’      是否保存图片</p>
+<p>imageSaveURL=’Path/FusionChartsSave.jsp ‘图片路径</p>
+<p>hoverCapSepChar=’，’。鼠标放到柱面上时显示的提示信息的分隔符</p>
+<p>showhovercap=’1’         鼠标放到柱面上时是否显示提示信息</p>
+<p>hoverCapBgColor=‘ffffff’提示信息背景颜色</p>
+<p><strong>3、图表和画布的样式</strong></p>
+<p>bgColor                    图表背景色，6位16进制颜色值</p>
+<p>canvasBgColor                画布背景色，6位16进制颜色值</p>
+<p>canvasBgAlpha                画布透明度，[0-100]</p>
+<p>canvasBorderColor            画布边框颜色，6位16进制颜色值</p>
+<p>canvasBorderThickness        画布边框厚度，[0-100]</p>
+<p>shadowAlpha                投影透明度，[0-100]</p>
+<p>showLegend                    是否显示系列名，默认为1(True)</p>
+<p><strong>4、字体属性</strong></p>
+<p>baseFont                    图表字体样式</p>
+<p>baseFontSize                图表字体大小</p>
+<p>baseFontColor                图表字体颜色，6位16进制颜色值</p>
+<p>outCnvBaseFont                图表画布以外的字体样式</p>
+<p>outCnvBaseFontSize            图表画布以外的字体大小</p>
+<p>outCnvBaseFontColor        图表画布以外的字体颜色，6位16进制颜色值</p>
+<p><strong>5、分区线和网格</strong></p>
+<p>numDivLines                画布内部水平分区线条数，数字</p>
+<p>divLineColor                水平分区线颜色，6位16进制颜色值</p>
+<p>divLineThickness            水平分区线厚度，[1-5]</p>
+<p>divLineAlpha                水平分区线透明度，[0-100]</p>
+<p>showAlternateHGridColor    是否在横向网格带交替的颜色，默认为0(False)</p>
+<p>alternateHGridColor        横向网格带交替的颜色，6位16进制颜色值</p>
+<p>alternateHGridAlpha        横向网格带的透明度，[0-100]</p>
+<p>showDivLineValues            是否显示Div行的值，默认？？</p>
+<p>numVDivLines                画布内部垂直分区线条数，数字</p>
+<p>vDivLineColor                垂直分区线颜色，6位16进制颜色值</p>
+<p>vDivLineThickness            垂直分区线厚度，[1-5]</p>
+<p>vDivLineAlpha                垂直分区线透明度，[0-100]</p>
+<p>showAlternateVGridColor    是否在纵向网格带交替的颜色，默认为0(False)</p>
+<p>alternateVGridColor        纵向网格带交替的颜色，6位16进制颜色值</p>
+<p>alternateVGridAlpha        纵向网格带的透明度，[0-100]</p>
+<p><strong>6、数字格式</strong></p>
+<p>numberPrefix                增加数字前缀</p>
+<p>numberSuffix                增加数字后缀    % 为 ‘%25’ / (吨)为‘%ef%bc%88%e5%90%a8%ef%bc%89’（Server.UrlEncode编码）</p>
+<p>formatNumberScale        是否格式化数字,默认为1(True),自动的给你的数字加上K（千）或M（百万）；若取0,则不加K或M</p>
+<p>decimalPrecision            指定小数位的位数， [0-10]    例如：=’0’ 取整</p>
+<p>divLineDecimalPrecision    指定水平分区线的值小数位的位数， [0-10]</p>
+<p>limitsDecimalPrecision        指定y轴最大、最小值的小数位的位数，[0-10]</p>
+<p>formatNumber                逗号来分隔数字(千位，百万位),默认为1(True)；若取0,则不加分隔符</p>
+<p>decimalSeparator            指定小数分隔符,默认为’.’</p>
+<p>thousandSeparator            指定千分位分隔符,默认为’,’</p>
+<p><strong>7、Tool- tip/Hover标题</strong></p>
+<p>showhovercap                是否显示悬停说明框，默认为1(True)</p>
+<p>hoverCapBgColor            悬停说明框背景色，6位16进制颜色值</p>
+<p>hoverCapBorderColor        悬停说明框边框颜色，6位16进制颜色值</p>
+<p>hoverCapSepChar            指定悬停说明框内值与值之间分隔符,默认为’,’</p>
+<p><strong>8、折线图的参数</strong></p>
+<p>lineThickness                折线的厚度</p>
+<p>anchorRadius                折线节点半径，数字</p>
+<p>anchorBgAlpha                折线节点透明度，[0-100]</p>
+<p>anchorBgColor                折线节点填充颜色，6位16进制颜色值</p>
+<p>anchorBorderColor            折线节点边框颜色，6位16进制颜色值</p>
+<p><strong>9、Set标签使用的参数</strong></p>
+<p>value                        数据值</p>
+<p>color                        颜色</p>
+<p>link                        链接（本窗口打开[Url]，新窗口打开[n-Url]，调用JS函数[JavaScript:函数]）</p>
+<p>name                        横向坐标轴标签名称</p>
+<p><strong>showFCMenuItem=’0’ 设置右键显示不显示</strong></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/FusionCharts/" rel="tag"># FusionCharts</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/06/Untitled/" rel="next" title="Fusioncharts创建图表时,报错提示:"Invalid Data."">
+                <i class="fa fa-chevron-left"></i> Fusioncharts创建图表时,报错提示:"Invalid Data."
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/10/搭建博客/" rel="prev" title="搭建博客">
+                搭建博客 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <p class="site-author-name" itemprop="name">Aeris</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一-FusionCharts的分类"><span class="nav-number">1.</span> <span class="nav-text">一.FusionCharts的分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、FusionCharts"><span class="nav-number">2.</span> <span class="nav-text">二、FusionCharts</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三-关于FusionCharts的FusionCharts的Attributes-属性"><span class="nav-number">3.</span> <span class="nav-text">三.关于FusionCharts的FusionCharts的Attributes(属性)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Aeris</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

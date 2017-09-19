@@ -219,7 +219,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/27/JAVA基础语法【运算符、键盘输入】/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/25/HTML-DOM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Aeris">
@@ -238,7 +238,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/07/27/JAVA基础语法【运算符、键盘输入】/" itemprop="url">运算符、键盘输入</a></h1>
+                <a class="post-title-link" href="/2016/10/25/HTML-DOM/" itemprop="url">HTML DOM</a></h1>
         
 
         <div class="post-meta">
@@ -250,175 +250,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-27T10:26:00+08:00">
-                2016-07-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="二、基础语法-day2"><a href="#二、基础语法-day2" class="headerlink" title="二、基础语法(day2)"></a>二、基础语法(day2)</h3><p><strong>5、运算符</strong><br><img src="http://upload-images.jianshu.io/upload_images/4731173-d88baf85112a4689?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/4731173-f9ea568996007155.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<ul>
-<li><strong>算数运算符</strong>：+、-、<em>、/、%、++、–、<br> (   a%b=a-(a/b)</em>b  )</li>
-<li><strong>关系运算符</strong>：==  、！=、&gt;、&lt;、&gt;=、&lt;=<ul>
-<li>①    &gt;、&lt;、&gt;=、&lt;=运算符的优先级别高于==  、！=。</li>
-<li>②    &gt;、&lt;、&gt;=、&lt;=运算符值支持数据类型的数据比较。</li>
-</ul>
-</li>
-<li><strong>逻辑运算符</strong>：&amp;、|、^、！、&amp;&amp; 、 ||<ul>
-<li>①    操作数据类型只能是布尔类型，操作结果也是布尔值。<br>　　优先级别：！ &gt; &amp; &gt; ^异或 &gt;   |   &gt;  &amp;&amp;  &gt;  ||  。</li>
-<li>②&amp;、| 与 &amp;&amp;、|| 的区别<br>　　&amp;和|运算是把逻辑表达式全部计算完，而&amp;&amp;和||运算具有短路计算功能。即系统从左至右进行逻辑表达式的计算，一旦出现计算结果已经确定的情况，则计算过程即被终止。短路计算功能可以提高程序的运行速度。 </li>
-<li>③    异或:＾两值相同结果为false，两值不同结果为true。<br>位运算符：&amp;位与、|位或、~位非、^位异或、&gt;&gt;右移、&lt;&lt;左移<br>赋值运算符：=、+=、-=、*=、/=、%=</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><strong>三目运算符</strong>：表达式1？表达式2：表达式3<pre><code>eg：int a=1,b=2,max;
-　　    max=a&gt;b?a:b;
-　　    //max等于2
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">//三目运算符练习</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>import java.util.*;<br>public class CompareDemo {<br>    public static void main(String[] args){<br>        double first;<br>        double second;<br>        Scanner scanner=new Scanner(System.in);<br>        System.out.print(“请输入第一个数：”);<br>        first=scanner.nextDouble();<br>        System.out.print(“请输入第二个数：”);<br>        second=scanner.nextDouble();<br>        System.out.println(“最小值为：”+(first&lt;second?first:second));<br>    }<br>}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
-<p>//CompareDemo运行结果：<br>请输入第一个数：4<br>请输入第二个数：6<br>最小值为：4.0<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"> - **运算符的优先级**：</div><div class="line"></div><div class="line"> | 优先级 | 运算符 | 描述 | </div><div class="line"> |:-------------:|:-------------:|:-----|</div><div class="line"> | 1 | （） | 括号 | </div><div class="line"> | 2 | +、-	 | 正负号 | </div><div class="line"> | 3 | ++、- -、！ | 单目运算符 | </div><div class="line"> | 4 | *、/、% | 乘、除、取余 | </div><div class="line"> | 5 | +、-	 | 加减 | </div><div class="line"> | 6 | &lt;&lt;、&gt;&gt;、&gt;&gt;&gt; | 移位运算 | </div><div class="line"> | 7 | &lt;&lt;、&gt;&gt;、&gt;、&gt;=	 | 比较大小 | </div><div class="line"> | 8 | ==、！= | 是否相等 | </div><div class="line"> | 9 | &amp; | 按位于运算 | </div><div class="line"> | 10 | 	^ | 按位异或运算 | </div><div class="line"> | 11 | \| | 按位或运算 | </div><div class="line"> | 12	 | &amp;&amp; | 非简洁逻辑与运算 | </div><div class="line"> | 13 | 双竖线 | 非简介逻辑或运算 | </div><div class="line"> | 14 | = | 赋值运算 | </div><div class="line"></div><div class="line"></div><div class="line">【</div><div class="line">**左移**:5&lt;&lt;2     将值5转换为二进制101后，左移2位，右边自动补0，即10100，计算得20</div><div class="line">**右移**：x&gt;&gt;y　　正数：将值x的二进制右移y位，左边自动补y个0</div><div class="line">		　　　　　　　     负数：将值x的二进制右移y位，左边自动补y个1</div><div class="line"> **无符号右移:**&gt;&gt;&gt;    无论正数还是负数，移动后都自动补0</div><div class="line">】</div><div class="line"></div><div class="line">**总结：**</div><div class="line">　①	单目运算符包括！、^、++、- -优先级别高</div><div class="line">　②	优先级别最低的是赋值运算符</div><div class="line">　③	()优先级最高，可通过()控制表达式的运算顺序。</div><div class="line">　④	从右向左结合性的只有赋值运算符、三目运算符和多目运算符。</div><div class="line">　⑤	算术运算符&gt;关系运算符&gt;逻辑运算符</div></pre></td></tr></table></figure></p>
-<p>//练习运算符<br>public class Test {<br>    public static void main(String[] args) {</p>
-<pre><code>    int i=0;
-    double x=2.3;
-    System.out.println(&quot;Result 1:&quot;+(--i+i+i++));
-    System.out.println(&quot;Result 2:&quot;+(i+++i));
-    i+=i+(i=4);
-    System.out.println(&quot;Result 3:&quot;+i);
-    i=3+3*2%i--;
-    System.out.println(&quot;Result 4:&quot;+i);
-    x=x++;
-    System.out.println(&quot;Result 5:&quot;+x);
-    x+=1.2*3+x++;
-    System.out.println(&quot;Result 6:&quot;+x);
-    x=x%3+4*2+x--;
-    System.out.println(&quot;Result 7:&quot;+x);
-
-}
-</code></pre><p>}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
-<p>//运行结果<br>Result 1:-3<br>Result 2:1<br>Result 3:6<br>Result 4:3<br>Result 5:2.3<br>Result 6:8.2<br>Result 7:18.4<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">**6、键盘输入**</div><div class="line">　使用Scanner可以接收用户键盘输入的字符。</div><div class="line">　步骤：</div><div class="line">　①导入Scanner类：</div></pre></td></tr></table></figure></p>
-<p>Import java.util.*;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">②创建Scanner对象：</div></pre></td></tr></table></figure></p>
-<p>Scanner input=new Scanner(System.in);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">③获得键盘输入的数据</div></pre></td></tr></table></figure></p>
-<p>int n=input.nextInt();<br>String m=input.next();<br>```</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/24/Javayufa/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Aeris">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aeris‘s">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/07/24/Javayufa/" itemprop="url">标识符、数据类型、常量变量、内存分析</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-24T14:34:00+08:00">
-                2016-07-24
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-25T11:02:00+08:00">
+                2016-10-25
               </time>
             
 
@@ -479,95 +312,26 @@
       
         
           
-            <h3 id="二、-基础语法"><a href="#二、-基础语法" class="headerlink" title="二、    基础语法"></a>二、    基础语法</h3><p>第一段程序：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">public class HelloWorld&#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		System.out.println(“Hello World!”);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>1、标识符：</strong></p>
+            <p><strong>HTML DOM </strong>定义了访问和操作 HTML 文档的标准方法。</p>
+<p><strong>DOM </strong>是 Document Object Model（文档对象模型）。定义了访问 HTML 和 XML 文档的标准。</p>
+<p>W3C DOM 标准被分为 3 个不同的部分：</p>
 <ul>
-<li>Java中凡是需要取名字的地方都叫做标识符。</li>
-<li>标识符可以由字母、数字、下划线、和美元符号组成。</li>
-<li>标识符的首字母不能是数字，且标识符是区分大小写的。</li>
-<li>标识符不能包含空格，不能包含@#等特殊符号。</li>
-<li>Java中定义的关键字、保留字不能作为标识符但可以包含如：class private static public void。</li>
-<li>类名的每个单词的首字母大写：方法名、变量名第一个单词的首字母小写，其他单词的首字母大写。</li>
+<li>核心 DOM - 针对任何结构化文档的标准模型</li>
+<li>XML DOM - 针对 XML 文档的标准模型。XML DOM 定义了所有 XML 元素的对象和属性，以及访问它们的方法。</li>
+<li>HTML DOM - 针对 HTML 文档的标准模型。HTML DOM 定义了所有 HTML 元素的对象和属性，以及访问它们的方法。</li>
 </ul>
-<p><strong>2、数据类型</strong></p>
-<p><strong>(1)基本数据类型：四类八种</strong><br><img src="http://upload-images.jianshu.io/upload_images/4731173-63b582b0412d705f?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>在 HTML DOM 中，所有事物都是节点。DOM 是被视为节点树的 HTML。通过 HTML DOM，树中的所有节点均可通过 JavaScript 进行访问。所有 HTML 元素（节点）均可被修改，也可以创建或删除节点。</strong></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-725791359b15ab57.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="HTML-DOM方法"><a href="#HTML-DOM方法" class="headerlink" title="HTML DOM方法"></a>HTML DOM方法</h4><p>一些常用的 HTML DOM <strong>方法</strong>：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-efe84876f8ff560c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
+<p>一些常用的 HTML DOM <strong>属性</strong>:</p>
 <ul>
-<li><p>整型：</p>
-<ul>
-<li>byte:8位，范围：-128（-2<sup>7</sup>）~127（2<sup>7</sup>-1），默认为0<br>【强制转换：byte number=(byte)128;】</li>
-<li>short：16位，范围：-2<sup>15</sup>~2<sup>15</sup>-1； </li>
-<li>int：32位，范围：-2<sup>31</sup>~2<sup>31</sup>-1</li>
-<li>long：64位，范围：-2<sup>63</sup>~2<sup>63</sup>-1  <strong>数据后面需要加L.</strong></li>
+<li>innerHTML - 获取或替换 HTML 元素的内容</li>
+<li>parentNode - 获取节点（元素）的父节点</li>
+<li>childNodes - 获取节点（元素）的子节点</li>
+<li>attributes - 获取节点（元素）的属性节点</li>
 </ul>
-</li>
-<li><p>字符型：</p>
-<ul>
-<li>char<br>表示单个字母，字符敞亮必须使用单引号‘‘括起来，如：‘A’;<br>[字符串string不是基本数据类型，是引用数据类型]</li>
-</ul>
-</li>
-<li>浮点型：<ul>
-<li>float  ：    <strong>float类型数据需要在后边加上f</strong></li>
-<li>double</li>
-</ul>
-</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/4731173-bbd8afcfdcbe1b95.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<ul>
-<li>布尔型：<ul>
-<li>boolean（true /false）默认为false</li>
-</ul>
-</li>
-</ul>
-<p><strong>（2）数据类型排序：</strong><br><img src="http://upload-images.jianshu.io/upload_images/4731173-e9c7d2c54112b634?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><strong>（3）类型转换：</strong></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4731173-50f609446951d16b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<ul>
-<li>自动数据类型转换：系统支持直接把某种数据类型的值直接赋给另外一种数据类型。</li>
-<li>强制类型转换：如果要把上图右边的数据类型转换为左边数据类型，则需要强制类型转换。强制类型转换格式为：（数据类型）值。例如：(int)size<br>【强制类型转换应数以溢出，精度丢失（double转int，int转byte）】</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">//TestConvert</div><div class="line">public class TestConvert &#123;</div><div class="line">    public static void main(String arg[]) &#123;</div><div class="line">        int i1 = 123; </div><div class="line">        int i2 = 456;</div><div class="line">        double d1 = (i1+i2)*1.2;//系统将转换为double型运算</div><div class="line">        float f1 = (float)((i1+i2)*1.2);//需要加强制转换符</div><div class="line">        byte b1 = 67; </div><div class="line">        byte b2 = 89;</div><div class="line">        byte b3 = (byte)(b1+b2);//系统将转换为int型运算，需</div><div class="line">                                //要强制转换符</div><div class="line">        System.out.println(b3);</div><div class="line">        double d2 = 1e200;</div><div class="line">        float f2 = (float)d2;//会产生溢出</div><div class="line">        System.out.println(f2);</div><div class="line"></div><div class="line">        float f3 = 1.23f;//必须加f</div><div class="line">        long l1 = 123;</div><div class="line">        long l2 = 30000000000L;//必须加l</div><div class="line">        float f = l1+l2+f3;//系统将转换为float型计算</div><div class="line">        long l = (long)f;//强制转换会舍去小数部分（不是四舍五入）</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>修正下列代码中的编译错误或者可能产生的溢出：</strong></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4731173-c192c0a9b81ec765?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">//TestConvert2</div><div class="line">public class TestConvert2 &#123;</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">   </div><div class="line">    int i=1,j=12;</div><div class="line">    float f1=(float)0.1;  //0.1f  0.1是double类型，需要强制类型转换</div><div class="line">    float f2=123;</div><div class="line">    long l1 = 12345678,l2=8888888888L;//l2必须加L,否则会产生溢出</div><div class="line">    double d1 = 2e20,d2=124;</div><div class="line">    byte b1 = 1,b2 = 2,b3 = 127;//byte类型的范围是（-128~127）</div><div class="line">    j = j+10;//变量必须赋值才能使用</div><div class="line">    i = i/10;</div><div class="line">    i = (int)(i*0.1);//运算后为double类型，需要强制类型转换</div><div class="line">    char c1=&apos;a&apos;,c2=125;</div><div class="line">    byte b = (byte)(b1-b2);//运算后为int类型，需要强制类型转换</div><div class="line">    char c = (char)(c1+c2-1);////运算后为int类型，需要强制类型转换</div><div class="line">    float f3 = f1+f2;</div><div class="line">    float f4 = (float)(f1+f2*0.1);//运算后为double类型，需要强制类型转换</div><div class="line">    double d = d1*i+j;</div><div class="line">    float f = (float)(d1*5+d2);</div><div class="line"></div><div class="line"></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><strong>3、常量、变量</strong></p>
-<p><strong>（1）常量：</strong></p>
-<p>常量是在程序运行中，值不能改变的量。用final定义。<br>语法：final&lt;数据类型&gt;&lt;常量名&gt;=&lt;初始值&gt;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">整型常量：123</div><div class="line">实型常量：3.14</div><div class="line">字符常量:&apos;a&apos;</div><div class="line">字符串常量:&quot;helloworld&quot;</div><div class="line">逻辑常量：true、false</div></pre></td></tr></table></figure>
-<p><strong>（2）变量：</strong></p>
-<p>从本质上讲，变量其实是内存中的一小块区域，使用变量名来访问这块区域。因此，没一个变量使用前必须要先声明，然后进行赋值，才能使用。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4731173-e3ba3351a77e224c?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><strong><a href="http://www.tudou.com/programs/view/BTOBFGfOAVg/%20%E8%A7%86%E9%A2%91%E8%AE%B2%E8%A7%A3" target="_blank" rel="external">4、内存分析（←点击看视频讲解）</a></strong></p>
-<p>内存分为堆、栈、方法区。</p>
-<ul>
-<li>栈（stack）：<ul>
-<li><strong>存放局部变量。</strong></li>
-<li>线程私有，不能实现线程间的共享。</li>
-<li>先进后出。自动分配，连续内存空间，效率高。</li>
-</ul>
-</li>
-<li>堆：<ul>
-<li><strong>存放new出来的对象。</strong></li>
-<li>不连续内存空间，分配灵活，效率低。</li>
-</ul>
-</li>
-<li>方法区：<ul>
-<li>存放永远不变而且唯一的文件。（<strong>类代码信息、静态变量、字符串常量</strong>）</li>
-<li>被所有线程共享。</li>
-<li>不连续内存空间，分配灵活，效率低</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">//内存分析</div><div class="line">public class Test&#123;</div><div class="line">	public static void main(String [] args)&#123;</div><div class="line">	Car c1=new Car();</div><div class="line">	c1.changeColor(&quot;红色&quot;);</div><div class="line">	c1.showColor();</div><div class="line">	System.out.println(Car.typeNum);</div><div class="line">	System.out.println(c1.typeNum);</div><div class="line"></div><div class="line">	Car c2=new Cae();</div><div class="line">	Engine e=new Engine();</div><div class="line">	e.speed=1000;</div><div class="line">	e.weight=e;</div><div class="line">	c2.engine=e;</div><div class="line">	c2.color=&quot;黑色&quot;;</div><div class="line"></div><div class="line">	c2.typeNum=10;</div><div class="line">	System.out.println(c1.typeNum);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Car&#123;</div><div class="line">	static int typeNum=4;</div><div class="line">	Engine enging;</div><div class="line">	String color;</div><div class="line"></div><div class="line">	void changeColor(String c)&#123;</div><div class="line">		color=c;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	void showColor()&#123;</div><div class="line">		System.out.println(&quot;我的颜色是：&quot;+color);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Engine&#123;</div><div class="line">	int speed;</div><div class="line">	int weight;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>内存分析图：<br><img src="http://upload-images.jianshu.io/upload_images/4731173-e420e5992e4ff86c?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>####——-static变量和方法内存分析———</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4731173-342a803fb1b9a389.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<ul>
-<li><h6 id="static变量和方法存放在方法区内-属性ss和方法printSs-，从属于类，只能调用同为static的变量和方法。调用static变量和方法时，直接调用类。"><a href="#static变量和方法存放在方法区内-属性ss和方法printSs-，从属于类，只能调用同为static的变量和方法。调用static变量和方法时，直接调用类。" class="headerlink" title="static变量和方法存放在方法区内 [ 属性ss和方法printSs() ] ，从属于类，只能调用同为static的变量和方法。调用static变量和方法时，直接调用类。"></a>static变量和方法存放在方法区内 <strong>[ </strong>属性ss和方法printSs()<strong> ] </strong>，从属于类，只能调用同为static的变量和方法。调用static变量和方法时，直接调用类。</h6></li>
-<li><h6 id="而非static变量和非static方法存放在堆中-属性name，id和方法study-，sayHello-，调用时必须先实例化对象-new-，同时加载类信息，可以调用static变量和方法。"><a href="#而非static变量和非static方法存放在堆中-属性name，id和方法study-，sayHello-，调用时必须先实例化对象-new-，同时加载类信息，可以调用static变量和方法。" class="headerlink" title="而非static变量和非static方法存放在堆中 [ 属性name，id和方法study()，sayHello() ] ，调用时必须先实例化对象[ new ] ，同时加载类信息，可以调用static变量和方法。"></a>而非static变量和非static方法存放在堆中 <strong>[ </strong>属性name，id和方法study()，sayHello()<strong> ] </strong>，调用时必须先实例化对象<strong>[ </strong>new<strong> ] </strong>，同时加载类信息，可以调用static变量和方法。</h6></li>
-</ul>
-<h4 id="——-this关键字——"><a href="#——-this关键字——" class="headerlink" title="——-this关键字——"></a>——-this关键字——</h4><p><img src="http://upload-images.jianshu.io/upload_images/4731173-8725de10aba17a00.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>构造方法中，this是隐式参数，this.name指向括号中的name对象：<br><img src="http://upload-images.jianshu.io/upload_images/4731173-19d71061067b2cc5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>this不能用于static方法，因为static方法不指向对象。</p>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">//创建 HTML 内容</div><div class="line">    document.getElementById(&quot;p1&quot;).innerHTML=&quot;New text!&quot;;   </div><div class="line"></div><div class="line">//改变 CSS 样式</div><div class="line">    document.getElementById(&quot;p2&quot;).style.color=&quot;blue&quot;;</div><div class="line"></div><div class="line">//改变 HTML 属性</div><div class="line"></div><div class="line">//创建新的 HTML 元素</div><div class="line">    var para=document.createElement(&quot;p&quot;);</div><div class="line">    var node=document.createTextNode(&quot;This is new.&quot;);</div><div class="line">    para.appendChild(node);</div><div class="line">    var element=document.getElementById(&quot;d1&quot;);</div><div class="line">    element.appendChild(para);</div><div class="line"></div><div class="line">//删除已有的 HTML 元素</div><div class="line">    &lt;div id=&quot;div1&quot;&gt;</div><div class="line">        &lt;p id=&quot;p1&quot;&gt;This is a paragraph.&lt;/p&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">        var parent=document.getElementById(&quot;div1&quot;);</div><div class="line">        var child=document.getElementById(&quot;p1&quot;);</div><div class="line">        parent.removeChild(child);</div><div class="line">    &lt;/script&gt;</div><div class="line">                或者</div><div class="line">    var child=document.getElementById(&quot;p1&quot;);</div><div class="line">    child.parentNode.removeChild(child);</div><div class="line"></div><div class="line">//改变事件（处理程序）</div><div class="line">    &lt;script&gt;</div><div class="line">        function ChangeBackground()&#123;</div><div class="line">            document.body.style.backgroundColor=&quot;lavender&quot;;</div><div class="line">        &#125;</div><div class="line">    &lt;/script&gt;</div><div class="line">    &lt;input type=&quot;button&quot; onclick=&quot;ChangeBackground()&quot; </div><div class="line">        value=&quot;Change background color&quot; /&gt;</div></pre></td></tr></table></figure>
           
         
       
@@ -615,7 +379,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/23/Javajichu/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/22/HTML/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Aeris">
@@ -634,7 +398,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/07/23/Javajichu/" itemprop="url">JAVA简介+环境配置</a></h1>
+                <a class="post-title-link" href="/2016/10/22/HTML/" itemprop="url">HTML知识点</a></h1>
         
 
         <div class="post-meta">
@@ -646,8 +410,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-23T00:00:00+08:00">
-                2016-07-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-22T10:57:00+08:00">
+                2016-10-22
               </time>
             
 
@@ -708,19 +472,32 @@
       
         
           
-            <h3 id="一、JAVA初体验"><a href="#一、JAVA初体验" class="headerlink" title="一、JAVA初体验"></a>一、JAVA初体验</h3><p>1、1995年，JAVA诞生，由James Gosling发明。<br>2、OOM:内存溢出<br>3、Java分类<br>:   Java SE:基础核心<br>:    Java EE:企业级应用<br>:   Java ME:移动设备、游戏、通信<br><strong>4、Java核心机制</strong><br>:  JVM:Java虚拟机，Java Virtual Machine<br>:  GC:垃圾回收机制</p>
-<p><strong>5、Java程序运行机制：[]</strong></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4731173-25d21ae3cf14f025?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><strong>6、开发环境的下载、安装与配置:</strong></p>
+            <h4 id="1、HTML-属性"><a href="#1、HTML-属性" class="headerlink" title="1、HTML 属性"></a>1、HTML 属性</h4><p><img src="http://upload-images.jianshu.io/upload_images/4731173-b12ab8d55d592cfa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="2、HTML标题"><a href="#2、HTML标题" class="headerlink" title="2、HTML标题"></a>2、HTML标题</h4><p><strong>h1—-h6</strong></p>
 <ul>
-<li>下载并安装JDK</li>
-<li>选择合适的文本编辑器或使用IDE(集成开发环境)</li>
-<li>配置Path、classpath、JAVA_HOME<pre><code>**JAVA_HOME:** JDK文件安装路径
-**Path:** jdk\bin目录 ；jre\bin目录
-**classpath:**    .;jdk路径\lib\toos.jar;jdk路径\lib\dt.jar;
-</code></pre></li>
-<li>验证：运行—-  java—- javac—-  java-version</li>
+<li>标题很重要。要确保将 HTML heading 标签只用于标题。不要仅仅是为了产生粗体或大号的文本而使用标题。</li>
+<li><strong>搜索引擎使用标题为您的网页的结构和内容编制索引。</strong></li>
+<li><p>因为用户可以通过标题来快速浏览您的网页，所以用标题来呈现文档结构是很重要的。</p>
+<h6 id="关于换行："><a href="#关于换行：" class="headerlink" title="关于换行："></a>关于换行：</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">您也许发现 &lt;br&gt; 与 &lt;br /&gt; 很相似。</div><div class="line">在 XHTML、XML 以及未来的 HTML 版本中，不允许使用没有结束标签（闭合标签）的 HTML 元素。</div><div class="line">即使 &lt;br&gt; 在所有浏览器中的显示都没有问题，使用 &lt;br /&gt; 也是更长远的保障。</div></pre></td></tr></table></figure>
+</li>
 </ul>
+<h4 id="3、HTML样式"><a href="#3、HTML样式" class="headerlink" title="3、HTML样式"></a>3、HTML样式</h4><p>HTML 的 <strong>style </strong>属性的作用：提供了一种改变所有 HTML 元素的样式的通用方法。在 HTML 4 中，有若干的标签和属性是被废弃的。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-43a40c21dbdea509.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">style=&quot;background-color:yellow&quot;   //style 属性淘汰了“旧的” bgcolor 属性。</div><div class="line">style=&quot;font-family:arial;color:red;font-size:20px;&quot;    //style 属性淘汰了旧的 &lt;font&gt; 标签</div><div class="line">style=&quot;text-align:center&quot;    //style 属性淘汰了旧的 &quot;align&quot; 属性。</div></pre></td></tr></table></figure></p>
+<h4 id="4、HTML文本格式化"><a href="#4、HTML文本格式化" class="headerlink" title="4、HTML文本格式化"></a>4、HTML文本格式化</h4><p>HTML 可定义很多供格式化输出的元素，比如粗体和斜体字。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-d2573c050b70c05a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="5、HTML引用"><a href="#5、HTML引用" class="headerlink" title="5、HTML引用"></a>5、HTML引用</h4><p><img src="http://upload-images.jianshu.io/upload_images/4731173-34a1b19356503d10.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="6、HTML计算机代码元素"><a href="#6、HTML计算机代码元素" class="headerlink" title="6、HTML计算机代码元素"></a>6、HTML计算机代码元素</h4><p><img src="http://upload-images.jianshu.io/upload_images/4731173-c697f7bf65925c25.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;code&gt; 元素不保留多余的空格和折行,如需空格和折行，必须在 &lt;pre&gt; 元素中包围代码。</div></pre></td></tr></table></figure></p>
+<h4 id="7、HTML-CSS"><a href="#7、HTML-CSS" class="headerlink" title="7、HTML CSS"></a>7、HTML CSS</h4><p><img src="http://upload-images.jianshu.io/upload_images/4731173-10e4f1d4c003f9c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h6 id="1、外部样式表"><a href="#1、外部样式表" class="headerlink" title="1、外部样式表"></a>1、外部样式表</h6><p>当样式需要被应用到很多页面的时候，外部样式表将是理想的选择。使用外部样式表，你就可以通过更改<strong>一个文件</strong>来改变整个站点的外观。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;mystyle.css&quot;&gt;</div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure></p>
+<h6 id="2、内部样式表"><a href="#2、内部样式表" class="headerlink" title="2、内部样式表"></a>2、内部样式表</h6><p>当单个文件需要特别样式时，就可以使用内部样式表。你可以<strong> 在head 部分通过 &lt; style&gt; 标签</strong>定义内部样式表。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">body &#123;background-color: red&#125;</div><div class="line">p &#123;margin-left: 20px&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure>
+<h6 id="3、内联样式"><a href="#3、内联样式" class="headerlink" title="3、内联样式"></a>3、内联样式</h6><p>当特殊的样式需要应用到个别元素时，就可以使用内联样式。 使用内联样式的方法是<strong>在相关的标签中使用样式属性</strong>。样式属性可以包含任何 CSS 属性。以下实例显示出如何改变段落的颜色和左外边距。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;p style=&quot;color: red; margin-left: 20px&quot;&gt;</div><div class="line">This is a paragraph</div><div class="line">&lt;/p&gt;</div></pre></td></tr></table></figure></p>
+<h4 id="8、HTML超链接"><a href="#8、HTML超链接" class="headerlink" title="8、HTML超链接"></a>8、HTML超链接</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">通过使用 &lt;a&gt; 标签在 HTML 中创建链接。</div><div class="line">有两种使用 &lt;a&gt; 标签的方式：</div><div class="line">       1、通过使用 href 属性 - 创建指向另一个文档的链接</div><div class="line">       2、通过使用 name 属性 - 创建文档内的书签（锚）</div></pre></td></tr></table></figure>
+<h6 id="HTML-链接-target-属性："><a href="#HTML-链接-target-属性：" class="headerlink" title="HTML 链接 - target 属性："></a>HTML 链接 - <strong>target 属性</strong>：</h6><p>使用 Target 属性，你可以定义被链接的文档在何处显示。下面的这行会在新窗口打开文档：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a href=&quot;http://www.baidu.com/&quot; target=&quot;_blank&quot;&gt;Visit Baidu!&lt;/a&gt;</div></pre></td></tr></table></figure></p>
+<h6 id="HTML-链接-name-属性"><a href="#HTML-链接-name-属性" class="headerlink" title="HTML 链接 - name 属性"></a>HTML 链接 - name 属性</h6><p>name 属性规定<strong>锚</strong>（anchor）的名称。可以使用 name 属性创建 HTML 页面中的书签。命名锚的语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;a name=&quot;label&quot;&gt;锚（显示在页面上的文本）&lt;/a&gt;</div><div class="line"> //可以使用 id 属性来替代 name 属性，命名锚同样有效</div></pre></td></tr></table></figure></p>
+<p>首先，我们在 HTML 文档中对锚进行命名（创建一个书签）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">首先，我们在 HTML 文档中对锚进行命名（创建一个书签）：</div><div class="line">       &lt;a name=&quot;tips&quot;&gt; TIPS &lt;/a&gt;</div><div class="line">然后，在同一个文档中创建指向该锚的链接：</div><div class="line">       &lt;a href=&quot;#tips&quot;&gt;点击跳转到TIPS&lt;/a&gt;</div><div class="line">也可以在其他页面中创建指向该锚的链接，将 # 符号和锚名称添加到 URL 的末端，就可以直接链接到这个锚了：</div><div class="line">       &lt;a href=&quot;页面链接#tips&quot;&gt;点击跳转到TIPS&lt;/a&gt;</div></pre></td></tr></table></figure></p>
+<h6 id="发送邮件"><a href="#发送邮件" class="headerlink" title="发送邮件"></a>发送邮件</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a href=&quot;mailto:someone@microsoft.com?subject=Hello%20again&quot;&gt;发送邮件&lt;/a&gt;</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-79ca5a428da08575.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="9、HTML图像"><a href="#9、HTML图像" class="headerlink" title="9、HTML图像"></a>9、HTML图像</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;img&gt; 是空标签，它只包含属性，并且没有闭合标签。</div><div class="line">   1、要在页面上显示图像，需要使用源属性src。源属性的值是图像的 URL 地址。</div><div class="line">   2、alt 属性用来为图像定义一串预备的可替换的文本。</div><div class="line">      在浏览器无法载入图像时，替换文本属性指定告诉用户的信息。</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-be530ad61f356abe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 
           
         
@@ -769,7 +546,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/19/转-一位资深程序员大牛给予Java初学者的学习路线建议-1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/16/List、Set、Map/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Aeris">
@@ -788,7 +565,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/07/19/转-一位资深程序员大牛给予Java初学者的学习路线建议-1/" itemprop="url">[转]一位资深程序员大牛给予Java初学者的学习路线建议</a></h1>
+                <a class="post-title-link" href="/2016/10/16/List、Set、Map/" itemprop="url">List、Set、Map</a></h1>
         
 
         <div class="post-meta">
@@ -800,8 +577,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-19T11:01:00+08:00">
-                2016-07-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-16T11:08:00+08:00">
+                2016-10-16
               </time>
             
 
@@ -862,35 +639,1153 @@
       
         
           
-            <p>java学习这一部分其实也算是今天的重点，这一部分用来回答很多群里的朋友所问过的问题，那就是我你是如何学习Java的，能不能给点建议？今天我是打算来点干货，因此咱们就不说一些学习方法和技巧了，直接来谈每个阶段要学习的内容甚至是一些书籍。这一部分的内容，同样适用于一些希望转行到Java的同学。</p>
-<p>　　在大家看之前，我要先声明两点。1、由于我本人是Java后端开发出身，因此所推荐的学习内容是Java Web和Java后端开发的路线，非Java Web和Java后端开发的同学请适当参考其学习思想即可，切勿照搬。2、下面对于【第一部分】的推荐内容，目的是让你尽快成为一个可以参加工作的Java开发者，更适用于处于待业状态，准备转行Java的同学。</p>
-<p>　　如果你是在校学生，务必要在学好基础（比如计算机系统、算法、编译原理等等）的前提下，再考虑去进行下面的学习。第一部分：对于尚未做过Java工作的同学，包括一些在校生以及刚准备转行Java的同学。</p>
-<p>　　一、Java基础首先去找一个Java的基础教程学一下，这里可以推荐一个地址，或者你也可以参照这个地址上去找相应的视频。学习Java基础的时候，应该尽量多动手，很多时候，你想当然的事情，等你写出来运行一下，你就会发现不是这么回事儿，不信你就试试。学完以上内容以后，你应该对Java有一个基本的了解了，你可以用Java语言写出一些简单的程序，并且你用的是最简单的编辑器，比如记事本。这个时候，不要急于进入下一部分，留下几天好好写一些程序，尽可能熟悉这些基础内容。</p>
-<p>　　二、Web开发等你写上几天程序以后，你往往会比较迷茫，因为你写的东西似乎看起来毫无用处，比如实现一个简单的计算器，读取一个文件等。这个时候你就应该去学着写一些让你觉得有意思的东西了，所以你应该学习更多的知识。这些内容主要是Web开发相关的内容，包括HTML/CSS/JS（前端页面）、Servlet/JSP（J2EE）以及Mysql（数据库）相关的知识。它们的学习顺序应该是从前到后，因此最先学习的应该是HTML/CSS/JS（前端页面），这部分内容你可以去上面的那个runoob网站上找。</p>
-<p>　　你可以试着自己写一些页面，当然，你可以尽你最大的努力让它变得最漂亮。这部分内容对于后端Java来说，理论上不是特别重要，但至少要达到可以自己写出一些简单页面的水平。接下来，你需要学习的是Servlet/JSP（J2EE）部分，这部分是Java后端开发必须非常精通的部分，因此这部分是这三部分中最需要花精力的，而且这个时候，你要学会使用开发工具，而不能再使用记事本了，可以选择eclipse。当你下载安装好eclipse以后，请视频中的教程一步一步去学习，一定要多动手。关于Servlet/Jsp部分视频的选择，业界比较认可马士兵的视频，因此推荐给大家。</p>
-<p>　　当然了，我本人并没有看过他的视频，所以不好说的太绝对，如果大家自己有更好的选择，可以坚持自己的，不要被我干扰。原本我也是打算出教学视频的，但是由于时间问题，还是决定放弃了。但是如果你看视频的过程中遇到了问题，欢迎来我的交流群提问，或者去斗鱼观看我的直播提出你的问题，直播地址和群号都在我的个人博客左侧。最后一步，你需要学会使用数据库，mysql是个不错的入门选择，而且Java领域里主流的关系型数据库就是mysql。这部分一般在你学习Servlet/Jsp的时候，就会接触到的，其中的JDBC部分就是数据库相关的部分。你不仅要学会使用JDBC操作数据库，还要学会使用数据库客户端工具，比如navicat，sqlyog，二选一即可。</p>
-<p>　　三、开发框架当你学会以上内容以后，这个时候你还不足以参加工作，你还需要继续深造。公司里为了提高开发的效率，会使用一些Java Web框架，因此你还需要学习一些开发框架。目前比较主流的是SSM框架，即spring、springmvc、mybatis。你需要学会这三个框架的搭建，并用它们做出一个简单的增删改查的Web项目。你可以不理解那些配置都是什么含义，以及为什么要这么做，这些留着后面你去了解。</p>
-<p>　　但你一定要可以快速的利用它们三个搭建出一个Web框架，你可以记录下你第一次搭建的过程，相信我，你一定会用到的。还要提一句的是，你在搭建SSM的过程中，可能会经常接触到一个叫maven的工具。这个工具也是你以后工作当中几乎是必须要使用的工具，所以你在搭建SSM的过程中，也可以顺便了解一下maven的知识。在你目前这个阶段，你只需要在网络上了解一下maven基本的使用方法即可，一些高端的用法随着你工作经验的增加，会逐渐接触到的。</p>
-<p>　　关于学习SSM框架的地址给大家推荐一个，这里面有视频，大家可以去观看。四、找工作当你完成开发框架的学习以后，你就该找工作了，在校的找实习，毕业的找全职。与此同时，在找工作的同时，你不应该停下你的学习，准确的说，是你在以后都不能停下学习。上面这些内容你只是囫囵吞枣的学会了使用，你可以逐步尝试着去了解更多的东西，网络是你最重要的老师。</p>
-<p>　　第二部分：对于参加工作一年以内的同学。恭喜你，这个时候，你已经拥有了一份Java的工作。这个阶段是你成长极快的阶段，而且你可能会经常加班。但是加班不代表你就可以松懈了，永远记得我说的那句话，从你入行那一刻起，你就要不停的学习。在这一年里，你至少需要看完《Java编程思想》这本书。这本书的内容是帮助你对于Java有一个更加深入的了解，是Java基础的升级版。这本书很厚，当初看这本书，我花了整整三个月。正常速度的话，应该可以在半年左右看完。我这里不要求过高，只要你在一年以内把这本书看完即可。当然了，我所说的看完，是充分吸收，而不是读一遍就完事了，因此有些内容你可能会看不止一遍。总而言之，这个阶段的核心学习思想就是，在工作中实践，并且更加深入的了解Java基础。</p>
-<p>　　第二部分：对于参加工作1年到2年的同学。这部分时间段的同学，已经对Java有了一个更加深入的了解。但是对于面向对象的体会可能还不够深刻，编程的时候还停留在完成功能的层次，很少会去考虑设计的问题。于是这个时候，设计模式就来了。我当时看的是《大话设计模式》这本书，并且写了完整版的设计模式博客。因此，我要求大家，最多在你工作一年的时候，必须开始写博客，而设计模式就是你博客的开端。</p>
-<p>　　请记住，我所提的基本都是最低要求，因此不要有任何松懈的心理，否则五年后，你不要去羡慕别人高于你的工资，也不要去羡慕别人进入了某公司。这一年，你必须对于设计模式了如指掌，《大话设计模式》可以作为你的开端。此外，设计模式并不是你这一年唯一的任务，你还需要看一些关于代码编写优化的书。比如《重构 改善既有代码的设计》，《effective java》。总而言之，这个阶段，你的核心任务就是提高你的代码能力，要能写出一手优雅的代码。</p>
-<p>　　第三部分：对于参加工作2年到3年的同学有的同学在这个时候觉得自己已经很牛逼了，于是忍不住开始慢慢松懈。请记住，你还嫩的多。这个阶段，有一本书是你必须看的，它叫做《深入理解Java虚拟机》。这本书绝对是Java开发者最重要的书，没有之一。在我眼里，这本书的重要性还要高于《Java编程思想》。这本书的内容是帮助你全面的了解Java虚拟机，在这个阶段，你一定已经知道Java是运行在JVM之上的。所以，对于JVM，你没有任何理由不了解它。</p>
-<p>　　另外，在过去2年的工作当中，你肯定或多或少接触过并发。这个时候，你应该去更加深入的了解并发相关的知识，而这部分内容，我比较推荐《Java并发编程实战》这本书。只要你把这本书啃下来了，并发的部分基本已经了解了十之六七。与此同时，这个阶段你要做的事情还远不止如此。这个时候，你应该对于你所使用的框架应该有了更深入的了解，对于Java的类库也有了更深入的了解。</p>
-<p>　　因此，你需要去看一些JDK中的类的源码，也包括你所使用的框架的源码。这些源码能看懂的前提是，你必须对设计模式非常了解。否则的话，你看源码的过程中，永远会有这样那样的疑问，这段代码为什么要这么写？为什么要定义这个接口，它看起来好像很多余？由此也可以看出，这些学习的过程是环环相扣的，如果你任何一个阶段拉下来了，那么你就真的跟不上了，或者说是一步慢步步慢。而且我很负责的告诉你，我在这个阶段的时候，所学习的东西远多于这里所罗列出来的。</p>
-<p>　　因此千万不要觉得你已经学的很多了，我所说的这些都只是最低要求，不光是我，很多人在这个时间段所学习的内容都远超本文的范围。如果你不能跟上节奏的话，若干年后，如果不是程序猿市场还不错的话，你很可能不仅仅是工资比别人低，公司没别人好，而是根本就找不到工作。总而言之，这个阶段，你需要做的是深入了解Java底层和Java类库（比如并发那本书就是Java并发包java.concurrent的内容），也就是JVM和JDK的相关内容。而且还要更深入的去了解你所使用的框架，方式比较推荐看源码或者看官方文档。另外，还有一种学习的方式，在2年这个阶段，也应该启用了，那就是造轮子。不要听信那套“不要重复造轮子”的论调，那是公司为了节省时间成本编造出来的。重复造轮子或许对别人没有价值，因为你造的轮子可能早就有了，而且一般情况下你造出来的轮子还没有现存的好。</p>
-<p>　　但是对别人没有价值，不代表对你自己没有价值。一个造轮子的过程，是一个从无到有的过程。这个过程可以对你进行系统的锻炼，它不仅考察你的编码能力，还考察你的框架设计能力，你需要让你的轮子拥有足够好的扩展性、健壮性。而且在造轮子的过程中，你会遇到各种各样的难题，这些难题往往又是你学习的契机。当你把轮子造好的时候，你一定会发现，其实你自己收获了很多。所以，这个阶段，除了上面提到的了解JVM、JDK和框架源码以外，也请你根据别人优秀的源码，去造一个任何你能够想象出来的轮子。</p>
-<p>　　第四部分：参加工作3年到4年的同学这个阶段的同学，提升已经是很难了，而且这个阶段的学习往往会比较多样化。因为在前3年的过程中，你肯定或多或少接触过一些其它的技术，比如大数据、分布式缓存、分布式消息服务、分布式计算、软负载均衡等等。这些技术，你能精通任何一项，都将是你未来面试时巨大的优势，因此如果你对某一项技术感兴趣的话，</p>
-<p>　　这个时候可以深入去研究一下。这项技术不一定是你工作所用到的，但一定是相关的。而且在研究一门新技术时，切忌朝三暮四。有的同学今天去整整大数据，搞搞Hadoop、hbase一类的东西。过不了一段时间，就觉得没意思，又去研究分布式缓存，比如redis。然后又过不了一段时间，又去研究分布式计算，比如整整Mapreduce或者storm。结果到最后，搞得自己好像什么都会一样，在简历上大言不惭的写上大数据、分布式缓存、分布式计算都了解，其实任何一个都只是浮于表面。到时候面试官随便一问，就把你给识破了。</p>
-<p>　　一定要记住，作为一个程序猿，平日里所接触的技术可能会很多，但是想要让一门技术成为你的优势，那么一定是你对这门技术的了解强过绝大多数人才行。因此在这个阶段，你就不能再简单的去学习前3年的内容了，虽然前面的学习如果还不够深入的话依旧要继续，但这个时候你应该更多的考虑建立你的优势，也可以称为差异性。差异性相信不难理解，就是让你自己变得与众不同。你前面三年的学习足够你成为一名基本合格的Java开发者，但你离成为一名优秀的Java开发者还有很大的距离。</p>
-<p>　　所谓优秀，即能别人所不能。而你前三年所学习的内容，是很多做过几年的Java开发都能够掌握的。那么为了让自己有差异性，你就需要另辟蹊径，找一个方向深入研究下去，以期在将来，你能够成为这个领域的专家，比如分布式计算领域的专家，大数据领域的专家，并发领域的专家等等。此外，你除了建立你的差异性之外，还要去弥补你基础上的不足，直到现在，我都没有提及基础知识。原因是基础是很枯燥无味的，学的太早不仅容易懵逼，而且懵逼的同时还容易产生心理阴影，以至于以后再不想去研究这些基础。但基础又是你深入研究一些领域时所必须掌握的，比如你去研究分布式计算，你不懂算法你玩个毛毛？比如你去做分布式缓存，你对计算机系统的内存不了解，你如何去做缓存？</p>
-<p>　　如果你的基础本来就非常强，那么恭喜你，相信你在之前的工作中已经充分体会到了这些基础对你的帮助。但我相信大部分人的基础都很薄弱，哪怕是科班毕业的人，很多人也不敢说自己当初的基础学的多么强大，比如算法、计算机系统原理、编译原理这些。但是每个人时间都是有限的，而且这些基础的书籍每一本读下来，没个一年半载的，还真拿不下来，因此还是要有所抉择的。虽然艺多不压身，但问题是艺多是有代价的，是需要你付出时间和精力的，而我个人更赞成在同等代价的情况下获取最大的收获。</p>
-<p>　　首先，我比较推崇的基础书籍有三本，分别是《深入理解计算机系统》，《tcp/ip详解 卷一、二、三》，《数据结构与算法》。其中TCP/IP有三本书，但我们这里把这三本看成是一本大书。这三本分别适合三种人，《深入理解计算机系统》比较适合一直从事Java Web开发和APP后端开发工作的人群。《tcp/ip详解 卷一、二、三》比较适合做网络编程的人群，比如你使用netty去开发的话，那么就要对TCP/IP有更深入的了解。而《数据结构与算法》这本书，则比较适合做计算研究工作的人，比如刚才提到的分布式计算。另外，我要强调的是，这里所说的适合，并不是其它两本对你就没有用。比如你做Java Web和APP后端开发，《tcp/ip详解 卷一、二、三》这本书对你的作用也是很大的。这里只是分出个主次关系而已，你要是时间足够的话，能把三本都精读那当然最好不过了。</p>
-<p>　　但如果时间有限的话，那么就先挑对你帮助最大的书去读。理论上来讲，这一年你能把这三本其中一本精读下来，就已经非常厉害了。有了基础，有了前面的工作经验，你就可以去开拓属于你的领域了。在这一年里，一定要规划好自己的领域，建立好自己的优势，制造出差异性。如果你对自己的领域不够清晰的话，随着你工作的时间日益增多，你接触的技术会越来越多，这个时候，你很容易被淹死在技术的海洋里，看似接触的技术越来越多，会用的也越来越多，但你毫无优势。有的同学可能会问，“我，我也不知道我的领域是什么啊？怎么办呢？”对于这种人，我只想说，“卧槽，这还问我？要不干脆我替你学习得了，好不好？”</p>
-<p>　　第五部分：参加工作4年到5年的同学经过前面一年的历练，相信你在自己所钻研的领域已经有了自己一定的见解，这个时候，技术上你应该已经遇到瓶颈了。这个时候不要着急提高自己的技术，已经是时候提高你的影响力了，你可以尝试去一些知名的公司去提高你的背景，你可以发表一些文章去影响更多的人。当然，你也可以去Github创建一个属于你的开源项目，去打造自己的产品。</p>
-<p>　　这次的开源项目不同于之前的造轮子，你这个时候是真的要去尽量尝试造出来真正对别人有价值的轮子。技术学到这个阶段，很容易遇到瓶颈，而且往往达到一定程度后，你再深入下去的收效就真的微乎其微了，除非你是专门搞学术研究的。然而很可惜，大部分程序猿做不到这一步，那是科学家做的事情。这个时候提高影响力不仅仅是因为技术上容易遇到瓶颈，更多的是影响力可以给你创造更多的机会。程序猿在某种程度上和明星很像，一个好的电视剧和电影就可以成就一批明星，程序猿有的时候也是，一个好的项目就可以成就一群程序猿。比如国内几个脍炙人口的项目，像淘宝、支付宝、QQ、百度、微信等等。这每一个项目，都成就了一批程序猿。我敢说，这里面任何一个项目，如果你是它的核心开发，光是这样一个Title，就已经是你非常大的优势。更何况还不止如此，Title说到底也是个名头，更重要的是，这种项目在做的时候，对你的历练一定也是非常给力的。</p>
-<p>　　而你如果想要参与这样的项目，除了靠运气之外，影响力也是很重要的一个手段。比如你在分布式计算领域有一定的影响力，那么如果有什么好的关于分布式计算的项目，对方就很可能会邀请你。就算人家不邀请你，你自己主动去面试的时候，对方如果知道你在这个领域的影响力，也肯定会起到很大的作用，而这个作用，甚至可能会超过你现在的技术能力。所以，在这个阶段，你最大的任务是提高自己的影响力，为自己未来的十年工作生涯那一天做准备。如果你能够靠你的影响力和以前积累的技术，参与到一个伟大的项目当中，那么你后面的五年也就有着落了。当然了，我现在满打满算，做程序猿也就4年半不到，因此关于4年到5年这一部分，我的见解不一定是对的，就算是对的，也不一定是适合任何人的。</p>
-<p>　　所以，希望大家自己有的判断力，去决定到底该如何度过这一年。结语本文到此就基本结束了，整篇文章很长，但其实主要就说了两部分内容，一个是社招面试的准备，一个是Java生涯的学习。关于这两部分，我已经给出了自己的见解，但是还是那句话，每个人吸收知识的时候，都要有抽取精华，去除糟粕的能力。我所说的，可能有些是对的，有些是错的，有些是适合你的，有些是不太适合你的，你要自己能够判断。其实你在生活和工作当中也是一样的，你身边的人形形色色，有的人你喜欢，有的人你很讨厌。但其实你喜欢的人也有缺点，你讨厌的人也有优点。你要学会从你讨厌的人身上学会他的优点，千万不要一棒子打死，这只会让你失去很多学习成长的机会。好了，说了这么多了，就到此为止吧，希望本文可以帮助到作为程序猿或即将成为程序猿的你。java学习交流群544975743爱好java喜欢java和我们一起学习吧。</p>
+            <h4 id="1、区别"><a href="#1、区别" class="headerlink" title="1、区别"></a>1、区别</h4><p><strong>Collection：</strong></p>
+<p><strong>List :</strong>有序 、可重复</p>
+<p><strong>Set:</strong>无序、不可重复</p>
+<p><strong>Map:</strong>有序、不可重复（键值对）</p>
+<h4 id="2、方法"><a href="#2、方法" class="headerlink" title="2、方法"></a>2、方法</h4><p><strong>Collection接口方法：</strong><br><img src="http://upload-images.jianshu.io/upload_images/4731173-b786bfa970b7eb97.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>Set相关方法</strong>与Collection接口方法一样。</p>
+<p><strong>List</strong>由于是有序的，多了以下几种与索引有关的方法：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-2483e3acecf2b0e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><strong>Map相关方法</strong>：<br><img src="http://upload-images.jianshu.io/upload_images/4731173-a5b9d38c99f94271.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="3、特点"><a href="#3、特点" class="headerlink" title="3、特点"></a>3、特点</h4><p><strong> List:</strong></p>
+<ul>
+<li>ArrayList:  底层用数组实现的List,<br>特点：查询效率高 ，增删效率低，不安全。</li>
+<li>LinkedList:底层是双向链表实现的List,<br>特点：查询效率低，增删效率高，线程不安全。</li>
+<li>Vector:底层用数组实现的List,<br>特点：线程安全.</li>
+</ul>
+<p>线程安全用Vector。<br>线程不安全，查找较多用ArrayList，增加或删除元素较多用LinkedList.</p>
+<p><strong>Set：</strong></p>
+<p>Set接口的实现类常用的有HashSet。</p>
+<p>特点是：没有是顺序，不可以重复，重复的元素添加进行会出现覆盖的现象。</p>
+<p><strong>Iterator接口：</strong></p>
+<p>   所有实现了Collection接口的容器类都有一个iterator方法用以返回一个实现Iterator接口的对象<br>Iterator对象称作为<strong>迭代器</strong>，用以方便的对容器内元素的遍历操作，Iterator接口定义了如下方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">boolean hashNext();//判断是否有元素没有被遍历</div><div class="line">Object next();//返回游标当前位置的元素并将游标移动到下一个位置</div><div class="line">void remove();//删除游标左边的元素，在执行完next之后该操作只能执行一次。</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/15/Java常见类/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aeris">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aeris‘s">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/15/Java常见类/" itemprop="url">Java常见类</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-15T10:53:00+08:00">
+                2016-10-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1、String-StringBuilder-StringBuffer"><a href="#1、String-StringBuilder-StringBuffer" class="headerlink" title="1、String ,StringBuilder,StringBuffer"></a>1、String ,StringBuilder,StringBuffer</h3><ul>
+<li>不可变字符序列：String</li>
+<li>可变字符序列：StringBuilder(线程不安全，效率高)<br>　　　　　　　StringBuffer(线程安全，效率低)  【synchronized】</li>
+</ul>
+<h6 id="可变字符序列"><a href="#可变字符序列" class="headerlink" title="可变字符序列"></a>可变字符序列</h6><ul>
+<li>初始化时，会把字符序列放在一个数组中，如果不定义长度的话默认长度为16个字节，如果定义则按照定义的字符序列长度+16个字节。</li>
+<li><strong>append：可变字符序列扩展长度的原理是，当添加的字符序列的长度超过原初始化长度的话，则创建一个新的数组，扩展长度，将原数组复制过去。</strong><br>【不可变字符序列String初始化时，会把字符序列放在一个长度为final常量的数组中，因此长度不可变。】</li>
+<li><strong>delete(start,end)</strong>：删除，包头不包尾</li>
+<li><strong>reverse()</strong>：翻转字符序列</li>
+</ul>
+<hr>
+<hr>
+<h3 id="2、Date"><a href="#2、Date" class="headerlink" title="2、Date"></a>2、Date</h3><p><img src="http://upload-images.jianshu.io/upload_images/4731173-af2ac4fdfdec3d5a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li><h5 id="java-util-Date：long类型数字"><a href="#java-util-Date：long类型数字" class="headerlink" title="java.util.Date：long类型数字"></a>java.util.Date：long类型数字</h5></li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-fdd4f905ac12cb26.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li><h5 id="日期格式化：long类型数字-lt-—-gt-日期字符串"><a href="#日期格式化：long类型数字-lt-—-gt-日期字符串" class="headerlink" title="日期格式化：long类型数字&lt;—&gt;日期字符串"></a>日期格式化：long类型数字&lt;—&gt;日期字符串</h5><p><img src="http://upload-images.jianshu.io/upload_images/4731173-9c944a030e803ef1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+<li><h5 id="日历：long类型数字-lt-—-gt-日期"><a href="#日历：long类型数字-lt-—-gt-日期" class="headerlink" title="日历：long类型数字&lt;—&gt;日期"></a>日历：long类型数字&lt;—&gt;日期</h5></li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-b2aba0f7826ea53b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-892429a18fdf3134.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<hr>
+<hr>
+<h3 id="3、File类"><a href="#3、File类" class="headerlink" title="3、File类"></a>3、File类</h3><p><img src="http://upload-images.jianshu.io/upload_images/4731173-388067d09052ffa3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>输出树状文件目录，递归调用：<br><img src="http://upload-images.jianshu.io/upload_images/4731173-de725eff9d74dae3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="4、Exception"><a href="#4、Exception" class="headerlink" title="4、Exception"></a>4、Exception</h3><h6 id="常见异常："><a href="#常见异常：" class="headerlink" title="常见异常："></a>常见异常：</h6><ul>
+<li>ArithmeticException</li>
+<li>NullPointerException</li>
+<li>ClassCastException</li>
+<li>ArrayIndexOutOfBoundsException</li>
+<li>NumberFormatException</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-52caf5bd05454e1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>所有不是Runtime Exception的异常，统称为<strong>Checked Exception</strong>.<br>Java语言将派生于RuntimeException类或Error类的所有异常称为“未检查异常”,<strong>Unchecked Exception</strong>。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/08/过滤器/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aeris">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aeris‘s">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/08/过滤器/" itemprop="url">过滤器生命周期，执行</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-08T10:51:00+08:00">
+                2016-10-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://upload-images.jianshu.io/upload_images/4731173-5b5d48817c47c9df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-44b1090a0fed882f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-3c6896520305563a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-a1ad25f9c26b30ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/02/JSP动作与指令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aeris">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aeris‘s">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/02/JSP动作与指令/" itemprop="url">JSP动作与指令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-02T10:47:00+08:00">
+                2016-10-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://upload-images.jianshu.io/upload_images/4731173-13f24a9a2f2499b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
+<p>指令元素：page、include、taglib</p>
+<p><strong> include指令：</strong><br>&lt;%@ include file=”URL”%&gt;</p>
+<p><strong> include动作：</strong><br>&lt; jsp:include page=”URL” flush=”true|false” &gt;</p>
+<h3 id="include指令与include动作区别"><a href="#include指令与include动作区别" class="headerlink" title="include指令与include动作区别"></a>include指令与include动作区别</h3><p><img src="http://upload-images.jianshu.io/upload_images/4731173-612b758722ba9fe4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
+<p><strong> forward动作：</strong></p>
+<p>&lt; jsp:forward page=”URL”&gt;<br>等同于服务器跳转指令：request.getRequestDispatcher(“/url”).forward(request,response);</p>
+<p><strong> param动作：</strong></p>
+<p>&lt; jsp:param name=”参数名” value=”参数值”&gt;<br>常常与<jsp:forward>一起使用，作为其的子标签。</jsp:forward></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/30/【转】二进制数的运算方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aeris">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aeris‘s">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/09/30/【转】二进制数的运算方法/" itemprop="url">【转】二进制数的运算方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-30T10:46:00+08:00">
+                2016-09-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="http://blog.csdn.net/qq_32436965/article/details/52924981" target="_blank" rel="external">http://blog.csdn.net/qq_32436965/article/details/52924981</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/28/EL表达式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aeris">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aeris‘s">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/09/28/EL表达式/" itemprop="url">EL表达式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-28T10:44:00+08:00">
+                2016-09-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="一、EL表达式：Expression-Language"><a href="#一、EL表达式：Expression-Language" class="headerlink" title="一、EL表达式：Expression Language"></a>一、EL表达式：Expression Language</h2><ul>
+<li>EL表达式提供了获取对象以及属性的简单方法</li>
+</ul>
+<h2 id="二、EL表达式语法："><a href="#二、EL表达式语法：" class="headerlink" title="二、EL表达式语法："></a>二、EL表达式语法：</h2><ul>
+<li>Jsp写法：         &lt;%= session.getAttribute(“name”) %&gt;。</li>
+<li>EL表达式写法：            “${sessionScope.name}”</li>
+<li><p>EL表达式格式：${表达式}</p>
+</li>
+<li><p>EL 提供.和[]两种运算符来存取数据。通常情况下两者是通用的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$&#123;user.name&#125;</div><div class="line">$&#123;user[“name”]&#125;</div><div class="line">“[]”还可以用来对集合元素进行定位：$&#123;booklist[0].price</div><div class="line"></div><div class="line">//以下两种情况必须使用”[]”：</div><div class="line">1.包含特殊符号：</div><div class="line">$&#123;user.first-name&#125;  错误写法</div><div class="line">$&#123;user[“first-name”]&#125;  正确写法</div><div class="line">2.通过变量动态取值：</div><div class="line">$&#123;user[param]&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="三、EL变量"><a href="#三、EL变量" class="headerlink" title="三、EL变量"></a>三、EL变量</h2><p><img src="http://upload-images.jianshu.io/upload_images/4731173-94f37da8798672e1?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">//示例：login.jsp</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;form action=&quot;&quot;&gt;</div><div class="line">		用户名：&lt;input type=&quot;text&quot; name=&quot;name&quot; /&gt;&lt;br/&gt;</div><div class="line">		&lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;1&quot;&gt;读书&lt;/input&gt;</div><div class="line">		&lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;2&quot;&gt;游泳&lt;/input&gt;</div><div class="line">		&lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;3&quot;&gt;旅行&lt;/input&gt;</div><div class="line">		&lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;4&quot;&gt;跳舞&lt;/input&gt;</div><div class="line">		&lt;input type=&quot;submit&quot; value=&quot;提交&quot; /&gt;</div><div class="line">	&lt;/form&gt;</div><div class="line">	&lt;%</div><div class="line">		String name=request.getParameter(&quot;name&quot;);</div><div class="line">		pageContext.setAttribute(&quot;name&quot;,&quot;zhangsan&quot;);//页面范围</div><div class="line">		//pageContext.removeAttribute(&quot;name&quot;);//运行后默认获取request的name属性</div><div class="line">		request.setAttribute(&quot;name&quot;,&quot;lisi&quot;);//请求范围</div><div class="line">		//request.removeAttribute(&quot;name&quot;);</div><div class="line">		session.setAttribute(&quot;name&quot;,&quot;wangwu&quot;);//会话范围</div><div class="line">		//session.removeAttribute(&quot;name&quot;);</div><div class="line">		application.setAttribute(&quot;name&quot;,&quot;zhaoliu&quot;);//应用范围</div><div class="line">		Cookie ck=new Cookie(&quot;name&quot;,name);</div><div class="line">		response.addCookie(ck);</div><div class="line">		</div><div class="line">	%&gt;</div><div class="line">	欢迎$&#123;param.name &#125;登录！&lt;br/&gt;//无法改变默认字符集，因此无法获取中文参数。</div><div class="line">	我的爱好是$&#123;paramValues.hobby[0]&#125;.&lt;br/&gt;</div><div class="line">	</div><div class="line">	&lt;!-- 与request.getHeader()相同： --&gt;</div><div class="line">	$&#123;header[&quot;Accept-Language&quot;] &#125;&lt;br/&gt;</div><div class="line">	$&#123;headerValues.Cookie[0] &#125;&lt;br/&gt;</div><div class="line">	从Cookie中取出值： $&#123;cookie.name.value&#125;</div><div class="line">	</div><div class="line">	&lt;hr/&gt;</div><div class="line">	</div><div class="line">	$&#123; name &#125;//默认pageContext&lt;br/&gt;</div><div class="line">	$&#123; pageScope.name &#125;&lt;br/&gt;</div><div class="line">	$&#123; requestScope.name &#125;&lt;br/&gt;</div><div class="line">	$&#123; sessionScope.name &#125;&lt;br/&gt;</div><div class="line">	$&#123; applicationScope.name &#125;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<hr>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-7088fd999a9895f0?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">	&lt;!-- EL的加减乘除模运算 --&gt;</div><div class="line">	&lt;br /&gt; EL的加减乘除模运算：</div><div class="line">	&lt;br /&gt; 1+2 = &amp;&#123;1+2&#125;</div><div class="line">	&lt;br /&gt; 1.2+1.4=$&#123;1.2+1.4&#125;</div><div class="line">	&lt;br /&gt;</div><div class="line">	&lt;%</div><div class="line">		BigDecimal a1 = new BigDecimal(Double.toString(1.2));</div><div class="line">		BigDecimal a2 = new BigDecimal(Double.toString(1.4));</div><div class="line">		out.print(&quot;1.2+1.4=&quot; + a1.add(a2) + &quot;&lt;br/&gt;&quot;);</div><div class="line">	%&gt;</div><div class="line">	&lt;br /&gt; 5 - 3 = $&#123;5-3&#125;</div><div class="line">	&lt;br /&gt; 5 + 3 = $&#123;5+3&#125;</div><div class="line">	&lt;br /&gt; 9 / 3 = $&#123;9/3&#125; 或者 9 div 3=$&#123;9 div 3 &#125;</div><div class="line">	&lt;br /&gt; 7 % 2 = $&#123;7%2&#125; 或者 7 mod 2=$&#123;7 mod 2 &#125;</div><div class="line">	&lt;br /&gt;</div><div class="line"></div><div class="line">	&lt;!-- 关系运算 --&gt;</div><div class="line">	&lt;br /&gt; 关系运算：</div><div class="line">	&lt;br /&gt;3 &gt; 2 = $&#123; 3 &gt; 2 &#125; 或者 3 gt 2 = $&#123; 3 gt 2 &#125;</div><div class="line">	&lt;br /&gt;2 &gt;= 3 = $&#123; 2 &gt;= 3 &#125; 或者 2 ge 3 = $&#123; 2 ge 3 &#125;</div><div class="line">	&lt;br /&gt; 1 &lt;2 = $&#123;1&lt;2 &#125; 或者 1 lt 2 = $&#123; 1 lt 2 &#125;</div><div class="line">	&lt;br /&gt;1 &lt;=2 = $&#123; 1&lt;=2 &#125; 或者 1 le 2 =$&#123; 1 le 2 &#125;</div><div class="line">	&lt;br /&gt;1 !=2 = $&#123;1 != 2&#125; 或者 1 ne 2 = $&#123; 1 ne 2 &#125;</div><div class="line">	&lt;!-- greater than、lesser than、greater equal、lesser equal --&gt;</div><div class="line">	&lt;br /&gt; </div><div class="line"></div><div class="line">	&lt;!-- 逻辑运算 --&gt;</div><div class="line">	&lt;br /&gt; 逻辑运算：</div><div class="line">	&lt;br /&gt; 1&gt;2 &amp;&amp; 1&lt;4 = $&#123; 1&gt;2 &amp;&amp; 1&lt;4 &#125; 或者 1&gt;2 and 1&lt;4 = $&#123; 1&gt;2 and 1&lt;4 &#125;</div><div class="line">	&lt;br /&gt; 1&gt;2 || 1&lt;4 = $&#123; 1&gt;2 || 1&lt;4 &#125; 或者 1&gt;2 or 1&lt;4 = $&#123; 1&gt;2 or 1&lt;4 &#125;</div><div class="line">	&lt;br /&gt; !(1&gt;2) = $&#123; !(1&gt;2) &#125; 或者 not (1&gt;2) = $&#123; not (1&gt;2) &#125;</div><div class="line">	&lt;br /&gt; </div><div class="line">	</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<hr>
+<p><strong>特殊运算符：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 特殊运算符 --&gt;</div><div class="line">&lt;br /&gt; 特殊运算符：</div><div class="line">&lt;br /&gt; $&#123;empty sessionScope.name &#125;</div><div class="line">&lt;br /&gt; $&#123;1&gt;2?&quot;真&quot;:&quot;假&quot;&#125;</div></pre></td></tr></table></figure>
+<hr>
+<p><strong>获取javaBean属性的三种方法：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">&lt;jsp:useBean id=&quot;user&quot; class=&quot;com.test.vo.UserBean&quot;&gt;&lt;/jsp:useBean&gt;</div><div class="line">&lt;jsp:setProperty property=&quot;name&quot; name=&quot;user&quot; value=&quot;haha&quot;/&gt;</div><div class="line"></div><div class="line">&lt;%-- 获取Bean的属性--%&gt;</div><div class="line">&lt;jsp:getProperty property=&quot;name&quot; name=&quot;user&quot;/&gt;</div><div class="line">$&#123;user.name &#125;</div><div class="line">&lt;%=user.getName() %&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/26/Servlet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aeris">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aeris‘s">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/09/26/Servlet/" itemprop="url">Servlet</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-26T10:43:00+08:00">
+                2016-09-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="一、Servlet概述"><a href="#一、Servlet概述" class="headerlink" title="一、Servlet概述"></a>一、Servlet概述</h2><p><strong>1、什么是Servlet</strong><br><img src="http://upload-images.jianshu.io/upload_images/4731173-5d33f70a56e17bd9?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p><strong>2、Tomcat容器等级</strong><br><img src="http://upload-images.jianshu.io/upload_images/4731173-b59fad8687deca73?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p><strong>3、编写第一个Servlet程序</strong><br><img src="http://upload-images.jianshu.io/upload_images/4731173-fdb0f7bd10a4a362?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/19/JSP内置对象/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aeris">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aeris‘s">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/09/19/JSP内置对象/" itemprop="url">JSP内置对象</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-19T10:42:00+08:00">
+                2016-09-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="JSP内置对象"><a href="#JSP内置对象" class="headerlink" title="JSP内置对象"></a>JSP内置对象</h1><p>Jsp内置对象是Web容器创建的一组对象，是不使用new关键字就可以使用的内置对象。<br><strong>常用的JSP九大内置对象</strong>：out、request、response、session、application、page、pageContext、exception、config</p>
+<h2 id="1、out对象："><a href="#1、out对象：" class="headerlink" title="1、out对象："></a>1、out对象：</h2><p>out对象是JspWriter类的实例，是向客户端输出内容常用的对象。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-03fd54c4e8aa8218?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"><br>【缓冲区：Buffer，缓冲区就是内存的一块区域用来保存临时数据。】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">&lt;%--浏览器不识别out.println()写入的换行符，应写入&lt;br&gt;来实现换行 --%&gt;</div><div class="line">&lt;%out.println(&quot;hello,world!&quot;); %&gt;</div><div class="line">&lt;%out.print(&quot;Hello,World!&quot;); %&gt;</div><div class="line">&lt;%out.print(&quot;&lt;br&gt;&quot;); %&gt;</div><div class="line">&lt;%out.print(&quot;Hello,World!&quot;); %&gt;</div><div class="line">&lt;%out.print(&quot;&lt;br&gt;&quot;); %&gt;</div><div class="line"></div><div class="line">&lt;%--out的getBufferSize()方法和getRemaining()方法 --%&gt;</div><div class="line">&lt;%out.println(&quot;缓冲区大小：&quot;+out.getBufferSize()); %&gt;</div><div class="line">&lt;%out.print(&quot;&lt;br&gt;&quot;); %&gt;</div><div class="line">&lt;%out.println(&quot;剩余缓冲区大小：&quot;+out.getRemaining()); %&gt;</div><div class="line">&lt;%for(int i=0;i&lt;5000;i++)&#123;</div><div class="line">	out.print(&quot;a&quot;);</div><div class="line">&#125; %&gt;</div><div class="line">&lt;%out.print(&quot;&lt;br&gt;&quot;); %&gt;</div><div class="line">&lt;%out.println(&quot;剩余缓冲区大小：&quot;+out.getRemaining()); %&gt;</div><div class="line"></div><div class="line">&lt;%--out的flush()方法 --%&gt;</div><div class="line">&lt;%out.flush(); %&gt;</div><div class="line">&lt;%out.print(&quot;&lt;br&gt;&quot;); %&gt;</div><div class="line">&lt;%out.println(&quot;剩余缓冲区大小：&quot;+out.getRemaining()); %&gt;</div><div class="line"></div><div class="line">&lt;%--out的close()方法 :关闭输出流--%&gt;</div><div class="line">&lt;%out.print(&quot;&lt;br&gt;&quot;); %&gt;</div><div class="line">&lt;%out.println(&quot;你好！&quot;); %&gt;</div><div class="line">&lt;%out.println(&quot;小明！&quot;); %&gt;</div><div class="line">&lt;%out.flush(); %&gt;</div><div class="line">&lt;%out.close(); %&gt;//这里会抛出异常</div><div class="line">&lt;%out.print(&quot;&lt;br&gt;&quot;); %&gt;</div><div class="line">&lt;%out.println(&quot;你好！&quot;); %&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<p>注意：</p>
+<ul>
+<li>浏览器不识别out.println()写入的换行符，应写入<br>来实现换行</li>
+<li>clear()用在flush()后会抛出异常，而clearBuffer()不会。</li>
+</ul>
+<h2 id="2、request对象"><a href="#2、request对象" class="headerlink" title="2、request对象"></a>2、request对象</h2><p><strong>【get和post区别】</strong></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-1663c90e1d6c803e?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p><strong>【中文乱码问题】</strong></p>
+<ul>
+<li>post方式</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;%</div><div class="line">	//post方式中文乱码处理：对request请求进行解码，解决提交表单或者post方式传递参数时的中文乱码问题。但无法解决URL传递中文参数出现的乱码问题。</div><div class="line">	</div><div class="line">	request.setCharacterEncoding(&quot;utf-8&quot;);</div><div class="line">	</div><div class="line">	//服务器告知浏览器，以什么方式打开文件以及编码格式是什么。</div><div class="line">	</div><div class="line">	response.setContentType(&quot;text/html;charset=utf-8&quot;);</div><div class="line">	</div><div class="line">%&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>get方式<br>①找到Servers中的server.xml,在Connector标签中添加URIEncoding=”utf-8”属性。（重启TomCat服务器）<br>//可以解决URL传递中文参数出现的乱码问题<br>②单解码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;%</div><div class="line">	String name=request.getParameter(&quot;name&quot;);</div><div class="line">	name=new String(name.getBytes(&quot;ISO-8859-1&quot;),&quot;utf-8&quot;);</div><div class="line">%&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-fbfa3549af89d049?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<hr>
+<h2 id="3、response对象"><a href="#3、response对象" class="headerlink" title="3、response对象"></a>3、response对象</h2><p>（1）<br><img src="http://upload-images.jianshu.io/upload_images/4731173-4a2ab7a49d59c750?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*,java.io.*&quot; comtentType=&quot;text/html;charset=utf-8&quot;%&gt;</div><div class="line">&lt;%</div><div class="line">	response.setContentType(&quot;text/html;charset=utf-8&quot;);//设置相应的MIME类型</div><div class="line">	out.println(&quot;&lt;h1&gt;response内置对象&lt;/h1&gt;&quot;);</div><div class="line">	out.println(&quot;&lt;hr&gt;&quot;);</div><div class="line">	//response获得PrintWriter对象输出的内容总是在内置的out对象输出的内容之前(如下图).</div><div class="line">	//解决方式：</div><div class="line">	out.flush();</div><div class="line"></div><div class="line">	PrintWriter outer=response.getWriter();//获得输出流对象</div><div class="line">	outer.println(&quot;大家好，我是response对象生成的输出流outer对象&quot;);</div><div class="line"></div><div class="line">	response.sendRedirect(&quot;index.jsp&quot;);//请求重定向，会立刻跳转到index.jsp页面。</div><div class="line">%&gt;</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-337c9061fb3614ee?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<hr>
+<p><strong>（2）【请求转发与请求重定向的区别】</strong></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-4eb3bac1767644ae?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p><strong>示例：</strong><br>//请求重定向<br><img src="http://upload-images.jianshu.io/upload_images/4731173-863da169a582f3a8?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"><br><img src="http://upload-images.jianshu.io/upload_images/4731173-746404be49b17837?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p>测试：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-846f9e6bd7763291?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p>效果：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-dcb827a5e9fe4f62?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p>//请求转发<br><img src="http://upload-images.jianshu.io/upload_images/4731173-3d76b2d7ae4c61b9?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p>效果：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-a72e89cafa566d5a?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<h2 id="4、session对象"><a href="#4、session对象" class="headerlink" title="4、session对象"></a>4、session对象</h2><p>（1）</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-0a6d29b23deaef2d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<ul>
+<li>会话保存在<strong>服务器</strong>的内存里。</li>
+<li>服务器内存中保存着不同用户的session。每个session都有一个唯一的sessionId.</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-1bd63405be162f08?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"><br><img src="http://upload-images.jianshu.io/upload_images/4731173-784c18836a1273cc?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">&lt;%@ page import=&quot;java.util.Date&quot; %&gt;</div><div class="line">//……</div><div class="line">&lt;body&gt;</div><div class="line">&lt;%</div><div class="line">	if(session.isNew())&#123;</div><div class="line">		session.setAttribute(&quot;n&quot;, 0);</div><div class="line">	&#125;else&#123;</div><div class="line">		int n=(Integer)session.getAttribute(&quot;n&quot;);</div><div class="line">		n++;</div><div class="line">		session.setAttribute(&quot;n&quot;, n);</div><div class="line">	&#125;</div><div class="line">%&gt;</div><div class="line">&lt;table width=&quot;500&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;1&quot; bordercolor=&quot;#c0c0c0&quot;&gt;</div><div class="line">	&lt;tr&gt;</div><div class="line">		&lt;td&gt;Session ID:&lt;/td&gt;</div><div class="line">		&lt;td&gt;&lt;%=session.getId() %&gt;&lt;/td&gt;</div><div class="line">	&lt;/tr&gt;</div><div class="line">	&lt;tr&gt;</div><div class="line">		&lt;td&gt;创建时间:&lt;/td&gt;</div><div class="line">		&lt;td&gt;&lt;%=new Date(session.getCreationTime()) %&gt;&lt;/td&gt;</div><div class="line">	&lt;/tr&gt;</div><div class="line">	&lt;tr&gt;</div><div class="line">		&lt;td&gt;上次访问时间:&lt;/td&gt;</div><div class="line">		&lt;td&gt;&lt;%=new Date(session.getLastAccessedTime()) %&gt;&lt;/td&gt;</div><div class="line">	&lt;/tr&gt;</div><div class="line">	&lt;tr&gt;</div><div class="line">		&lt;td&gt;访问次数:&lt;/td&gt;</div><div class="line">		&lt;td&gt;&lt;%=session.getAttribute(&quot;n&quot;) %&gt;&lt;/td&gt;</div><div class="line">	&lt;/tr&gt;</div><div class="line">&lt;/table&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<p><strong>（2）session对象的生命周期</strong><br><img src="http://upload-images.jianshu.io/upload_images/4731173-24fd3dc426d7e476?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"><br><img src="http://upload-images.jianshu.io/upload_images/4731173-0c0217fe256c441e?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"><br><img src="http://upload-images.jianshu.io/upload_images/4731173-80fe5f97746cf081?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p>【销毁方式】<br><img src="http://upload-images.jianshu.io/upload_images/4731173-553c4a0275fe96ac?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<h2 id="5、application对象"><a href="#5、application对象" class="headerlink" title="5、application对象"></a>5、application对象</h2><p><img src="http://upload-images.jianshu.io/upload_images/4731173-03b256053d850f25?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"><br><img src="http://upload-images.jianshu.io/upload_images/4731173-1ce7bec384471d90?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p>示例：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-1d3cc899e26475d1?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写代码片"></p>
+<p>效果：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-5bc65abde6a41c36?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<h2 id="6、page对象"><a href="#6、page对象" class="headerlink" title="6、page对象"></a>6、page对象</h2><p>与Object类差不多。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-f0ca8ce5684337e3?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<h2 id="7、pageContext对象"><a href="#7、pageContext对象" class="headerlink" title="7、pageContext对象"></a>7、pageContext对象</h2><p><img src="http://upload-images.jianshu.io/upload_images/4731173-9fe88197acb86930?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"><br><img src="http://upload-images.jianshu.io/upload_images/4731173-b12fd39354949586?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<h2 id="8、Config对象"><a href="#8、Config对象" class="headerlink" title="8、Config对象"></a>8、Config对象</h2><p><img src="http://upload-images.jianshu.io/upload_images/4731173-e05974f873376d10?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<h2 id="9、Exception对象"><a href="#9、Exception对象" class="headerlink" title="9、Exception对象"></a>9、Exception对象</h2><p><img src="http://upload-images.jianshu.io/upload_images/4731173-7a6614244591adda?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p><strong>示例：</strong></p>
+<p>//编写exception_test.jsp</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-fb9a5a88017f7d60?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"><br><img src="http://upload-images.jianshu.io/upload_images/4731173-1a0e4b950cb48489?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p>//编写exception.jsp</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-6a10cec5ee902142?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"><br><img src="http://upload-images.jianshu.io/upload_images/4731173-7953f072865b3ee4?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p><strong>测试：</strong></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-51e3a87878e206a0?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
 
           
         
@@ -930,7 +1825,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -975,7 +1870,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">42</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -986,7 +1881,7 @@
             
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">categories</span>
               
             </div>
@@ -997,7 +1892,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">39</span>
                 <span class="site-state-item-name">tags</span>
               
             </div>

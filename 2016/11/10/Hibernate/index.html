@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh_Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="hibernate," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="一、Hibernate基础知识1.【ORM—对象/关系映射】ORM(Object/Relationship Mapping)利用面向对象思想编写的数据库应用程序最终都是把对象信息保存在关系型数据库中，但编写很多和底层数据库相关的sql语句与面向对象思想格格不入。  2.【主流的ORM框架技术】 Hibernate MyBatis：前身就是著名的iBatis Toplink：后被Oracle收购，重">
+<meta name="keywords" content="hibernate">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hibernate">
+<meta property="og:url" content="http://yoursite.com/2016/11/10/Hibernate/index.html">
+<meta property="og:site_name" content="Aeris‘s">
+<meta property="og:description" content="一、Hibernate基础知识1.【ORM—对象/关系映射】ORM(Object/Relationship Mapping)利用面向对象思想编写的数据库应用程序最终都是把对象信息保存在关系型数据库中，但编写很多和底层数据库相关的sql语句与面向对象思想格格不入。  2.【主流的ORM框架技术】 Hibernate MyBatis：前身就是著名的iBatis Toplink：后被Oracle收购，重">
+<meta property="og:locale" content="zh_Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-bd89aaf8b4c0c4e2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-e70047f5fcd18bee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-6579cc545127b5db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-28c640160e76875b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-8ef0ef8e214a27ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-2bdd294a40313b82.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-e1bce13608c793d5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-a803c3c9e92345c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-efbf7cd3a8ca3b98.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-4b9b106585e47c29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-244d3fd7d2c2e229.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-9eb4dfe2961fe9ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-aff38b990d8a99e4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-2831c00af0aa466a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-50d0ba2443ae7d99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-e0302ae74b33fcf3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-78ebef352686fa1b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-f3b037784fae4530.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-95c713d10af6da1d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-abde2ce715360326.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-aade886351fdacba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-3fd77318a912f3b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-9e28ddc6e56718c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-0f7e0bbccb7e4f9c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-0ab25abfcd2613f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-9c4f29feabd3c700.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-09-19T08:32:11.740Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hibernate">
+<meta name="twitter:description" content="一、Hibernate基础知识1.【ORM—对象/关系映射】ORM(Object/Relationship Mapping)利用面向对象思想编写的数据库应用程序最终都是把对象信息保存在关系型数据库中，但编写很多和底层数据库相关的sql语句与面向对象思想格格不入。  2.【主流的ORM框架技术】 Hibernate MyBatis：前身就是著名的iBatis Toplink：后被Oracle收购，重">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4731173-bd89aaf8b4c0c4e2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/11/10/Hibernate/"/>
+
+
+
+
+
+  <title>Hibernate | Aeris‘s</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Aeris‘s</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/10/Hibernate/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aeris">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aeris‘s">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Hibernate</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-10T15:30:00+08:00">
+                2016-11-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="一、Hibernate基础知识"><a href="#一、Hibernate基础知识" class="headerlink" title="一、Hibernate基础知识"></a>一、Hibernate基础知识</h4><h5 id="1-【ORM—对象-关系映射】"><a href="#1-【ORM—对象-关系映射】" class="headerlink" title="1.【ORM—对象/关系映射】"></a>1.【ORM—对象/关系映射】</h5><h6 id="ORM-Object-Relationship-Mapping"><a href="#ORM-Object-Relationship-Mapping" class="headerlink" title="ORM(Object/Relationship Mapping)"></a>ORM(Object/Relationship Mapping)</h6><p>利用面向对象思想编写的数据库应用程序最终都是把对象信息保存在关系型数据库中，但编写很多和底层数据库相关的sql语句与面向对象思想格格不入。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-bd89aaf8b4c0c4e2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h5 id="2-【主流的ORM框架技术】"><a href="#2-【主流的ORM框架技术】" class="headerlink" title="2.【主流的ORM框架技术】"></a>2.【主流的ORM框架技术】</h5><ul>
+<li>Hibernate</li>
+<li>MyBatis：前身就是著名的iBatis</li>
+<li>Toplink：后被Oracle收购，重新包装为Oracle AS TopLink</li>
+<li>EJB：本身是javaee的规范</li>
+</ul>
+<h5 id="3、Hibernate"><a href="#3、Hibernate" class="headerlink" title="3、Hibernate"></a>3、Hibernate</h5><p>对JDBC进行了非常轻量级的对象封装。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-e70047f5fcd18bee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="创建Hibernate实例步骤："><a href="#创建Hibernate实例步骤：" class="headerlink" title="创建Hibernate实例步骤："></a>创建Hibernate实例步骤：</h4><p><img src="http://upload-images.jianshu.io/upload_images/4731173-6579cc545127b5db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h5 id="1-创建工程，导入相关jar包。"><a href="#1-创建工程，导入相关jar包。" class="headerlink" title="1.创建工程，导入相关jar包。"></a>1.创建工程，导入相关jar包。</h5><p>Preferences—Java—Build Path—User Libraries—添加自定义类库<br><img src="http://upload-images.jianshu.io/upload_images/4731173-28c640160e76875b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>右键工程—Preferences—Java—Build Path—Libraries—Add Library—User Library—选择刚创建的自定义类库。</p>
+<p>可设置以下路径的dtd文档支持xml的<strong>自动提示功能</strong>。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-8ef0ef8e214a27ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><strong>创建Hibernate的配置文件hibernate.cfg.xml。</strong>以下五个标签是hibernate.cfg.xml文件基本的属性标签，包括数据库的用户名、密码、驱动、地址、数据库方言。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-2bdd294a40313b82.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h5 id="2-创建持久化类【即Java-Bean】"><a href="#2-创建持久化类【即Java-Bean】" class="headerlink" title="2.创建持久化类【即Java Bean】"></a>2.创建持久化类【即Java Bean】</h5><p><img src="http://upload-images.jianshu.io/upload_images/4731173-e1bce13608c793d5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h5 id="3-创建对象-关系映射文件"><a href="#3-创建对象-关系映射文件" class="headerlink" title="3.创建对象-关系映射文件"></a>3.创建对象-关系映射文件</h5><p>右键src—new—other—Hibernate—Hibernate XML Mapping file（hbm.xml），创建对象-关系映射文件hibernate.cfg.xml。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-a803c3c9e92345c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>同时，在hibernate.cfg.xml文件中声明mapping标签。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-efbf7cd3a8ca3b98.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h5 id="4通过Hibernate-API编写访问数据库的代码"><a href="#4通过Hibernate-API编写访问数据库的代码" class="headerlink" title="4通过Hibernate API编写访问数据库的代码"></a>4通过Hibernate API编写访问数据库的代码</h5><p><img src="http://upload-images.jianshu.io/upload_images/4731173-4b9b106585e47c29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/4731173-244d3fd7d2c2e229.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-9eb4dfe2961fe9ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="二、Hibernate进阶"><a href="#二、Hibernate进阶" class="headerlink" title="二、Hibernate进阶"></a>二、Hibernate进阶</h4><h5 id="1-hibernate-cfg-xml常用配置"><a href="#1-hibernate-cfg-xml常用配置" class="headerlink" title="1.hibernate.cfg.xml常用配置"></a>1.hibernate.cfg.xml常用配置</h5><p><img src="http://upload-images.jianshu.io/upload_images/4731173-aff38b990d8a99e4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h5 id="2-session"><a href="#2-session" class="headerlink" title="2.session"></a>2.session</h5><p><strong>Session可以理解为操作数据库的对象。</strong>不建议直接使用jdbc的connection操作数据库，而是通过使用session操作数据库。<br>session与connection是多对一的关系，每个session都有一个与之对应的connection，一个connection不同时刻可以供多个session使用。<br><strong>把对象保存在关系数据库中需要调用session的各种方法，如：save(),update(),delete(),createQuery()等。</strong></p>
+<h5 id="3-Transaction事务"><a href="#3-Transaction事务" class="headerlink" title="3.Transaction事务"></a>3.Transaction事务</h5><ul>
+<li>Hibernate对数据的操作都是封装在事务当中，并且默认是非自动提交的方式。所以用session保存对象时，如果不开启事务，并且<strong>手工提交事务</strong>，对象并不会真正保存在数据库中。</li>
+<li>如果想要实现hibernate像jdbc那样<strong>自动提交事务</strong>，必须调用session对象的<strong>doWork()</strong>方法，获得jdbc的connection后，设置其为自动提交事务模式。如下：（通常并不推荐这样做）<br><img src="http://upload-images.jianshu.io/upload_images/4731173-2831c00af0aa466a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+<h5 id="4-session详解"><a href="#4-session详解" class="headerlink" title="4.session详解"></a>4.session详解</h5><p><strong>获得session对象有两种方法：</strong></p>
+<ul>
+<li>1）openSession</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-50d0ba2443ae7d99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li>2）getCurrentSession</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-e0302ae74b33fcf3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-78ebef352686fa1b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/4731173-f3b037784fae4530.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>openSession与getCurrentSession的区别：</strong><br>（1）getCurrentSession在事物提交或者回滚之后会自动关闭，而openSession需要手动关闭。如果使用openSession而没有手动关闭，多次之后会导致连接池溢出。<br>（2）openSession每次创建新的session对象，getCurrentSession使用现有的session对象。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-95c713d10af6da1d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-abde2ce715360326.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h5 id="5-hbm配置文件常用设置"><a href="#5-hbm配置文件常用设置" class="headerlink" title="5.hbm配置文件常用设置"></a>5.hbm配置文件常用设置</h5><p><img src="http://upload-images.jianshu.io/upload_images/4731173-aade886351fdacba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/4731173-3fd77318a912f3b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/4731173-9e28ddc6e56718c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/4731173-0f7e0bbccb7e4f9c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="三、Hibernate单表操作"><a href="#三、Hibernate单表操作" class="headerlink" title="三、Hibernate单表操作"></a>三、Hibernate单表操作</h4><h5 id="1、单一主键"><a href="#1、单一主键" class="headerlink" title="1、单一主键"></a>1、单一主键</h5><p>以mysql为例，常见有两种主键生成策略：</p>
+<ul>
+<li><strong>assigned：</strong>手工赋值方式。由java应用程序负责生成。</li>
+<li><strong>native：</strong>自动生成方式。由底层数据库自动生成标示符，如果是MySQL就是increment策略，如果是Oracle就是sequence策略，等等。<h5 id="2-Hibernate基本类型"><a href="#2-Hibernate基本类型" class="headerlink" title="2.Hibernate基本类型"></a>2.Hibernate基本类型</h5>在hibernate.hbm.xml中，指定数据类型时，可以使用<strong>Hibernate映射类型</strong>，也可以使用<strong>java类型</strong>。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-0ab25abfcd2613f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li>date：年月日</li>
+<li>time：时分秒</li>
+<li>timestamp：年月日时分秒<h5 id="3-Hibernate对象类型"><a href="#3-Hibernate对象类型" class="headerlink" title="3.Hibernate对象类型"></a>3.Hibernate对象类型</h5><img src="http://upload-images.jianshu.io/upload_images/4731173-9c4f29feabd3c700.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hibernate/" rel="tag"># hibernate</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/04/Java反射/" rel="next" title="Java反射">
+                <i class="fa fa-chevron-left"></i> Java反射
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/21/Struts/" rel="prev" title="Struts2">
+                Struts2 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <p class="site-author-name" itemprop="name">Aeris</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、Hibernate基础知识"><span class="nav-number">1.</span> <span class="nav-text">一、Hibernate基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-【ORM—对象-关系映射】"><span class="nav-number">1.1.</span> <span class="nav-text">1.【ORM—对象/关系映射】</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#ORM-Object-Relationship-Mapping"><span class="nav-number">1.1.1.</span> <span class="nav-text">ORM(Object/Relationship Mapping)</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-【主流的ORM框架技术】"><span class="nav-number">1.2.</span> <span class="nav-text">2.【主流的ORM框架技术】</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3、Hibernate"><span class="nav-number">1.3.</span> <span class="nav-text">3、Hibernate</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建Hibernate实例步骤："><span class="nav-number">2.</span> <span class="nav-text">创建Hibernate实例步骤：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-创建工程，导入相关jar包。"><span class="nav-number">2.1.</span> <span class="nav-text">1.创建工程，导入相关jar包。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-创建持久化类【即Java-Bean】"><span class="nav-number">2.2.</span> <span class="nav-text">2.创建持久化类【即Java Bean】</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-创建对象-关系映射文件"><span class="nav-number">2.3.</span> <span class="nav-text">3.创建对象-关系映射文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4通过Hibernate-API编写访问数据库的代码"><span class="nav-number">2.4.</span> <span class="nav-text">4通过Hibernate API编写访问数据库的代码</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、Hibernate进阶"><span class="nav-number">3.</span> <span class="nav-text">二、Hibernate进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-hibernate-cfg-xml常用配置"><span class="nav-number">3.1.</span> <span class="nav-text">1.hibernate.cfg.xml常用配置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-session"><span class="nav-number">3.2.</span> <span class="nav-text">2.session</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-Transaction事务"><span class="nav-number">3.3.</span> <span class="nav-text">3.Transaction事务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-session详解"><span class="nav-number">3.4.</span> <span class="nav-text">4.session详解</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-hbm配置文件常用设置"><span class="nav-number">3.5.</span> <span class="nav-text">5.hbm配置文件常用设置</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、Hibernate单表操作"><span class="nav-number">4.</span> <span class="nav-text">三、Hibernate单表操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、单一主键"><span class="nav-number">4.1.</span> <span class="nav-text">1、单一主键</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-Hibernate基本类型"><span class="nav-number">4.2.</span> <span class="nav-text">2.Hibernate基本类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-Hibernate对象类型"><span class="nav-number">4.3.</span> <span class="nav-text">3.Hibernate对象类型</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Aeris</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
