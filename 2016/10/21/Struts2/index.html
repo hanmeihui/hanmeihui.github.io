@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh_Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Struts2," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="简单来说，Struts2的作用就是把请求和结果分开，即提高可扩展性，使得更加灵活。 一、struts2的基本配置新建一个web project项目，下载struts2，配置Strusts2环境。 1配置struts.xml文件。将struts-2.1.6目录中的apps中的struts2-blank.war文件解压，打开WEB-INF———classes——–struts.xml文件拷贝到新建项目">
+<meta name="keywords" content="Struts2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Struts2">
+<meta property="og:url" content="http://yoursite.com/2016/10/21/Struts2/index.html">
+<meta property="og:site_name" content="Aeris‘s">
+<meta property="og:description" content="简单来说，Struts2的作用就是把请求和结果分开，即提高可扩展性，使得更加灵活。 一、struts2的基本配置新建一个web project项目，下载struts2，配置Strusts2环境。 1配置struts.xml文件。将struts-2.1.6目录中的apps中的struts2-blank.war文件解压，打开WEB-INF———classes——–struts.xml文件拷贝到新建项目">
+<meta property="og:locale" content="zh_Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-dfa663408098a2e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-048628628bbc3ba3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-ab6987515420b632.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-4f2648de3809941f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-b09c1047c35c68cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-d34a95b1b44737dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-706e15ef00394c79.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-00d02467bec28e29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-ba33aa846a2fb35a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-3dd3095a9f830061.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-df3c6c91995ef2ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-563baf92863be5cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-09-19T08:28:32.037Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Struts2">
+<meta name="twitter:description" content="简单来说，Struts2的作用就是把请求和结果分开，即提高可扩展性，使得更加灵活。 一、struts2的基本配置新建一个web project项目，下载struts2，配置Strusts2环境。 1配置struts.xml文件。将struts-2.1.6目录中的apps中的struts2-blank.war文件解压，打开WEB-INF———classes——–struts.xml文件拷贝到新建项目">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4731173-dfa663408098a2e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/10/21/Struts2/"/>
+
+
+
+
+
+  <title>Struts2 | Aeris‘s</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Aeris‘s</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/21/Struts2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aeris">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aeris‘s">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Struts2</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-21T16:28:00+08:00">
+                2016-10-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java进阶/" itemprop="url" rel="index">
+                    <span itemprop="name">Java进阶</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>简单来说，Struts2的作用就是把请求和结果分开，即提高可扩展性，使得更加灵活。</p>
+<h4 id="一、struts2的基本配置"><a href="#一、struts2的基本配置" class="headerlink" title="一、struts2的基本配置"></a>一、struts2的基本配置</h4><h6 id="新建一个web-project项目，下载struts2，配置Strusts2环境。"><a href="#新建一个web-project项目，下载struts2，配置Strusts2环境。" class="headerlink" title="新建一个web project项目，下载struts2，配置Strusts2环境。"></a>新建一个web project项目，下载struts2，配置Strusts2环境。</h6><ul>
+<li>1<strong>配置struts.xml文件。</strong><br>将struts-2.1.6目录中的apps中的struts2-blank.war文件解压，打开WEB-INF———classes——–struts.xml文件拷贝到新建项目的src目录下。</li>
+</ul>
+<p>【struts-2.1.6\apps\struts2-blank-2.1.6-\WEB-INF\classes\struts.xml】</p>
+<ul>
+<li>2<strong>配置struts2所需的jar包。</strong><br>将【struts-2.1.6\apps\struts2-blank-2.1.6-\WEB-INF\lib】下的jar包拷贝到 项目的WebRoot—–WEB-INF<br>—-lib目录下。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-dfa663408098a2e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li>3<strong>配置web.xml文件。</strong><br>将示例web.xml文件中关于struts2的<strong>filter标签</strong>配置复制到项目的web.xml中。</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-048628628bbc3ba3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">1.源码和javadoc的设置：</div><div class="line">【可查阅struts2源码，按F1可查阅javadoc】</div><div class="line">    在jar包上右键---properties---Java Source Attachment/Java Doc Location:</div><div class="line"></div><div class="line">    【struts2的Java Source源码路径为：</div><div class="line">         \struts-2.3.16.1\src\core\src\main\java</div><div class="line">      struts2的Java Doc路径为：</div><div class="line">          \struts-2.3.16.1\docs\struts2-core\apidocs】</div><div class="line">2.xml文件自动提示设置</div><div class="line">Window----Preferences----输入catalog----XML catalog----Add---设置dtd文档location、keyType和key</div><div class="line"></div><div class="line">【Location：选择dtd文档位置。</div><div class="line">      解压 struts-2.3.16.1\lib\ 目录下的struts2-core-2.3.16.1.jar文件，选择struts-2.0.dtd文件位置。</div><div class="line">  Key Type：URL</div><div class="line">  Key：输入dtd的URL地址，在struts.xml文件的上部的DOCTYPE标签中定义的   &quot;http://struts.apache.org/dtds/struts-2.0.dtd&quot;】</div></pre></td></tr></table></figure></p>
+<ul>
+<li>4<strong>配置action。</strong><br>简化struts.xml中package标签中的内容。</li>
+</ul>
+<blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-ab6987515420b632.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;constant&gt;标签：struts.devMode为true时，为开发模式，可更改action的name且不用重启tomcat</div><div class="line">&lt;package&gt;标签：包名，设置namespace。类似java项目中的包名，起到防止action重名的作用。</div><div class="line">&lt;action&gt;标签：设置action的name，设置相应result路径。</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="二、Struts2运行机制"><a href="#二、Struts2运行机制" class="headerlink" title="二、Struts2运行机制"></a>二、Struts2运行机制</h4><h5 id="Struts2的作用：把请求和视图分开，增强项目的可扩展性。"><a href="#Struts2的作用：把请求和视图分开，增强项目的可扩展性。" class="headerlink" title="Struts2的作用：把请求和视图分开，增强项目的可扩展性。"></a>Struts2的作用：把请求和视图分开，增强项目的可扩展性。</h5><p><a href="http://duanxx.iteye.com/blog/1662918" target="_blank" rel="external">struts2的原理</a></p>
+<h6 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程:"></a>工作流程:</h6><p>1、客户端浏览器发出HTTP请求.</p>
+<p>2、根据web.xml配置，该请求被FilterDispatcher接收</p>
+<p>3、根据struts.xml配置，找到需要调用的Action类和方法， 并通过IoC方式，将值注入给Aciton</p>
+<p>4、Action调用业务逻辑组件处理业务逻辑，这一步包含表单验证。</p>
+<p>5、Action执行完毕，根据struts.xml中的配置找到对应的返回结果result，并跳转到相应页面</p>
+<p>6、返回HTTP响应到客户端浏览器</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-4f2648de3809941f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="1、namespace：action访问路径"><a href="#1、namespace：action访问路径" class="headerlink" title="1、namespace：action访问路径"></a>1、namespace：action访问路径</h4><p><img src="http://upload-images.jianshu.io/upload_images/4731173-b09c1047c35c68cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="2、用户自定义Action"><a href="#2、用户自定义Action" class="headerlink" title="2、用户自定义Action"></a>2、用户自定义Action</h4><h6 id="1-IndexAction中有execute-方法，返回“success”字符串，struts-xml的action标签中定义class。"><a href="#1-IndexAction中有execute-方法，返回“success”字符串，struts-xml的action标签中定义class。" class="headerlink" title="1.IndexAction中有execute()方法，返回“success”字符串，struts.xml的action标签中定义class。"></a>1.IndexAction中有execute()方法，返回“success”字符串，struts.xml的action标签中定义class。</h6><p>当struts2的filter读到struts.xml中的action是一个class时，每次访问struts2都会调用createMessage()方法，new一个新的action的class对象，调用execute()方法，不会出现线程同步的问题。【而struts1每次访问时会访问可能用的是同一个对象，会出现线程同步的问题。】</p>
+<h6 id="2-当action中不配置class时，可以使IndexAction继承Action接口，实现execute-方法，返回SUCCESS常量。"><a href="#2-当action中不配置class时，可以使IndexAction继承Action接口，实现execute-方法，返回SUCCESS常量。" class="headerlink" title="2.当action中不配置class时，可以使IndexAction继承Action接口，实现execute()方法，返回SUCCESS常量。"></a>2.当action中不配置class时，可以使IndexAction继承Action接口，实现execute()方法，返回SUCCESS常量。</h6><h6 id="3-当action中不配置class时，可以使IndexAction继承ActionSupport类，重写execute方法，返回SUCCESS常量。"><a href="#3-当action中不配置class时，可以使IndexAction继承ActionSupport类，重写execute方法，返回SUCCESS常量。" class="headerlink" title="3.当action中不配置class时，可以使IndexAction继承ActionSupport类，重写execute方法，返回SUCCESS常量。"></a>3.当action中不配置class时，可以使IndexAction继承ActionSupport类，重写execute方法，返回SUCCESS常量。</h6><h6 id="——————————日常开发使用第三种方法。"><a href="#——————————日常开发使用第三种方法。" class="headerlink" title="——————————日常开发使用第三种方法。"></a>——————————日常开发使用第三种方法。</h6><h4 id="3、路径问题"><a href="#3、路径问题" class="headerlink" title="3、路径问题"></a>3、路径问题</h4><p><img src="http://upload-images.jianshu.io/upload_images/4731173-d34a95b1b44737dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="4、Action–method"><a href="#4、Action–method" class="headerlink" title="4、Action–method"></a>4、Action–method</h4><p>Action执行的时候并不一定要执行execute()方法<br>（1）可以在struts.xml配置文件中配置Action的时候用<strong>“method=要执行的方法”</strong>，并在对应的Action中实现该方法。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-706e15ef00394c79.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-00d02467bec28e29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>（2）也可以在url地址中动态指定（动态方法调用DMI）【推荐】<br>不指定method，在调用时通过在action后添加“!方法名”的方式调用Action中的方法。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-ba33aa846a2fb35a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-3dd3095a9f830061.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="5、Action—通配符"><a href="#5、Action—通配符" class="headerlink" title="5、Action—通配符"></a>5、Action—通配符</h4><p>使用通配符，可将配置量降到最低。但一定要遵守“约定优于配置”的原则。</p>
+<blockquote>
+<p>通过Studentadd访问action<br><img src="http://upload-images.jianshu.io/upload_images/4731173-df3c6c91995ef2ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>在action配置中没有对应的Studentadd的action，但有Student<em>。result中{1}与</em>表示的内容相同。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-563baf92863be5cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Struts2/" rel="tag"># Struts2</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/16/List、Set、Map/" rel="next" title="List、Set、Map">
+                <i class="fa fa-chevron-left"></i> List、Set、Map
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/22/HTML/" rel="prev" title="HTML知识点">
+                HTML知识点 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <p class="site-author-name" itemprop="name">Aeris</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">57</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">Kategorien</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">Tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、struts2的基本配置"><span class="nav-number">1.</span> <span class="nav-text">一、struts2的基本配置</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#新建一个web-project项目，下载struts2，配置Strusts2环境。"><span class="nav-number">1.0.1.</span> <span class="nav-text">新建一个web project项目，下载struts2，配置Strusts2环境。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、Struts2运行机制"><span class="nav-number">2.</span> <span class="nav-text">二、Struts2运行机制</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Struts2的作用：把请求和视图分开，增强项目的可扩展性。"><span class="nav-number">2.1.</span> <span class="nav-text">Struts2的作用：把请求和视图分开，增强项目的可扩展性。</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#工作流程"><span class="nav-number">2.1.1.</span> <span class="nav-text">工作流程:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1、namespace：action访问路径"><span class="nav-number">3.</span> <span class="nav-text">1、namespace：action访问路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、用户自定义Action"><span class="nav-number">4.</span> <span class="nav-text">2、用户自定义Action</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-IndexAction中有execute-方法，返回“success”字符串，struts-xml的action标签中定义class。"><span class="nav-number">4.0.1.</span> <span class="nav-text">1.IndexAction中有execute()方法，返回“success”字符串，struts.xml的action标签中定义class。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-当action中不配置class时，可以使IndexAction继承Action接口，实现execute-方法，返回SUCCESS常量。"><span class="nav-number">4.0.2.</span> <span class="nav-text">2.当action中不配置class时，可以使IndexAction继承Action接口，实现execute()方法，返回SUCCESS常量。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-当action中不配置class时，可以使IndexAction继承ActionSupport类，重写execute方法，返回SUCCESS常量。"><span class="nav-number">4.0.3.</span> <span class="nav-text">3.当action中不配置class时，可以使IndexAction继承ActionSupport类，重写execute方法，返回SUCCESS常量。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#——————————日常开发使用第三种方法。"><span class="nav-number">4.0.4.</span> <span class="nav-text">——————————日常开发使用第三种方法。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、路径问题"><span class="nav-number">5.</span> <span class="nav-text">3、路径问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、Action–method"><span class="nav-number">6.</span> <span class="nav-text">4、Action–method</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、Action—通配符"><span class="nav-number">7.</span> <span class="nav-text">5、Action—通配符</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Aeris</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

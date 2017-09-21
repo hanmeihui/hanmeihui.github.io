@@ -172,7 +172,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -182,7 +182,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -219,7 +219,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/16/JSP基本语法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/04/Java反射/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Aeris">
@@ -238,7 +238,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/09/16/JSP基本语法/" itemprop="url">JSP基本语法</a></h1>
+                <a class="post-title-link" href="/2016/11/04/Java反射/" itemprop="url">Java反射</a></h1>
         
 
         <div class="post-meta">
@@ -248,579 +248,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-16T10:41:00+08:00">
-                2016-09-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="一、JSP简介："><a href="#一、JSP简介：" class="headerlink" title="一、JSP简介："></a>一、JSP简介：</h2><p><strong>1、JSP</strong></p>
-<p>JSP是指Java服务器端页面，由HTML+JSP标记+Java代码组成。</p>
-<p><strong>2、特点：</strong></p>
-<pre><code>①降低了程序设计的难度
-
-②可以使用可视化工具，减少了开发工作量
-
-③不需要手动编译
-
-④包含相关的内置对象、指令元素与动作元素，简化了编写servlet程序的过程。
-
-⑤可运用Java所提供的各类包
-</code></pre><p><strong>3、执行过程：</strong></p>
-<pre><code>①请求（Request）
-
-②翻译（Servlet即.java文件）
-
-③编译（.class文件）
-
-④执行
-
-⑤响应（Response）
-</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/4731173-1f6ee1cdf2676771?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
-<p><strong>4、基本元素：</strong><br><img src="http://upload-images.jianshu.io/upload_images/4731173-c77413404c0e7876?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
-<hr>
-<hr>
-<hr>
-<h2 id="二、JSP基本元素"><a href="#二、JSP基本元素" class="headerlink" title="二、JSP基本元素"></a>二、JSP基本元素</h2><p><a href="参考wugewuge的博客：http://blog.csdn.net/wugewuge/article/details/7979274">参考wugewuge的博客：http://blog.csdn.net/wugewuge/article/details/7979274</a></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4731173-92cc4637ae19211c?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
-<hr>
-<p><strong>1、jsp注释</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;%-- annotation --%&gt; //jsp注释：不经过翻译阶段，客户端不可见</div><div class="line"></div><div class="line">&lt;% //annotation  %&gt;  //单行注释：经过翻译阶段，客户端不可见</div><div class="line"></div><div class="line">&lt;% /* annotation</div><div class="line">	  annotation</div><div class="line">	  annotation*/%&gt; //多行注释：经过翻译阶段，客户端不可见</div><div class="line"></div><div class="line">&lt;!--  --&gt;            //html注释：经过翻译、编译阶段，客户端可见</div></pre></td></tr></table></figure>
-<hr>
-<p><strong>2、JSP脚本元素</strong></p>
-<p>（1）JSP声明<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;%! int a=0; %&gt; //成员变量</div><div class="line">&lt;% int b=0; %&gt;  //局部变量</div><div class="line">……				//还有成员方法和局部方法</div></pre></td></tr></table></figure></p>
-<p>（2）JSP脚本</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;% Java代码 %&gt;</div></pre></td></tr></table></figure>
-<p>（3）JSP表达式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;%=表达式 %&gt;</div><div class="line"></div><div class="line">//注意：表达式后无分号</div><div class="line">//	   表达式返回结果为字符串。</div></pre></td></tr></table></figure>
-<hr>
-<p><strong>3、JSP指令元素</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;%@ include / page / tablib %&gt;//三大指令元素</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/4731173-c8b4e9e27a7db4c5?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
-<hr>
-<p><img src="http://upload-images.jianshu.io/upload_images/4731173-c4338dcdd89d3786?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
-<hr>
-<p><img src="http://upload-images.jianshu.io/upload_images/4731173-541337f1b7c23e6b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
-<hr>
-<p><strong>4、JSP动作元素</strong></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4731173-f445fa755caf8078?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
-<p>（1）include动作元素</p>
-<ul>
-<li><p>作用：</p>
-<p> include动作元素用来在JSP页面中包含其他静态页面和动态页面。</p>
-</li>
-</ul>
-<ul>
-<li>无参数格式：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;jsp:include page=”文件路径” flush=”true|false”/&gt;</div></pre></td></tr></table></figure>
-<ul>
-<li>带参数格式：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;jsp:include page=”文件路径” flush=”true|false”/&gt;</div><div class="line">        &lt;jsp:param name=”参数名1” value=”参数1的值”&gt;</div><div class="line">       &lt;jsp:param name=”参数名2” value=”参数2的值”/&gt;</div><div class="line">       &lt;jsp:param name=”参数名3” value=”参数3的值”/&gt;</div><div class="line">        …</div><div class="line">       &lt;jsp:param name=”参数名n” value=”参数n的值”/&gt;</div><div class="line">&lt;/jsp:include&gt;</div></pre></td></tr></table></figure>
-<ul>
-<li>示例：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">&lt;!-- 动态包含静态文件 --&gt;</div><div class="line">&lt;jsp:include page=&quot;1.html&quot; flush=&quot;true&quot;&gt;&lt;/jsp:include&gt;</div><div class="line">&lt;% String name=request.getParameter(&quot;name&quot;);</div><div class="line">   if(name==null||name==&quot;&quot;)&#123;</div><div class="line">	  name=&quot;0&quot;;</div><div class="line">   &#125;</div><div class="line">%&gt;</div><div class="line">&lt;!-- 动态包含文件并传递参数 --&gt;</div><div class="line">&lt;jsp:include page=&quot;2.jsp&quot; flush=&quot;true&quot;&gt;</div><div class="line">    &lt;jsp:param name=&quot;r&quot; value=&quot;&lt;%=name %&gt;&quot; /&gt;</div><div class="line">&lt;/jsp:include&gt;</div><div class="line"></div><div class="line">&lt;!-- 动态包含文件并不传递参数 --&gt;</div><div class="line">&lt;jsp:include page=&quot;3.jsp&quot; flush=&quot;true&quot;&gt;&lt;/jsp:include&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
-<p>（2）forward动作元素</p>
-<ul>
-<li><p>作用：</p>
-<p> forward动作元素用来跳转网页，即将当前页面跳转到其他指定页面。转向的目标页面可以是静态HTML页面、JSP页面或Servlet类。</p>
-</li>
-</ul>
-<ul>
-<li>无参数格式：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;jsp:forward page=”文件路径” flush=”true|false”/&gt;</div></pre></td></tr></table></figure>
-<ul>
-<li>带参数格式：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;jsp:forward page=”文件路径” flush=”true|false”/&gt;</div><div class="line">     &lt;jsp:param name=”参数名1” value=”参数1的值”&gt;</div><div class="line">     &lt;jsp:param name=”参数名2” value=”参数2的值”/&gt;</div><div class="line">     &lt;jsp:param name=”参数名3” value=”参数3的值”/&gt;</div><div class="line">     …</div><div class="line">    &lt;jsp:param name=”参数名n” value=”参数n的值”/&gt;</div><div class="line">&lt;/jsp:forward&gt;</div></pre></td></tr></table></figure>
-<ul>
-<li>示例：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">//用户登录页面，登录成功跳转到sucess.jsp，否则跳转到error.jsp</div><div class="line">&lt;body&gt;</div><div class="line">&lt;% String name=request.getParameter(&quot;name&quot;);</div><div class="line">   String pwd=request.getParameter(&quot;pwd&quot;);</div><div class="line"></div><div class="line">   if(name.equals(&quot;sa&quot;)&amp;&amp;pwd.equals(&quot;123&quot;))&#123;</div><div class="line">%&gt;</div><div class="line">&lt;jsp:forward page=&quot;sucess.jsp&quot;&gt;</div><div class="line">     &lt;jsp:param value=&quot;&lt;%=name%&gt;&quot; name=&quot;name&quot;/&gt;</div><div class="line">     &lt;jsp:param value=&quot;&lt;%=pwd%&gt;&quot; name=&quot;pwd&quot;/&gt;</div><div class="line">&lt;/jsp:forward&gt;</div><div class="line"></div><div class="line">&lt;% &#125;else&#123;%&gt;</div><div class="line">	&lt;jsp:forward page=&quot;error.jsp&quot;&gt;&lt;/jsp:forward&gt;</div><div class="line">&lt;% &#125;%&gt;	</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
-<p>（3）param动作元素</p>
-<ul>
-<li><p>作用：</p>
-<p> param动作元素主要用来向需要包含的动态页面或要跳转的动态页面传递参数。</p>
-</li>
-<li><p>语法：</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;jsp:param name=”属性名” value=”属性值”/&gt;</div><div class="line"></div><div class="line">//注意：param动作元素必须配合include动作元素、forward动作元素和plugin等元素，在加载外部程序或是网页转换的时候，传递参数给另外一个JSP程序。</div></pre></td></tr></table></figure>
-<ul>
-<li>示例：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">&lt;% String str=null;</div><div class="line">   str=&quot;Hello World!&quot;;</div><div class="line">%&gt;</div><div class="line"></div><div class="line">&lt;jsp:forward page=&quot;1.jsp&quot; &gt;</div><div class="line">    &lt;jsp:param name=&quot;str&quot; value=&quot;&lt;%=str%&gt;&quot; /&gt;</div><div class="line">&lt;/jsp:forward&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
-<p>（4）useBean动作元素</p>
-<ul>
-<li><p>作用：<br> useBean动作元素用来在JSP中创建并使用一个JavaBean。实际工作中常用JavaBean做组件开发，而在JSP中只需要声明并使用这个组件，这样可以较大限度地实现静态内容和动态内容的分离。</p>
-</li>
-<li><p>语法：</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;jsp:useBean id=”bean的名称” scope=”有效范围” class=”包名.类名”&gt;&lt;/useBean&gt;</div><div class="line"></div><div class="line">//useBean动作元素有id、class、scope、type和beanName五种属性</div></pre></td></tr></table></figure>
-<ul>
-<li>示例：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">//圆形实体类</div><div class="line">public class CircleBean &#123;</div><div class="line">	private double radius=1.0;</div><div class="line">	private double perimeter;</div><div class="line">	private double area;</div><div class="line">                      private double  PI=3.14;</div><div class="line">	public CircleBean()&#123;  &#125;</div><div class="line">	public void setRadius(double r)&#123;</div><div class="line">		radius=r;</div><div class="line">	&#125;</div><div class="line">	public double getRadius()&#123;</div><div class="line">		return radius;</div><div class="line">	&#125;</div><div class="line">	public double getPerimeter()&#123;</div><div class="line">		perimeter=radius*2*PI;</div><div class="line">		return perimeter;</div><div class="line">	&#125;</div><div class="line">	public double getArea()&#123;</div><div class="line">		area=radius*radius*PI;</div><div class="line">		return area;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">//jsp页面</div><div class="line"></div><div class="line">&lt;body&gt;</div><div class="line">&lt;form id=&quot;form1&quot; name=&quot;form1&quot; method=&quot;post&quot; action=&quot;&quot;&gt;</div><div class="line">  请输入圆的半径：</div><div class="line">  &lt;input type=&quot;text&quot; name=&quot;radius1&quot; /&gt;</div><div class="line">  &lt;input type=&quot;submit&quot; name=&quot;Submit&quot; value=&quot;提交&quot; /&gt;</div><div class="line">&lt;/form&gt;</div><div class="line"></div><div class="line">&lt;!-- 加载JavaBean --&gt;</div><div class="line">&lt;jsp:useBean id=&quot;cicle&quot; class=&quot;ch07.CircleBean&quot; &gt;&lt;/jsp:useBean&gt;</div><div class="line">&lt;!-- 使用setProperty属性设置JavaBean属性 --&gt;</div><div class="line">&lt;jsp:setProperty property=&quot;*&quot;  name=&quot;cicle&quot; /&gt;</div><div class="line">&lt;jsp:setProperty property=&quot; radius&quot;  name=&quot;cicle“ param=“radius1” /&gt;</div><div class="line"></div><div class="line">&lt;!-- 使用getProperty属性获取JavaBean属性 --&gt;</div><div class="line">&lt;p&gt;圆的半径：&lt;jsp:getProperty property=&quot;radius&quot; name=&quot;cicle&quot;/&gt; &lt;/p&gt;</div><div class="line">&lt;p&gt;圆的面积：&lt;jsp:getProperty property=&quot;area&quot; name=&quot;cicle&quot;/&gt; &lt;/p&gt;</div><div class="line">&lt;p&gt;圆的周长：&lt;jsp:getProperty property=&quot;perimeter&quot; name=&quot;cicle&quot;/&gt; &lt;/p&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
-<p>（5）setProperty</p>
-<ul>
-<li><p>作用：</p>
-<p> 设置Bean中的属性值。</p>
-</li>
-<li><p>语法：</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;jsp:setProperty name=&quot;bean的名称&quot; property=&quot;*&quot;  /&gt;</div><div class="line"></div><div class="line">&lt;jsp:setProperty name=&quot;bean的名称&quot; property=&quot;属性名称&quot;  /&gt;</div><div class="line"></div><div class="line">&lt;jsp:setProperty name=&quot;bean的名称&quot; property=&quot;属性名称&quot;  param=”参数名称” /&gt;</div><div class="line"></div><div class="line">&lt;jsp:setProperty name=&quot;bean的名称&quot; property=&quot;属性名称&quot;  value=”属性值” /&gt;</div></pre></td></tr></table></figure>
-<p>（6）getProperty</p>
-<ul>
-<li><p>作用：</p>
-<p> getProperty动作元素获取Bean中的属性值并将其转换为字符串，用于在页面中显示。</p>
-</li>
-</ul>
-<ul>
-<li>语法：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;jsp:getProperty name=&quot;bean的名称&quot; property=&quot;属性名称&quot;  /&gt;</div></pre></td></tr></table></figure>
-<p>（7）plugin动作元素</p>
-<ul>
-<li><p>作用：</p>
-<p> plugin动作元素用来在JSP网页中加载Java Applet或JavaBean程序组件。</p>
-</li>
-<li><p>语法：</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;jsp:plugin</div><div class="line">      type=”bean|applet”</div><div class="line">      code=”加载Java程序编译后的类名称”</div><div class="line">      codebase=” 编译后Java程序类所在目录”</div><div class="line">      name=”名称”</div><div class="line">      align=”top|right|bottom|left”</div><div class="line">      height=”加载的程序在窗口中显示的高度”</div><div class="line">      width=”加载的程序在窗口中显示的宽度”</div><div class="line">      hspace=”加载的显示区与网页其他内容的水平间隔”</div><div class="line">      vspace=”加载的显示区与网页其他内容的垂直间隔”&gt;</div><div class="line">&lt;jsp:params&gt;</div><div class="line">     &lt;jsp:param name=”参数名1” value=”参数1的值”&gt;</div><div class="line">     &lt;jsp:param name=”参数名2” value=”参数2的值”/&gt;</div><div class="line">     …</div><div class="line">     &lt;jsp:param name=”参数名n” value=”参数n的值”/&gt;</div><div class="line">&lt;/jsp:params&gt;</div><div class="line">&lt;/jsp:plugin&gt;</div></pre></td></tr></table></figure>
-<ul>
-<li>示例：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;form id=&quot;form1&quot; name=&quot;form1&quot; method=&quot;post&quot; action=&quot;&quot;&gt;</div><div class="line">  请输入圆的半径：</div><div class="line">  &lt;input type=&quot;text&quot; name=&quot;name&quot; /&gt;</div><div class="line">  &lt;input type=&quot;submit&quot; name=&quot;Submit&quot; value=&quot;提交&quot; /&gt;</div><div class="line">&lt;/form&gt;</div><div class="line">&lt;%String str=request.getParameter(&quot;radius&quot;);</div><div class="line">  if(str==null||str==&quot;&quot;)&#123;str=&quot;30&quot;; &#125;</div><div class="line">%&gt;</div><div class="line"></div><div class="line">&lt;!-- 加载Java Applet --&gt;</div><div class="line">&lt;jsp:plugin code=&quot;CircleApplet.class&quot;  type=&quot;applet&quot;  width=&quot;300&quot; height=&quot;300&quot;&gt;</div><div class="line">	&lt;jsp:params&gt;</div><div class="line">		&lt;jsp:param name=&quot;width&quot; value=&quot;300&quot;/&gt;</div><div class="line">	    &lt;jsp:param name=&quot;height&quot; value=&quot;300&quot;/&gt;</div><div class="line">	    &lt;jsp:param name=&quot;radius&quot; value=&quot;&lt;%=str%&gt;&quot;/&gt;</div><div class="line">	&lt;/jsp:params&gt;</div><div class="line">&lt;/jsp:plugin&gt;</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/10/JAVAWEB概述/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Aeris">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aeris‘s">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/09/10/JAVAWEB概述/" itemprop="url">JAVAWEB概述</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-10T10:39:00+08:00">
-                2016-09-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="http://upload-images.jianshu.io/upload_images/4731173-94775d9c6bea21e1?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="JavaWeb目录"></p>
-<p><strong>1、web应用程序</strong></p>
-<pre><code>web应用程序是一种可以通过web访问的应用程序。web应用程序最大的好处是用户值需要有浏览器即可访问应用程序，不需要再安装其他软件。
-</code></pre><p><strong>2、静态页面、动态页面</strong></p>
-<ul>
-<li>静态页面：网页中内容固定，不会更新。（HTML、CSS）</li>
-<li>动态网页：网页中内容通过程序动态显示，自动更新，有数据交互。（HTML、CSS、数据库技术、JAVA、JavaScript、XML等。）（主流动态网页脚本技术：Jsp、Asp.net、Php）</li>
-</ul>
-<p><strong>3、B/S编程语言体系结构</strong></p>
-<ul>
-<li>浏览器编程语言：HTML、CSS、JavaScript、VBScript</li>
-<li>服务器端编程语言：PHP、JSP、ASP/ASP.NET、CGI</li>
-</ul>
-<p><strong>4、搭建JAVA WEB开发环境</strong></p>
-<p>（1）安装TomCat服务器。</p>
-<pre><code>TomCat是一个开放源代码、运行servlet和JSP Web应用软件的基于Java的Web应用软件容器。【Apache开源项目】【jsp/Servlet容器】
-</code></pre><p>（2）配置环境变量：</p>
-<ul>
-<li>CATALINA_HOME:TomCat根目录     </li>
-<li>CATALINA_BASE:TomCat根目录</li>
-<li>PATH:%CATALINA_HOME%\lib;%CATALINA_BASE%\bin;</li>
-</ul>
-<p>（3）启动TomCat服务器：</p>
-<pre><code>TomCat根目录→bin→startup.bat双击运行
-</code></pre><p>【显示“Server startup in xxx ms”则表示启动成功】</p>
-<p><strong>TomCat服务器目录结构：</strong><br><img src="http://upload-images.jianshu.io/upload_images/4731173-437fc0903306ce23?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
-<p><strong>5、编写web程序</strong></p>
-<p>（1）在webApps创建项目目录</p>
-<p>（2）编写index.jsp（写入jsp代码）</p>
-<p>（3）创建WEB_INF目录</p>
-<ul>
-<li>复制examples→WEB_INF→web.xml，只保留web-app根标签即可。</li>
-<li>创建classes文件夹：存储编辑生成的字节码文件。<pre><code>创建lib文件夹：存储要用到jar包。
-</code></pre></li>
-</ul>
-<p><strong>WEB_INF目录结构</strong></p>
-<pre><code>①WEB_INF是Java的Web应用的安全目录。（即客户端无法访问，只有服务端可以访问的目录）
-
-②web.xml:  项目部署文件。（设置欢迎页面）
-例如：
-    &lt;welcom-file-list&gt;
-        &lt;welcome_file&gt;/index.jsp&lt;/welcome-file&gt;
-        &lt;welcome_file&gt;/helloworld.jsp&lt;/welcome-file&gt;
-        &lt;welcome_file&gt;/home.jsp&lt;/welcome-file&gt;
-    &lt;/welcom-file-list&gt;
-
-③classes：  存放web项目所有class文件。
-
-④lib：  存放web应用使用的jar文件。
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/03/排序、二维数组/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Aeris">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aeris‘s">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/08/03/排序、二维数组/" itemprop="url">排序、二维数组</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-03T10:39:00+08:00">
-                2016-08-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="排序："><a href="#排序：" class="headerlink" title="排序："></a>排序：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">//快速排序法、选择排序法、冒泡排序法</div><div class="line"></div><div class="line">import java.util.Arrays;</div><div class="line"></div><div class="line">public class ArraySort &#123;</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		int arr[]=&#123;5,4,3,2,1&#125;;</div><div class="line">//		//快速排序法</div><div class="line">//		System.out.println(&quot;快速排序法：&quot;);</div><div class="line">//		Arrays.sort(arr);</div><div class="line">//		for (int i = 0; i &lt; arr.length; i++) &#123;</div><div class="line">//			System.out.print(arr[i]+&quot;  &quot;);</div><div class="line">//		&#125;</div><div class="line">//		System.out.println();</div><div class="line">//		//选择排序法</div><div class="line">//		System.out.println(&quot;选择排序法：&quot;);</div><div class="line">//		for (int i = 0; i &lt; arr.length-1; i++) &#123;</div><div class="line">//			int min=i;</div><div class="line">//			for (int j = i+1; j &lt; arr.length; j++) &#123;</div><div class="line">//				if(arr[min]&gt;arr[j])&#123;</div><div class="line">//					min=j;</div><div class="line">//				&#125;</div><div class="line">//			&#125;</div><div class="line">//			if(min!=i)&#123;</div><div class="line">//				int temp=arr[i];</div><div class="line">//				arr[i]=arr[min];</div><div class="line">//				arr[min]=temp;</div><div class="line">//			&#125;</div><div class="line">//		&#125;</div><div class="line">//		for (int i = 0; i &lt; arr.length; i++) &#123;</div><div class="line">//			System.out.print(arr[i]+&quot;  &quot;);</div><div class="line">//		&#125;</div><div class="line">//		System.out.println();</div><div class="line">//		</div><div class="line">		//冒泡排序法（输出排序过程）</div><div class="line">		System.out.println(&quot;冒泡排序法：&quot;);</div><div class="line">		for (int i = 0; i &lt; arr.length-1; i++) &#123;</div><div class="line">			for (int j = 0; j &lt; arr.length-1-i; j++) &#123;</div><div class="line">				if(arr[j+1]&lt;arr[j])&#123;</div><div class="line">					int temp=0;</div><div class="line">					temp=arr[j+1];</div><div class="line">					arr[j+1]=arr[j];</div><div class="line">					arr[j]=temp;</div><div class="line">				&#125;</div><div class="line">				for (int k = 0; k &lt; arr.length; k++) &#123;</div><div class="line">					System.out.print(arr[k]+&quot; &quot;);</div><div class="line">				&#125;</div><div class="line">				System.out.println();</div><div class="line">			&#125;</div><div class="line">			System.out.println();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">//运行结果：</div><div class="line"></div><div class="line">冒泡排序法：</div><div class="line">4 5 3 2 1 </div><div class="line">4 3 5 2 1 </div><div class="line">4 3 2 5 1 </div><div class="line">4 3 2 1 5 </div><div class="line"></div><div class="line">3 4 2 1 5 </div><div class="line">3 2 4 1 5 </div><div class="line">3 2 1 4 5 </div><div class="line"></div><div class="line">2 3 1 4 5 </div><div class="line">2 1 3 4 5 </div><div class="line"></div><div class="line">1 2 3 4 5</div></pre></td></tr></table></figure>
-<hr>
-<p><strong>( 3 ) 二维数组</strong></p>
-<p>1)    定义</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">数据类型[][] 数组名</div><div class="line">数据类型 数组名[][]</div></pre></td></tr></table></figure>
-<p>2)    初始化</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">int arr[][] =&#123;&#123;1,2&#125;,&#123;1,2,3&#125;,&#123;4,5,6,7&#125;&#125;;</div><div class="line">int arr2[][]= new int[3][];</div><div class="line">int arr3[][]=new int&#123;&#123;1,2&#125;,&#123;1,2,3&#125;,&#123;4,5,6,7&#125;&#125;;</div></pre></td></tr></table></figure>
-<p>【除了定义的值，其他值是否为null？】</p>
-<p>3）遍历数组</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">for(int i=0;i&lt;arr.length;i++)&#123;</div><div class="line">	for(int j=0;j&lt;arr[i].length;j++)&#123;</div><div class="line">		System.out.println(arr[i][j]);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<hr>
-<h3 id="Test："><a href="#Test：" class="headerlink" title="Test："></a>Test：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">//1、二维数组的定义、初始化、遍历public class Test1 </div><div class="line"></div><div class="line">public class Test1 &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		//二维数组的定义</div><div class="line">		/*int arr1[][];</div><div class="line">		int [][] arr2;*/</div><div class="line">		//初始化</div><div class="line">		int arr1[][] =&#123;&#123;1,2&#125;,&#123;1,2,3&#125;,&#123;4,5,6,7&#125;&#125;;</div><div class="line">		int arr2[][]=new int[3][];</div><div class="line">		int arr3[][]=new int[][]&#123;&#123;1,2&#125;,&#123;1,2,3&#125;,&#123;4,5,6,7&#125;&#125;;</div><div class="line">		//遍历</div><div class="line">		for (int i = 0; i &lt; arr1.length; i++) &#123;</div><div class="line">			for (int j = 0; j &lt; arr1[i].length; j++) &#123;</div><div class="line">				System.out.print(arr1[i][j]+&quot;\t&quot;);</div><div class="line">			&#125;</div><div class="line">			System.out.println();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//运行结果：</div><div class="line"></div><div class="line">1	2	</div><div class="line">1	2	3	</div><div class="line">4	5	6	7</div></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//2、计算三个班级的总成绩。</div><div class="line"></div><div class="line">public class Test2 &#123;</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		</div><div class="line">		int [][]arr=&#123;&#123;66,95&#125;,&#123;98,42,75&#125;,&#123;23,86,65&#125;&#125;;</div><div class="line">		for (int i = 0; i &lt; arr.length; i++) &#123;</div><div class="line">			int total=0;</div><div class="line">			for (int j = 0; j &lt; arr[i].length; j++) &#123;</div><div class="line">				total+=arr[i][j];</div><div class="line">			&#125;</div><div class="line">			System.out.println(&quot;第&quot;+(i+1)+&quot;个班级的总成绩为：&quot;+total);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//运行结果：</div><div class="line"></div><div class="line">第1个班级的总成绩为：161</div><div class="line">第2个班级的总成绩为：215</div><div class="line">第3个班级的总成绩为：174</div></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">//3、根据输入的城市查询省份</div><div class="line"></div><div class="line">import java.util.*;</div><div class="line"></div><div class="line">public class Test3 &#123;</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		</div><div class="line">		String findCity;</div><div class="line">		boolean isFound=false;</div><div class="line">		Scanner scanner=new Scanner(System.in);</div><div class="line">		String [][] citys = &#123;</div><div class="line">				&#123;&quot;广东省&quot;,&quot;广州&quot;,&quot;深圳&quot;,&quot;珠海&quot;&#125;,</div><div class="line">				&#123;&quot;江苏省&quot;,&quot;南京&quot;,&quot;无锡&quot;,&quot;苏州&quot;&#125;,</div><div class="line">				&#123;&quot;浙江省&quot;,&quot;杭州&quot;,&quot;宁波&quot;,&quot;温州&quot;&#125;,</div><div class="line">				&#123;&quot;河南省&quot;,&quot;洛阳&quot;,&quot;南阳&quot;,&quot;信阳&quot;&#125;</div><div class="line">				&#125;;</div><div class="line">		System.out.print(&quot;请输入您要找的城市：&quot;);</div><div class="line">		findCity= scanner.next();</div><div class="line">		outer:for (int i = 0; i &lt; citys.length; i++) &#123;</div><div class="line">			for (int j = 1; j &lt; citys[i].length; j++) &#123;</div><div class="line">				if(findCity.equals(citys[i][j]))&#123;</div><div class="line">					isFound=true;</div><div class="line">					System.out.println(findCity+&quot;位于&quot;+citys[i][0]);</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		if(!isFound)&#123;</div><div class="line">			System.out.println(&quot;暂不支持该城市查询！&quot;);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//运行结果：</div><div class="line"></div><div class="line">请输入您要找的城市：深圳</div><div class="line">深圳位于广东省</div></pre></td></tr></table></figure>
-<hr>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/31/while循环、一维数组、Arrays类方法及练习/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Aeris">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aeris‘s">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/07/31/while循环、一维数组、Arrays类方法及练习/" itemprop="url">while循环、一维数组、Arrays类方法及练习</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-31T10:36:00+08:00">
-                2016-07-31
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-04T15:28:00+08:00">
+                2016-11-04
               </time>
             
 
@@ -838,7 +269,311 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">In</span>
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java进阶/" itemprop="url" rel="index">
+                    <span itemprop="name">Java进阶</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="一、Class类的使用"><a href="#一、Class类的使用" class="headerlink" title="一、Class类的使用"></a>一、Class类的使用</h4><h6 id="1-在面向对象的世界里，万事万物皆对象。类也是对象，是java-lang-Class类的实例对象。"><a href="#1-在面向对象的世界里，万事万物皆对象。类也是对象，是java-lang-Class类的实例对象。" class="headerlink" title="1.在面向对象的世界里，万事万物皆对象。类也是对象，是java.lang.Class类的实例对象。"></a>1.在面向对象的世界里，万事万物皆对象。类也是对象，是java.lang.Class类的实例对象。</h6><h6 id="2-类的表示方法："><a href="#2-类的表示方法：" class="headerlink" title="2.类的表示方法："></a>2.类的表示方法：</h6><p><img src="http://upload-images.jianshu.io/upload_images/4731173-5e2bdc03c8a44943.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-2967783c9cee87dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="二、动态加载类"><a href="#二、动态加载类" class="headerlink" title="二、动态加载类"></a>二、动态加载类</h4><h6 id="1-通过new关键字创建对象是静态加载类，在编译时刻就需要加载所有可能使用到的类。"><a href="#1-通过new关键字创建对象是静态加载类，在编译时刻就需要加载所有可能使用到的类。" class="headerlink" title="1. 通过new关键字创建对象是静态加载类，在编译时刻就需要加载所有可能使用到的类。"></a>1. 通过new关键字创建对象是静态加载类，在编译时刻就需要加载所有可能使用到的类。</h6><p><img src="http://upload-images.jianshu.io/upload_images/4731173-542649f45899c63e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-2349d7241d966d5d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h6 id="2-通过动态加载类可解决该问题。"><a href="#2-通过动态加载类可解决该问题。" class="headerlink" title="2.通过动态加载类可解决该问题。"></a>2.通过动态加载类可解决该问题。</h6><p><img src="http://upload-images.jianshu.io/upload_images/4731173-60647cbd2934c4a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h6 id="3-基本的数据类型，void关键字都存在类类型"><a href="#3-基本的数据类型，void关键字都存在类类型" class="headerlink" title="3.基本的数据类型，void关键字都存在类类型"></a>3.基本的数据类型，void关键字都存在类类型</h6><p><img src="http://upload-images.jianshu.io/upload_images/4731173-75ed2ed54cc51977.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="三、Class的基本API操作"><a href="#三、Class的基本API操作" class="headerlink" title="三、Class的基本API操作"></a>三、Class的基本API操作</h4><p><img src="http://upload-images.jianshu.io/upload_images/4731173-ade08af9a66c1161.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-da06c76e2871ea84.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-cac366010876f6b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-4d4f77016e36dd1a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<hr>
+<h4 id="四、方法的反射"><a href="#四、方法的反射" class="headerlink" title="四、方法的反射"></a>四、方法的反射</h4><p><img src="http://upload-images.jianshu.io/upload_images/4731173-6922be911a47d520.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-97511fed1c6659e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-0bfd647c94fdfe92.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="五、Java-通过反射了解集合泛型的本质"><a href="#五、Java-通过反射了解集合泛型的本质" class="headerlink" title="五、Java 通过反射了解集合泛型的本质"></a>五、Java 通过反射了解集合泛型的本质</h4><p><img src="http://upload-images.jianshu.io/upload_images/4731173-66cab6f619605100.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/01/Java注解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aeris">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aeris‘s">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/01/Java注解/" itemprop="url">Java注解</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-01T15:26:00+08:00">
+                2016-11-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java进阶/" itemprop="url" rel="index">
+                    <span itemprop="name">Java进阶</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="http://blog.csdn.net/zen99t/article/details/49506919" target="_blank" rel="external">Java注解(Annotation)详解(一)——概述及JDK自带注解 </a></p>
+<p><a href="http://blog.csdn.net/zen99t/article/details/49508447" target="_blank" rel="external">Java注解(Annotation)详解(二)——自定义注解</a></p>
+<h4 id="一、Java中常见注解"><a href="#一、Java中常见注解" class="headerlink" title="一、Java中常见注解"></a>一、Java中常见注解</h4><p>注解（Annotation），也叫元数据。一种代码级别的说明。它是JDK1.5及以后版本引入的一个特性，与类、接口、枚举是在同一个层次。它可以声明在包、类、字段、方法、局部变量、方法参数等的前面，用来对这些元素进行说明，注释。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-12b1a8d0f33d5ed5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>@Override 表示当前方法覆盖了父类的方法<br>@Deprecation 表示方法已经过时,方法上有横线，使用时会有警告。<br>@SuppviseWarnings 表示关闭一些警告信息(通知java编译器忽略特定的编译警告)</p>
+<h4 id="二、注解分类"><a href="#二、注解分类" class="headerlink" title="二、注解分类"></a>二、注解分类</h4><p><img src="http://upload-images.jianshu.io/upload_images/4731173-b227db5b11f0458b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="三、自定义注解"><a href="#三、自定义注解" class="headerlink" title="三、自定义注解"></a>三、自定义注解</h4><h6 id="1-自定义注解的语法要求"><a href="#1-自定义注解的语法要求" class="headerlink" title="1.自定义注解的语法要求"></a>1.自定义注解的语法要求</h6><p><img src="http://upload-images.jianshu.io/upload_images/4731173-4d0647e9f0b16a01.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-8ca68902da87c188.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h6 id="2-注解的注解（元注解）"><a href="#2-注解的注解（元注解）" class="headerlink" title="2.注解的注解（元注解）"></a>2.注解的注解（元注解）</h6><h6 id="3-使用自定义注解"><a href="#3-使用自定义注解" class="headerlink" title="3.使用自定义注解"></a>3.使用自定义注解</h6><p>参照 <a href="http://blog.csdn.net/zen99t/article/details/49508447" target="_blank" rel="external">Java注解(Annotation)详解(二)——自定义注解</a></p>
+<h6 id="4-解析注解"><a href="#4-解析注解" class="headerlink" title="4.解析注解"></a>4.解析注解</h6><h4 id="四、注解应用实战"><a href="#四、注解应用实战" class="headerlink" title="四、注解应用实战"></a>四、注解应用实战</h4>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/29/Cookies/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aeris">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aeris‘s">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/29/Cookies/" itemprop="url">Cookie，与session区别</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-29T11:06:00+08:00">
+                2016-10-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -881,73 +616,15 @@
       
         
           
-            <p><strong>9、循环结构</strong><br>循环结构就是在满足某种条件的情况下不断重复的执行某段代码，我们需要在适当的时候将条件变成假以此来结束循环，避免死循环。</p>
-<p><strong>While循环</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">while(条件)&#123;</div><div class="line">	语句;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>While循环也是可以省略括号()的，但不建议。</li>
-<li><p>While循环一定要保证循环有变为false的时候，避免造成死循环。<br>##二、数组<br><strong>1、数组定义</strong></p>
-</li>
-<li><p>数组是一种类型，属于引用数据类型</p>
-</li>
-<li>数组中的所有元素数据类型要一样</li>
-<li>Java中数组既可以存储基本数据类型也可以存储引用数据类型。</li>
-<li>数组中也可以放自定义的数据类型（可以包含父类和子类，因为父类和子类其实是一种数据类型）</li>
-<li>数组在内存中是一块连续的空间。</li>
-<li>数组的空间要在定义的时候被确定，一旦确定不能改变，即使数组中的数据被清楚数组在内存中的空间依然被保存依然属于数组，数组长度依然不变。</li>
-</ul>
-<p><strong>（2）    一维数组</strong></p>
-<p>1)定义</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">①int  arr1[]=new int[5];</div><div class="line">②int  arr2[]=&#123;1，2，3&#125;;</div><div class="line">③int  arr3[]=new int[]&#123;1,2,3&#125;;</div></pre></td></tr></table></figure>
-<p>2)获取取长度：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">System.out.println(arr3.length);</div></pre></td></tr></table></figure>
-<p>　　① java中的<strong>length</strong>属性是针对数组说的,比如说你声明了一个数组,想知道这个数组的长度则用到了length这个属性.<br>　　②java中的<strong>length()</strong>方法是针对字符串String说的,如果想看这个字符串的长度则用到length()这个方法.<br>　　③java中的<strong>size()</strong>方法是针对泛型集合说的,如果想看这个泛型有多少个元素,就调用此方法来查看!</p>
-<p>3)遍历数组：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">for(int  i=0;i&lt;arr2.length;i++)&#123;</div><div class="line">	System.out.println(arr2[i]);</div><div class="line">&#125;</div><div class="line"></div><div class="line">//增强for循环</div><div class="line">for(int  a:arr)&#123;</div><div class="line">	System.out.println(a);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>4)初始化</p>
-<ul>
-<li><p>静态初始化：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">①int  arr1[]=new int[5];</div><div class="line">②int  arr2[]=&#123;1，2，3&#125;;</div><div class="line">③int  arr3[]=new int[]&#123;1,2,3&#125;;</div></pre></td></tr></table></figure>
-</li>
-<li><p>动态初始化：  </p>
-<ul>
-<li>byte、short、int、long默认为0；</li>
-<li>float、double默认为0.0；</li>
-<li>char默认为\u00001,也就是空格；</li>
-<li>boolean默认为false；</li>
-<li>引用数据类型默认为null；</li>
-</ul>
-</li>
-</ul>
-<p>5)易错点</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">int  arr[]= new int[2]&#123;1,2&#125;；  //错误</div></pre></td></tr></table></figure>
-<p>6）Array类常用方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">import java.util.Arrays;</div><div class="line"></div><div class="line">public class ArrayExercise &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		int arr1[]=&#123;1,2&#125;;</div><div class="line">		int arr2[]=&#123;11,2,33,1,5&#125;;</div><div class="line">		String []season=&#123;&quot;春&quot;,&quot;夏&quot;,&quot;秋&quot;,&quot;冬&quot;&#125;;</div><div class="line">		arr1=arr2; //数组赋值</div><div class="line">		//遍历数组</div><div class="line">		System.out.println(&quot;1、遍历arr1：&quot;);</div><div class="line">		for(int i:arr1)&#123;</div><div class="line">			System.out.print(i+&quot;\t&quot;);</div><div class="line">		&#125;</div><div class="line">		System.out.println();</div><div class="line">		</div><div class="line">		//Arrays类的方法</div><div class="line">		//判断两数组是否相等</div><div class="line">		System.out.println(&quot;2、判断arr1、arr2是否相等：&quot;);</div><div class="line">		System.out.println(Arrays.equals(arr1, arr2));</div><div class="line">		</div><div class="line">		//快速排序法</div><div class="line">		System.out.println(&quot;3、快速排序法：&quot;);</div><div class="line">		Arrays.sort(arr2);</div><div class="line">		for(int i:arr2)&#123;</div><div class="line">			System.out.print(i+&quot;\t&quot;);</div><div class="line">		&#125;</div><div class="line">		System.out.println();</div><div class="line">		</div><div class="line">		//产生数组的string表示</div><div class="line">		System.out.println(&quot;4、产生数组的string表示：&quot;);</div><div class="line">		System.out.println(Arrays.deepToString(season));</div><div class="line">		System.out.println(Arrays.toString(arr2));</div><div class="line">		//搜索指定数组的指定对象的索引</div><div class="line">		System.out.println(&quot;5、搜索指定数组的指定对象的索引:&quot;);</div><div class="line">		Arrays.sort(arr2);</div><div class="line">		System.out.println(Arrays.binarySearch(arr2, 2));</div><div class="line">		//复制数组方法</div><div class="line">		System.out.println(&quot;6、复制数组：&quot;);</div><div class="line">		int arr3[]=Arrays.copyOf(arr2, 3);</div><div class="line">		for (int i = 0; i &lt; arr3.length; i++) &#123;</div><div class="line">			System.out.print(arr3[i]+&quot;\t&quot;);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//运行结果：</div><div class="line"></div><div class="line">1、遍历arr1：</div><div class="line">11	2	33	1	5	</div><div class="line">2、判断arr1、arr2是否相等：</div><div class="line">true</div><div class="line">3、快速排序法：</div><div class="line">1	2	5	11	33	</div><div class="line">4、产生数组的string表示：</div><div class="line">[春, 夏, 秋, 冬]</div><div class="line">[1, 2, 5, 11, 33]</div><div class="line">5、搜索指定数组的指定对象的索引:</div><div class="line">1</div><div class="line">6、复制数组：</div><div class="line">1	2	5</div></pre></td></tr></table></figure>
-<hr>
-<h3 id="Test"><a href="#Test" class="headerlink" title="Test:"></a>Test:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">//1、数组定义、获取长度、遍历、初始化练习</div><div class="line"></div><div class="line">public class textArr &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		//数组的定义</div><div class="line">		int[] arr1=new int[5];</div><div class="line">		int[] arr2=&#123;1,2,3&#125;;</div><div class="line">		int[] arr3=new int[]&#123;1,2,3,4&#125;;</div><div class="line">		String[] strs=new String[3];</div><div class="line">		//获取数组长度：</div><div class="line">		System.out.println(&quot;arr3数组的长度为：&quot;+arr3.length);</div><div class="line">		//遍历数组</div><div class="line">		System.out.println(&quot;arr2数组的内容为：&quot;);</div><div class="line">		for(int i=0;i&lt;arr2.length;i++)&#123;</div><div class="line">			//访问数组元素的方式为：arr[i]</div><div class="line">			System.out.print(arr2[i]+&quot;\t&quot;);</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		//int数组动态初始化</div><div class="line">		System.out.println();</div><div class="line">		System.out.println(&quot;arr1数组的内容为：&quot;);</div><div class="line">		for(int i=0;i&lt;arr1.length;i++)&#123;</div><div class="line">			System.out.print(arr1[i]+&quot;\t&quot;);</div><div class="line">		&#125;</div><div class="line">		//String数组动态初始化</div><div class="line">		System.out.println();</div><div class="line">		System.out.println(&quot;strs数组的内容为：&quot;);</div><div class="line">		for(int i=0;i&lt;strs.length;i++)&#123;</div><div class="line">			System.out.print(strs[i]+&quot;\t&quot;);</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//运行结果：</div><div class="line"></div><div class="line">arr3数组的长度为：4</div><div class="line">arr2数组的内容为：</div><div class="line">1	2	3	</div><div class="line">arr1数组的内容为：</div><div class="line">0	0	0	0	0	</div><div class="line">strs数组的内容为：</div><div class="line">null	null	null</div></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">//2、动态给数组赋值、遍历、增强for循环</div><div class="line"></div><div class="line">import java.util.*;</div><div class="line"></div><div class="line">public class ArrayInta &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		int[] arr=new int[5];</div><div class="line">		//动态给数组赋值</div><div class="line">		Scanner scanner = new Scanner(System.in);</div><div class="line">		for(int i=0;i&lt;arr.length;i++)&#123;</div><div class="line">			System.out.print(&quot;请给数组的第&quot;+(i+1)+&quot;个元素赋值：&quot;);</div><div class="line">			arr[i]=scanner.nextInt();</div><div class="line">		&#125;</div><div class="line">		//遍历数组元素</div><div class="line">		System.out.println(&quot;遍历数组元素：&quot;);</div><div class="line">		for(int i=0;i&lt;arr.length;i++)&#123;</div><div class="line">			System.out.print(arr[i]+&quot;\t&quot;);</div><div class="line">		&#125;</div><div class="line">		//增强for循环</div><div class="line">		System.out.println();</div><div class="line">		System.out.println(&quot;增强for循环遍历：&quot;);</div><div class="line">		for(int a:arr)&#123;</div><div class="line">			System.out.print(a+&quot;\t&quot;);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//运行结果：</div><div class="line"></div><div class="line">请给数组的第1个元素赋值：2</div><div class="line">请给数组的第2个元素赋值：	5</div><div class="line">请给数组的第3个元素赋值：	7</div><div class="line">请给数组的第4个元素赋值：	1</div><div class="line">请给数组的第5个元素赋值：	3</div><div class="line">遍历数组元素：</div><div class="line">2	5	7	1	3	</div><div class="line">增强for循环遍历：</div><div class="line">2	5	7	1	3</div></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//3、倒序输出一组char类型的数组。</div><div class="line"></div><div class="line">public class ArrayReverse &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		char []cha=&#123;&apos;d&apos;,&apos;o&apos;,&apos;g&apos;&#125;;</div><div class="line">		System.out.print(&quot;数组cha&#123;&apos;d&apos;,&apos;o&apos;,&apos;g&apos;&#125;的倒序为：&quot;);</div><div class="line">		for(int i=cha.length;i&gt;0;i--)&#123;</div><div class="line">			System.out.print(cha[i-1]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//运行结果：</div><div class="line"></div><div class="line">数组cha&#123;&apos;d&apos;,&apos;o&apos;,&apos;g&apos;&#125;的倒序为：god</div></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//4、求数组&#123;1,4,2,6,7,3,5&#125;和值为8的数对</div><div class="line"></div><div class="line">public class MateNum &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		int[] arr=&#123;1,4,2,6,7,3,5&#125;;</div><div class="line">		int n=8;</div><div class="line">		System.out.println(&quot;数组&#123;1,4,2,6,7,3,5&#125;和值为8的数对为&quot;);</div><div class="line">		for(int i=0;i&lt;arr.length;i++)&#123;</div><div class="line">			System.out.print(&quot;&#123;&quot;+arr[i]+&quot;,&quot;+n+&quot;&#125;&quot;+&quot;\t&quot;);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//运行结果：</div><div class="line"></div><div class="line">数组&#123;1,4,2,6,7,3,5&#125;和值为8的数对为</div><div class="line">&#123;1,8&#125;	&#123;4,8&#125;	&#123;2,8&#125;	&#123;6,8&#125;	&#123;7,8&#125;	&#123;3,8&#125;	&#123;5,8&#125;</div></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">//5、动态赋值，找出数组中奇数出现的次数.</div><div class="line"></div><div class="line">import java.util.*;</div><div class="line"></div><div class="line">public class OddNum &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		int sum;</div><div class="line">		int oddNum=0;</div><div class="line">		//动态给数组赋值</div><div class="line">		Scanner scanner = new Scanner(System.in);</div><div class="line">		System.out.print(&quot;请输入数组的长度:&quot;);</div><div class="line">		sum=scanner.nextInt();</div><div class="line">		int[] arr=new int[sum];</div><div class="line">		for(int i=0;i&lt;arr.length;i++)&#123;</div><div class="line">			System.out.print(&quot;请给数组的第&quot;+(i+1)+&quot;个元素赋值：&quot;);</div><div class="line">			arr[i]=scanner.nextInt();</div><div class="line">		&#125;</div><div class="line">		//遍历数组</div><div class="line">		System.out.println(&quot;您输入的数组为：&quot;);</div><div class="line">		for(int i=0;i&lt;arr.length;i++)&#123;</div><div class="line">			System.out.print(arr[i]+&quot;\t&quot;);</div><div class="line">		&#125;</div><div class="line">		System.out.println();</div><div class="line">		//计算奇数个数</div><div class="line">		System.out.print(&quot;您输入的数组中奇数出现的次数为：&quot;);</div><div class="line">		for(int i=0;i&lt;arr.length;i++)&#123;</div><div class="line">			if(arr[i]%2==1)&#123;</div><div class="line">				oddNum++;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		System.out.print(oddNum);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//运行结果:</div><div class="line"></div><div class="line">请输入数组的长度:5</div><div class="line">请给数组的第1个元素赋值：	2</div><div class="line">请给数组的第2个元素赋值：	5</div><div class="line">请给数组的第3个元素赋值：	3</div><div class="line">请给数组的第4个元素赋值：	7</div><div class="line">请给数组的第5个元素赋值：	4</div><div class="line">您输入的数组为：</div><div class="line">2	5	3	7	4	</div><div class="line">您输入的数组中奇数出现的次数为：3</div></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">//6、给定一个数组a打印出所有元素的m位随机组合。</div><div class="line"></div><div class="line">public class RandmComb &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		int[] a=&#123;1,2,3,4,5&#125;;</div><div class="line">		int m=3;</div><div class="line">		System.out.println(&quot;数组a=&#123;1,2,3,4,5&#125;的所有3位随机组合为：&quot;);</div><div class="line">		for(int i=0;i&lt;a.length;i++)&#123;</div><div class="line">			for(int j=i+1;j&lt;a.length;j++)&#123;</div><div class="line">				for(int k=j+1;k&lt;a.length;k++)&#123;</div><div class="line">					System.out.print(a[i]+&quot; &quot;+a[j]+&quot; &quot;+a[k]);</div><div class="line">					System.out.print(&quot;,&quot;);</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		System.out.println();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//运行结果：</div><div class="line"></div><div class="line">数组a=&#123;1,2,3,4,5&#125;的所有3位随机组合为：</div><div class="line">1 2 3,1 2 4,1 2 5,1 3 4,1 3 5,1 4 5,</div><div class="line">2 3 4,2 3 5,2 4 5,</div><div class="line">3 4 5,</div></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">//7、输出两个数组中的相同元素。</div><div class="line"></div><div class="line">import java.util.*;</div><div class="line"></div><div class="line">public class Same &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		int arr1[]=&#123;2,4,6,8,10&#125;;</div><div class="line">		int arr2[]=&#123;4,8,10,16,20&#125;;</div><div class="line">		System.out.println(&quot;两个数组的相同元素为：&quot;);</div><div class="line">		if(arr1.length&gt;=arr2.length)&#123;</div><div class="line">			for(int i=0;i&lt;arr1.length;i++)&#123;</div><div class="line">				for(int j=0;j&lt;arr2.length;j++)&#123;</div><div class="line">					if(arr1[i]==arr2[j])&#123;</div><div class="line">						System.out.println(arr1[i]);</div><div class="line">					&#125;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;else&#123;</div><div class="line">			for(int i=0;i&lt;arr2.length;i++)&#123;</div><div class="line">				for(int j=0;j&lt;arr1.length;j++)&#123;</div><div class="line">					if(arr1[i]==arr2[j])&#123;</div><div class="line">						System.out.println(arr1[i]);</div><div class="line">					&#125;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//运行结果：</div><div class="line"></div><div class="line">两个数组的相同元素为：</div><div class="line">4</div><div class="line">8</div><div class="line">10</div></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">//8、动态录入成绩并计算班级平均分。</div><div class="line"></div><div class="line">import java.util.*;</div><div class="line"></div><div class="line">public class ScoreAvg &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		Scanner scanner=new Scanner(System.in);</div><div class="line">		int StudentSum;</div><div class="line">		double ScoreSum=0;</div><div class="line">		System.out.println(&quot;***********成绩录入系统***********&quot;);</div><div class="line">		System.out.print(&quot;请输入学生总数：&quot;);</div><div class="line">		StudentSum=scanner.nextInt();</div><div class="line">		double[] score=new double[StudentSum];</div><div class="line">		//成绩录入</div><div class="line">		for(int i=0;i&lt;score.length;i++)&#123;</div><div class="line">			System.out.print(&quot;请输入第&quot;+(i+1)+&quot;个学生的成绩:&quot;);</div><div class="line">			score[i]=scanner.nextDouble();</div><div class="line">		&#125;</div><div class="line">		//计算总成绩：</div><div class="line">		for(int i=0;i&lt;score.length;i++)&#123;</div><div class="line">			ScoreSum+=score[i];</div><div class="line">		&#125;</div><div class="line">		System.out.println(&quot;班级成绩平均分为：&quot;+ScoreSum/StudentSum);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//运行结果：</div><div class="line"></div><div class="line">***********成绩录入系统***********</div><div class="line">请输入学生总数：3</div><div class="line">请输入第1个学生的成绩:	98</div><div class="line">请输入第2个学生的成绩:	86</div><div class="line">请输入第3个学生的成绩:	79</div><div class="line">班级成绩平均分为：87.66666666666667</div></pre></td></tr></table></figure>
+            <h5 id="由于Http协议的无状态性，服务器无法保存用户状态，因此需要用到session和cookie两大机制。"><a href="#由于Http协议的无状态性，服务器无法保存用户状态，因此需要用到session和cookie两大机制。" class="headerlink" title="由于Http协议的无状态性，服务器无法保存用户状态，因此需要用到session和cookie两大机制。"></a>由于Http协议的无状态性，服务器无法保存用户状态，因此需要用到session和cookie两大机制。</h5><p><img src="http://upload-images.jianshu.io/upload_images/4731173-191c5213a5e83db6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
+<h4 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h4><p><img src="http://upload-images.jianshu.io/upload_images/4731173-e1abe0955c949920.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-cabc0256c697c76e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-44a1073d01956622.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-e48e7cb14ef89708.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
+<h4 id="中文乱码问题："><a href="#中文乱码问题：" class="headerlink" title="中文乱码问题："></a>中文乱码问题：</h4><h6 id="编码："><a href="#编码：" class="headerlink" title="编码："></a>编码：</h6><p><img src="http://upload-images.jianshu.io/upload_images/4731173-79eee725cec0298d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
+<h6 id="解码："><a href="#解码：" class="headerlink" title="解码："></a>解码：</h6><p><img src="http://upload-images.jianshu.io/upload_images/4731173-0eba6a108b91108e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-05727bb639f3acc7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
+
           
         
       
@@ -995,7 +672,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/29/JAVA基础语法【for循环、猜数字游戏】/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/27/安装Oracle无法在指示的节点上执行物理内存检查/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Aeris">
@@ -1014,7 +691,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/07/29/JAVA基础语法【for循环、猜数字游戏】/" itemprop="url">for循环、猜数字游戏</a></h1>
+                <a class="post-title-link" href="/2016/10/27/安装Oracle无法在指示的节点上执行物理内存检查/" itemprop="url">安装Oracle无法在指示的节点上执行物理内存检查</a></h1>
         
 
         <div class="post-meta">
@@ -1024,10 +701,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-29T10:35:00+08:00">
-                2016-07-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-27T11:14:00+08:00">
+                2016-10-27
               </time>
             
 
@@ -1045,7 +722,157 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">In</span>
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/问题解决/" itemprop="url" rel="index">
+                    <span itemprop="name">问题解决</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在自己电脑上装Oracle，出现如下错误：<br>PRVF-7531 : 无法在节点 “xxxxxxxxx” 上执行物理内存检查 - Cause: 无法在指示的节点上执行物理内存检查。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-889b9b6102e02cd9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-efb54d951b3dd59e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>解决方案，有如下几种：</p>
+<p>（1）检查安装程序是否有足够权限，如果在Windows下运行要用“Run as Administrator”。但是，同学的电脑是XP。。</p>
+<p>（2）检查硬盘空间和物理内存、交换空间的大小是否满足安装要求的最小值。经检查，同学的这项操作没有错。。</p>
+<p>（3）打开系统盘（C盘）的默认共享：<br>在“命令提示符下”键入 “net share c$=c:” 回车。但是，提示已经打开共享。。</p>
+<p>（4）在这一步的上一步，修改默认字符集为：“Unicode”。使用这一方法，成功解决这个错误。。。</p>
+<p>（5）当然，也可以直接忽略这些错误。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/25/HTML-DOM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aeris">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aeris‘s">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/25/HTML-DOM/" itemprop="url">HTML DOM</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-25T11:02:00+08:00">
+                2016-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -1088,27 +915,26 @@
       
         
           
-            <p>9、for循环</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">for (初始值；条件；变化)&#123;</div><div class="line">	语句；</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//for语句示例：</div><div class="line">//输出10遍“我爱你”</div><div class="line"></div><div class="line">for(int i=0;i&lt;10;i++)&#123;</div><div class="line">	System.out.println(“我爱你”);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<hr>
-<p>##练习</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">//猜数字游戏。</div><div class="line"></div><div class="line">import java.util.*;</div><div class="line"></div><div class="line">public class number &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		Scanner scanner=new Scanner(System.in);</div><div class="line">		int n=1;</div><div class="line">		int guessNumber;</div><div class="line">		//产生一个随机数</div><div class="line">		int random=(int)(Math.random()*100+1);</div><div class="line">		</div><div class="line">		while(true)&#123;</div><div class="line">			System.out.print(&quot;请输入您猜测的数字：&quot;);</div><div class="line">			guessNumber =scanner.nextInt();</div><div class="line">			if(guessNumber&gt;random)&#123;</div><div class="line">				System.out.println(&quot;第&quot;+n+&quot;次猜大了！继续猜吧！\n&quot;);</div><div class="line">				n++;</div><div class="line">			&#125;else if(guessNumber&lt;random)</div><div class="line">			&#123;</div><div class="line">				System.out.println(&quot;第&quot;+n+&quot;次猜小了！继续猜吧！\n&quot;);</div><div class="line">				n++;</div><div class="line">			&#125;else&#123;</div><div class="line">				System.out.println(&quot;恭喜您用了&quot;+n+&quot;次，猜对了!&quot;);</div><div class="line">				break;</div><div class="line">			&#125;	</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">//运行结果：</div><div class="line"></div><div class="line">请输入您猜测的数字：10</div><div class="line">第1次猜小了！继续猜吧！</div><div class="line"></div><div class="line">请输入您猜测的数字：50</div><div class="line">第2次猜小了！继续猜吧！</div><div class="line"></div><div class="line">请输入您猜测的数字：90</div><div class="line">第3次猜大了！继续猜吧！</div><div class="line"></div><div class="line">请输入您猜测的数字：70</div><div class="line">第4次猜小了！继续猜吧！</div><div class="line"></div><div class="line">请输入您猜测的数字：80</div><div class="line">第5次猜小了！继续猜吧！</div><div class="line"></div><div class="line">请输入您猜测的数字：85</div><div class="line">第6次猜小了！继续猜吧！</div><div class="line"></div><div class="line">请输入您猜测的数字：88</div><div class="line">第7次猜大了！继续猜吧！</div><div class="line"></div><div class="line">请输入您猜测的数字：86</div><div class="line">第8次猜小了！继续猜吧！</div><div class="line"></div><div class="line">请输入您猜测的数字：87</div><div class="line">恭喜您用了9次，猜对了!</div></pre></td></tr></table></figure>
-<hr>
-<p>##总结：</p>
+            <p><strong>HTML DOM </strong>定义了访问和操作 HTML 文档的标准方法。</p>
+<p><strong>DOM </strong>是 Document Object Model（文档对象模型）。定义了访问 HTML 和 XML 文档的标准。</p>
+<p>W3C DOM 标准被分为 3 个不同的部分：</p>
 <ul>
-<li>产生一个1~100范围内的随机数:</li>
+<li>核心 DOM - 针对任何结构化文档的标准模型</li>
+<li>XML DOM - 针对 XML 文档的标准模型。XML DOM 定义了所有 XML 元素的对象和属性，以及访问它们的方法。</li>
+<li>HTML DOM - 针对 HTML 文档的标准模型。HTML DOM 定义了所有 HTML 元素的对象和属性，以及访问它们的方法。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">int  random=(int)(Math.random()*100+1);</div></pre></td></tr></table></figure>
+<p><strong>在 HTML DOM 中，所有事物都是节点。DOM 是被视为节点树的 HTML。通过 HTML DOM，树中的所有节点均可通过 JavaScript 进行访问。所有 HTML 元素（节点）均可被修改，也可以创建或删除节点。</strong></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-725791359b15ab57.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="HTML-DOM方法"><a href="#HTML-DOM方法" class="headerlink" title="HTML DOM方法"></a>HTML DOM方法</h4><p>一些常用的 HTML DOM <strong>方法</strong>：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-efe84876f8ff560c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
+<p>一些常用的 HTML DOM <strong>属性</strong>:</p>
 <ul>
-<li>一个完整JAVA程序包含的内容：</li>
+<li>innerHTML - 获取或替换 HTML 元素的内容</li>
+<li>parentNode - 获取节点（元素）的父节点</li>
+<li>childNodes - 获取节点（元素）的子节点</li>
+<li>attributes - 获取节点（元素）的属性节点</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public class Demo&#123;</div><div class="line">    public Demo()&#123;&#125;//构造方法</div><div class="line">    //自定义方法</div><div class="line">    //自定义变量</div><div class="line">    </div><div class="line">    public static void main(String[] args) &#123; //main方法入口</div><div class="line">        System.out.println(&quot;这就是一个完整的java程序&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>注释的快捷键：ctrl+shift+/</li>
-</ul>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">//创建 HTML 内容</div><div class="line">    document.getElementById(&quot;p1&quot;).innerHTML=&quot;New text!&quot;;   </div><div class="line"></div><div class="line">//改变 CSS 样式</div><div class="line">    document.getElementById(&quot;p2&quot;).style.color=&quot;blue&quot;;</div><div class="line"></div><div class="line">//改变 HTML 属性</div><div class="line"></div><div class="line">//创建新的 HTML 元素</div><div class="line">    var para=document.createElement(&quot;p&quot;);</div><div class="line">    var node=document.createTextNode(&quot;This is new.&quot;);</div><div class="line">    para.appendChild(node);</div><div class="line">    var element=document.getElementById(&quot;d1&quot;);</div><div class="line">    element.appendChild(para);</div><div class="line"></div><div class="line">//删除已有的 HTML 元素</div><div class="line">    &lt;div id=&quot;div1&quot;&gt;</div><div class="line">        &lt;p id=&quot;p1&quot;&gt;This is a paragraph.&lt;/p&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">        var parent=document.getElementById(&quot;div1&quot;);</div><div class="line">        var child=document.getElementById(&quot;p1&quot;);</div><div class="line">        parent.removeChild(child);</div><div class="line">    &lt;/script&gt;</div><div class="line">                或者</div><div class="line">    var child=document.getElementById(&quot;p1&quot;);</div><div class="line">    child.parentNode.removeChild(child);</div><div class="line"></div><div class="line">//改变事件（处理程序）</div><div class="line">    &lt;script&gt;</div><div class="line">        function ChangeBackground()&#123;</div><div class="line">            document.body.style.backgroundColor=&quot;lavender&quot;;</div><div class="line">        &#125;</div><div class="line">    &lt;/script&gt;</div><div class="line">    &lt;input type=&quot;button&quot; onclick=&quot;ChangeBackground()&quot; </div><div class="line">        value=&quot;Change background color&quot; /&gt;</div></pre></td></tr></table></figure>
           
         
       
@@ -1156,7 +982,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/28/练习02/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/22/HTML/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Aeris">
@@ -1175,7 +1001,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/07/28/练习02/" itemprop="url">练习02</a></h1>
+                <a class="post-title-link" href="/2016/10/22/HTML/" itemprop="url">HTML知识点</a></h1>
         
 
         <div class="post-meta">
@@ -1185,10 +1011,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-28T18:33:00+08:00">
-                2016-07-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-22T10:57:00+08:00">
+                2016-10-22
               </time>
             
 
@@ -1206,7 +1032,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">In</span>
+                <span class="post-meta-item-text">in</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -1249,441 +1075,32 @@
       
         
           
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">//实现简易登陆系统。</div><div class="line"></div><div class="line">import java.util.*;</div><div class="line"></div><div class="line">public class login &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		System.out.println(&quot;* * * * * * * * * * * 欢迎使用购物管理系统6.0版* * * * * * * * * * * \n&quot;);</div><div class="line">		System.out.println(&quot;\t\t\t1、登陆系统\n&quot;);</div><div class="line">		System.out.println(&quot;\t\t\t2、退出\n&quot;);</div><div class="line">		System.out.println(&quot;* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n&quot;);</div><div class="line">		System.out.print(&quot;请选择对应操作：&quot;);</div><div class="line">		</div><div class="line">		//从键盘获取信息，并执行相应操作.</div><div class="line">		Scanner scanner=new Scanner(System.in);</div><div class="line">		String name;</div><div class="line">		String password;</div><div class="line">		if(scanner.hasNextInt()==true)&#123;</div><div class="line">			int n = scanner.nextInt();</div><div class="line">			switch(n)&#123;</div><div class="line">				case 1:</div><div class="line">					System.out.print(&quot;请输入用户名：&quot;);</div><div class="line">					name=scanner.next();</div><div class="line">					System.out.print(&quot;请输入密码：&quot;);</div><div class="line">					password=scanner.next();</div><div class="line">					if(name.equals(&quot;hmh&quot;)&amp;&amp;password.equals(&quot;123123&quot;))&#123;</div><div class="line">						System.out.println(&quot;登陆成功！&quot;);</div><div class="line">					&#125;else&#123;</div><div class="line">						System.out.println(&quot;用户名或密码错误，请重新输入！&quot;);</div><div class="line">					&#125;</div><div class="line">						break;</div><div class="line">				case 2:</div><div class="line">					System.out.println(&quot;谢谢使用！&quot;);</div><div class="line">					break;</div><div class="line">				default:</div><div class="line">					System.out.println(&quot;输入错误。&quot;);</div><div class="line">					break;</div><div class="line">			&#125; </div><div class="line">		&#125;else&#123;</div><div class="line">			System.out.println(&quot;请输入正确的数字！&quot;);</div><div class="line">			&#125;	</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//运行结果：</div><div class="line">* * * * * * 欢迎使用购物管理系统6.0版* * * * * * </div><div class="line"></div><div class="line">			1、登陆系统</div><div class="line"></div><div class="line">			2、退出</div><div class="line"></div><div class="line">* * * * * * * * * * * * * * * * * * * * * * * </div><div class="line"></div><div class="line">请选择对应操作：1</div><div class="line">请输入用户名：hmh</div><div class="line">请输入密码：123123</div><div class="line">登陆成功！</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/28/JAVA基础语法【if语句、switch语句】/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Aeris">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aeris‘s">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/07/28/JAVA基础语法【if语句、switch语句】/" itemprop="url">if语句、switch语句</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-28T10:31:00+08:00">
-                2016-07-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>【  <strong>判断字符串相等</strong>，有两种方式：</p>
-<p>　　　①    字段.equals(“值”)      //内容比较</p>
-<p>　　　②    字段==“值”              //内存地址比较          】</p>
-<p><strong>8、流程控制</strong><br>(1)if语句</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">if(条件)&#123;</div><div class="line">	语句1;</div><div class="line">&#125;else&#123;</div><div class="line">	语句2;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">//if语句练习</div><div class="line">//输入java和音乐成绩，用条件语句判断并输出响应。</div><div class="line"></div><div class="line">import java.util.*;</div><div class="line"></div><div class="line">public class text1 &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		Scanner scanner=new Scanner(System.in);</div><div class="line">		System.out.print(&quot;请输入你的Java成绩：&quot;);</div><div class="line">		double javaScore =scanner.nextDouble();</div><div class="line">		System.out.print(&quot;请输入你的音乐成绩：&quot;);</div><div class="line">		double musicScore =scanner.nextDouble();</div><div class="line">		if(javaScore&gt;90&amp;&amp;musicScore&gt;80||javaScore==100&amp;&amp;musicScore&gt;70)&#123;</div><div class="line">			System.out.println(&quot;很棒么么哒~&quot;);</div><div class="line">		&#125;else&#123;</div><div class="line">			System.out.println(&quot;继续努力~&quot;);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">//if 、else if嵌套语句练习</div><div class="line">//输入成绩，输出成绩等级。</div><div class="line"></div><div class="line">import java.util.*;</div><div class="line"></div><div class="line">public class text2 &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		Scanner scanner=new Scanner(System.in);</div><div class="line">		System.out.print(&quot;请输入你的成绩：&quot;);</div><div class="line">		double score=scanner.nextDouble();</div><div class="line">		if(score&gt;100||score&lt;0)&#123;</div><div class="line">			System.out.println(&quot;输入成绩有误&quot;);</div><div class="line">		&#125;else if(score==100)&#123;</div><div class="line">			System.out.println(&quot;满分&quot;);</div><div class="line">		&#125;else if(score&gt;=90&amp;&amp;score&lt;100)&#123;</div><div class="line">			System.out.println(&quot;优秀&quot;);</div><div class="line">		&#125;else if(score&gt;=80&amp;&amp;score&lt;90)&#123;</div><div class="line">			System.out.println(&quot;良好&quot;);</div><div class="line">		&#125;else if(score&gt;=70&amp;&amp;score&lt;80)&#123;</div><div class="line">			System.out.println(&quot;中等&quot;);</div><div class="line">		&#125;else if(score&gt;=60&amp;&amp;score&lt;70)&#123;</div><div class="line">			System.out.println(&quot;及格&quot;);</div><div class="line">		&#125;else if(score&gt;=0&amp;&amp;score&lt;60)&#123;</div><div class="line">			System.out.println(&quot;补考&quot;);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">//if语句嵌套</div><div class="line">//输入成绩和性别，判断是否能进入男子/女子决赛。</div><div class="line"></div><div class="line">import java.util.*;</div><div class="line"></div><div class="line">public class text4 &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		</div><div class="line">		double time;</div><div class="line">		String sex;</div><div class="line">		Scanner scanner=new Scanner(System.in);</div><div class="line">		System.out.print(&quot;请输入您的成绩：&quot;);</div><div class="line">		time=scanner.nextDouble();</div><div class="line">		if(time&lt;10.0)&#123;</div><div class="line">			System.out.print(&quot;请输入您的性别：&quot;);</div><div class="line">			sex=scanner.next();</div><div class="line">			if(sex.equals(&quot;男&quot;))&#123;</div><div class="line">				System.out.println(&quot;恭喜您进入男子决赛！&quot;);</div><div class="line">			&#125;else if(sex.equals(&quot;女&quot;))&#123;</div><div class="line">				System.out.println(&quot;恭喜您进入女子决赛！&quot;);</div><div class="line">			&#125;else&#123;</div><div class="line">				System.out.println(&quot;输入性别不明确！&quot;);</div><div class="line">			&#125;</div><div class="line">		&#125;else&#123;</div><div class="line">			System.out.println(&quot;谢谢参与！&quot;);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>(2)switch语句</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">switch(条件)&#123;</div><div class="line">	case 常量1 : </div><div class="line">		语句1;</div><div class="line">		break;</div><div class="line">	case 常量2 : </div><div class="line">		语句2;</div><div class="line">		break;</div><div class="line">	…</div><div class="line">	default : </div><div class="line">		语句m；</div><div class="line">		break；</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">//switch语句练习</div><div class="line">//输入成绩，用switch语句输出成绩等级。</div><div class="line"></div><div class="line">import java.util.*;</div><div class="line"></div><div class="line">public class text5 &#123;</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		double score;</div><div class="line">		Scanner scanner=new Scanner(System.in);</div><div class="line">		System.out.println(&quot;请输入您的成绩：&quot;);</div><div class="line">		score=scanner.nextDouble();</div><div class="line">		int temp=(int)(score/10);</div><div class="line">		switch(temp)&#123;</div><div class="line">		case 10:</div><div class="line">			System.out.println(&quot;满分&quot;);</div><div class="line">			break;</div><div class="line">		case 9:</div><div class="line">			System.out.println(&quot;优秀&quot;);</div><div class="line">			break;</div><div class="line">		case 8:</div><div class="line">			System.out.println(&quot;良好&quot;);</div><div class="line">			break;</div><div class="line">		case 7:</div><div class="line">			System.out.println(&quot;中等&quot;);</div><div class="line">			break;</div><div class="line">		case 6:</div><div class="line">			System.out.println(&quot;及格&quot;);</div><div class="line">			break;</div><div class="line">		case 5:</div><div class="line">		case 4:</div><div class="line">		case 3:</div><div class="line">		case 2:</div><div class="line">		case 1:</div><div class="line">		case 0:</div><div class="line">			System.out.println(&quot;补考&quot;);</div><div class="line">			break;</div><div class="line">		default:</div><div class="line">			System.out.println(&quot;输入成绩有误！&quot;);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">//根据输入日期输出日程安排。</div><div class="line"></div><div class="line">import java.util.*;</div><div class="line"></div><div class="line">public class text7 &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		String date;</div><div class="line">		Scanner scanner=new Scanner(System.in);</div><div class="line">		System.out.println(&quot;今天星期几&quot;);</div><div class="line">		System.out.print(&quot;[请输入“星期*”格式]：&quot;);</div><div class="line">		date= scanner.next();</div><div class="line">		</div><div class="line">		switch(date)&#123;</div><div class="line">		case &quot;星期一&quot;:</div><div class="line">			System.out.println(&quot;上课&quot;);</div><div class="line">			break;</div><div class="line">		case &quot;星期二&quot;:</div><div class="line">			System.out.println(&quot;听歌&quot;);</div><div class="line">			break;</div><div class="line">		case &quot;星期三&quot;:</div><div class="line">			System.out.println(&quot;跳舞&quot;);</div><div class="line">			break;</div><div class="line">		case &quot;星期四&quot;:</div><div class="line">			System.out.println(&quot;健身&quot;);</div><div class="line">			break;</div><div class="line">		case &quot;星期五&quot;:</div><div class="line">			System.out.println(&quot;读书&quot;);</div><div class="line">			break;</div><div class="line">		case &quot;星期六&quot;:</div><div class="line">			System.out.println(&quot;旅游&quot;);</div><div class="line">			break;</div><div class="line">		case &quot;星期日&quot;:</div><div class="line">			System.out.println(&quot;睡觉&quot;);</div><div class="line">			break;</div><div class="line">		default:</div><div class="line">			System.out.println(&quot;输入有误！&quot;);</div><div class="line">			break;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/27/练习01/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Aeris">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aeris‘s">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/07/27/练习01/" itemprop="url">练习01</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-27T10:30:00+08:00">
-                2016-07-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <hr>
-<p><strong>练习总结：</strong></p>
+            <h4 id="1、HTML-属性"><a href="#1、HTML-属性" class="headerlink" title="1、HTML 属性"></a>1、HTML 属性</h4><p><img src="http://upload-images.jianshu.io/upload_images/4731173-b12ab8d55d592cfa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="2、HTML标题"><a href="#2、HTML标题" class="headerlink" title="2、HTML标题"></a>2、HTML标题</h4><p><strong>h1—-h6</strong></p>
 <ul>
-<li>导包快捷键：ctrl+shift+o;</li>
-<li>当字符串和多个整型数字相加输出时，会自动将整型数字转换为字符串类型，输出字符串。</li>
-<li>求四位数字的千位数：int number1=number/1000;</li>
-<li>求四位数字的百位数：int number2=(number/100)%10;</li>
-<li>求四位数字的十位数：int number3=(number/10)%10;</li>
-<li>求四位数字的个位数：int number4=number%10;</li>
-</ul>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">//Test1：使用变量存储数据，实现个人简历信息的输出。</div><div class="line"></div><div class="line">import java.util.*;</div><div class="line"></div><div class="line">public class text1 &#123;</div><div class="line">	</div><div class="line">	public static void main(final String[] args)&#123;</div><div class="line">	String name;</div><div class="line">	int age;</div><div class="line">	int jobYear;</div><div class="line">	String project;</div><div class="line">	String technology;</div><div class="line">	String hobby;</div><div class="line">	final Scanner input=new Scanner(System.in);</div><div class="line">	System.out.print(&quot;姓名：&quot;);</div><div class="line">	name=input.next();</div><div class="line">	System.out.print(&quot;年龄：&quot;);</div><div class="line">	age=input.nextInt();</div><div class="line">	System.out.print(&quot;工作年限：&quot;);</div><div class="line">	jobYear=input.nextInt();</div><div class="line">	System.out.print(&quot;项目经验：&quot;);</div><div class="line">	project=input.next();</div><div class="line">	System.out.print(&quot;技术方向：&quot;);</div><div class="line">	technology=input.next();</div><div class="line">	System.out.print(&quot;爱好：&quot;);</div><div class="line">	hobby=input.next();</div><div class="line">	System.out.println(name+&quot;今年&quot;+age+&quot;岁。&quot;+&quot;工作&quot; + jobYear+&quot;年了。&quot;+&quot;做过&quot;+project+&quot;等项目。&quot;+&quot;技术方向是&quot;+technology+&quot;。兴趣爱好是&quot;+hobby+&quot;。&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//Test1运行结果</div><div class="line"></div><div class="line">姓名：孙悟空</div><div class="line">年龄：600</div><div class="line">工作年限：100</div><div class="line">项目经验：取经</div><div class="line">技术方向：打妖怪</div><div class="line">爱好：吃</div><div class="line"></div><div class="line">孙悟空今年600岁。工作100年了。做过取经等项目。技术方向是打妖怪。兴趣爱好是吃。</div></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//Test2：使用Scanner类获取键盘输入的会员卡号，并将该数据存储在变量中，输出这个变量的信息。</div><div class="line"></div><div class="line">import java.util.*;</div><div class="line"></div><div class="line">public class text2 &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		System.out.print(&quot;请输入4位会员卡号：&quot;);</div><div class="line">		Scanner input=new Scanner(System.in);</div><div class="line">		int number=input.nextInt();</div><div class="line">		System.out.println(&quot;会员卡号是：&quot;+number);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//Test2运行结果</div><div class="line">请输入4位会员卡号：1234</div><div class="line">会员卡号是：1234</div></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">//Test3：将Test2中输入的会员卡号分解，并根据分解后的数字求和。</div><div class="line"></div><div class="line">import java.util.Scanner;</div><div class="line"></div><div class="line">public class text3 &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		System.out.print(&quot;请输入4位会员卡号：&quot;);</div><div class="line">		Scanner input=new Scanner(System.in);</div><div class="line">		int number=input.nextInt();</div><div class="line">		System.out.println(&quot;会员卡号是：&quot;+number);</div><div class="line">		int number1=number/1000;</div><div class="line">		int number2=(number/100)%10;</div><div class="line">		int number3=(number/10)%10;</div><div class="line">		int number4=number%10;</div><div class="line">		System.out.println(&quot;千位数：&quot;+number1+&quot;,百位数：&quot;+number2+&quot;,十位数：&quot;+number3+&quot;个位数：&quot;+number4);</div><div class="line">		System.out.println(&quot;会员卡号&quot;+number+&quot;各位之和：&quot;+sum);</div><div class="line">		//System.out.println(&quot;会员卡号&quot;+number+&quot;各位之和：&quot;+number1+number2+number3+number4);</div><div class="line">		//错误。将会输出1234，因为jvm会自动将整型转换为字符串类型，输出字符串。</div><div class="line">		//根据分解后的数字之和，判断用户是否中奖</div><div class="line">		if(number5&gt;20)&#123;</div><div class="line">			System.out.println(&quot;恭喜中奖！&quot;);</div><div class="line">		&#125;else&#123;</div><div class="line">			System.out.println(&quot;谢谢参与！&quot;);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//Test3运行结果：</div><div class="line"></div><div class="line">请输入4位会员卡号：9999</div><div class="line">会员卡号是：9999</div><div class="line">千位数：9,百位数：9,十位数：9个位数：9</div><div class="line">会员卡号9999  各位之和：36</div><div class="line">恭喜中奖！</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/27/JAVA基础语法【运算符、键盘输入】/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Aeris">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aeris‘s">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/07/27/JAVA基础语法【运算符、键盘输入】/" itemprop="url">运算符、键盘输入</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-27T10:26:00+08:00">
-                2016-07-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="二、基础语法-day2"><a href="#二、基础语法-day2" class="headerlink" title="二、基础语法(day2)"></a>二、基础语法(day2)</h3><p><strong>5、运算符</strong><br><img src="http://upload-images.jianshu.io/upload_images/4731173-d88baf85112a4689?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/4731173-f9ea568996007155.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<ul>
-<li><strong>算数运算符</strong>：+、-、<em>、/、%、++、–、<br> (   a%b=a-(a/b)</em>b  )</li>
-<li><strong>关系运算符</strong>：==  、！=、&gt;、&lt;、&gt;=、&lt;=<ul>
-<li>①    &gt;、&lt;、&gt;=、&lt;=运算符的优先级别高于==  、！=。</li>
-<li>②    &gt;、&lt;、&gt;=、&lt;=运算符值支持数据类型的数据比较。</li>
-</ul>
-</li>
-<li><strong>逻辑运算符</strong>：&amp;、|、^、！、&amp;&amp; 、 ||<ul>
-<li>①    操作数据类型只能是布尔类型，操作结果也是布尔值。<br>　　优先级别：！ &gt; &amp; &gt; ^异或 &gt;   |   &gt;  &amp;&amp;  &gt;  ||  。</li>
-<li>②&amp;、| 与 &amp;&amp;、|| 的区别<br>　　&amp;和|运算是把逻辑表达式全部计算完，而&amp;&amp;和||运算具有短路计算功能。即系统从左至右进行逻辑表达式的计算，一旦出现计算结果已经确定的情况，则计算过程即被终止。短路计算功能可以提高程序的运行速度。 </li>
-<li>③    异或:＾两值相同结果为false，两值不同结果为true。<br>位运算符：&amp;位与、|位或、~位非、^位异或、&gt;&gt;右移、&lt;&lt;左移<br>赋值运算符：=、+=、-=、*=、/=、%=</li>
-</ul>
+<li>标题很重要。要确保将 HTML heading 标签只用于标题。不要仅仅是为了产生粗体或大号的文本而使用标题。</li>
+<li><strong>搜索引擎使用标题为您的网页的结构和内容编制索引。</strong></li>
+<li><p>因为用户可以通过标题来快速浏览您的网页，所以用标题来呈现文档结构是很重要的。</p>
+<h6 id="关于换行："><a href="#关于换行：" class="headerlink" title="关于换行："></a>关于换行：</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">您也许发现 &lt;br&gt; 与 &lt;br /&gt; 很相似。</div><div class="line">在 XHTML、XML 以及未来的 HTML 版本中，不允许使用没有结束标签（闭合标签）的 HTML 元素。</div><div class="line">即使 &lt;br&gt; 在所有浏览器中的显示都没有问题，使用 &lt;br /&gt; 也是更长远的保障。</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<ul>
-<li><strong>三目运算符</strong>：表达式1？表达式2：表达式3<pre><code>eg：int a=1,b=2,max;
-　　    max=a&gt;b?a:b;
-　　    //max等于2
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">//三目运算符练习</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>import java.util.*;<br>public class CompareDemo {<br>    public static void main(String[] args){<br>        double first;<br>        double second;<br>        Scanner scanner=new Scanner(System.in);<br>        System.out.print(“请输入第一个数：”);<br>        first=scanner.nextDouble();<br>        System.out.print(“请输入第二个数：”);<br>        second=scanner.nextDouble();<br>        System.out.println(“最小值为：”+(first&lt;second?first:second));<br>    }<br>}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
-<p>//CompareDemo运行结果：<br>请输入第一个数：4<br>请输入第二个数：6<br>最小值为：4.0<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"> - **运算符的优先级**：</div><div class="line"></div><div class="line"> | 优先级 | 运算符 | 描述 | </div><div class="line"> |:-------------:|:-------------:|:-----|</div><div class="line"> | 1 | （） | 括号 | </div><div class="line"> | 2 | +、-	 | 正负号 | </div><div class="line"> | 3 | ++、- -、！ | 单目运算符 | </div><div class="line"> | 4 | *、/、% | 乘、除、取余 | </div><div class="line"> | 5 | +、-	 | 加减 | </div><div class="line"> | 6 | &lt;&lt;、&gt;&gt;、&gt;&gt;&gt; | 移位运算 | </div><div class="line"> | 7 | &lt;&lt;、&gt;&gt;、&gt;、&gt;=	 | 比较大小 | </div><div class="line"> | 8 | ==、！= | 是否相等 | </div><div class="line"> | 9 | &amp; | 按位于运算 | </div><div class="line"> | 10 | 	^ | 按位异或运算 | </div><div class="line"> | 11 | \| | 按位或运算 | </div><div class="line"> | 12	 | &amp;&amp; | 非简洁逻辑与运算 | </div><div class="line"> | 13 | 双竖线 | 非简介逻辑或运算 | </div><div class="line"> | 14 | = | 赋值运算 | </div><div class="line"></div><div class="line"></div><div class="line">【</div><div class="line">**左移**:5&lt;&lt;2     将值5转换为二进制101后，左移2位，右边自动补0，即10100，计算得20</div><div class="line">**右移**：x&gt;&gt;y　　正数：将值x的二进制右移y位，左边自动补y个0</div><div class="line">		　　　　　　　     负数：将值x的二进制右移y位，左边自动补y个1</div><div class="line"> **无符号右移:**&gt;&gt;&gt;    无论正数还是负数，移动后都自动补0</div><div class="line">】</div><div class="line"></div><div class="line">**总结：**</div><div class="line">　①	单目运算符包括！、^、++、- -优先级别高</div><div class="line">　②	优先级别最低的是赋值运算符</div><div class="line">　③	()优先级最高，可通过()控制表达式的运算顺序。</div><div class="line">　④	从右向左结合性的只有赋值运算符、三目运算符和多目运算符。</div><div class="line">　⑤	算术运算符&gt;关系运算符&gt;逻辑运算符</div></pre></td></tr></table></figure></p>
-<p>//练习运算符<br>public class Test {<br>    public static void main(String[] args) {</p>
-<pre><code>    int i=0;
-    double x=2.3;
-    System.out.println(&quot;Result 1:&quot;+(--i+i+i++));
-    System.out.println(&quot;Result 2:&quot;+(i+++i));
-    i+=i+(i=4);
-    System.out.println(&quot;Result 3:&quot;+i);
-    i=3+3*2%i--;
-    System.out.println(&quot;Result 4:&quot;+i);
-    x=x++;
-    System.out.println(&quot;Result 5:&quot;+x);
-    x+=1.2*3+x++;
-    System.out.println(&quot;Result 6:&quot;+x);
-    x=x%3+4*2+x--;
-    System.out.println(&quot;Result 7:&quot;+x);
-
-}
-</code></pre><p>}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
-<p>//运行结果<br>Result 1:-3<br>Result 2:1<br>Result 3:6<br>Result 4:3<br>Result 5:2.3<br>Result 6:8.2<br>Result 7:18.4<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">**6、键盘输入**</div><div class="line">　使用Scanner可以接收用户键盘输入的字符。</div><div class="line">　步骤：</div><div class="line">　①导入Scanner类：</div></pre></td></tr></table></figure></p>
-<p>Import java.util.*;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">②创建Scanner对象：</div></pre></td></tr></table></figure></p>
-<p>Scanner input=new Scanner(System.in);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">③获得键盘输入的数据</div></pre></td></tr></table></figure></p>
-<p>int n=input.nextInt();<br>String m=input.next();<br>```</p>
+<h4 id="3、HTML样式"><a href="#3、HTML样式" class="headerlink" title="3、HTML样式"></a>3、HTML样式</h4><p>HTML 的 <strong>style </strong>属性的作用：提供了一种改变所有 HTML 元素的样式的通用方法。在 HTML 4 中，有若干的标签和属性是被废弃的。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-43a40c21dbdea509.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">style=&quot;background-color:yellow&quot;   //style 属性淘汰了“旧的” bgcolor 属性。</div><div class="line">style=&quot;font-family:arial;color:red;font-size:20px;&quot;    //style 属性淘汰了旧的 &lt;font&gt; 标签</div><div class="line">style=&quot;text-align:center&quot;    //style 属性淘汰了旧的 &quot;align&quot; 属性。</div></pre></td></tr></table></figure></p>
+<h4 id="4、HTML文本格式化"><a href="#4、HTML文本格式化" class="headerlink" title="4、HTML文本格式化"></a>4、HTML文本格式化</h4><p>HTML 可定义很多供格式化输出的元素，比如粗体和斜体字。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-d2573c050b70c05a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="5、HTML引用"><a href="#5、HTML引用" class="headerlink" title="5、HTML引用"></a>5、HTML引用</h4><p><img src="http://upload-images.jianshu.io/upload_images/4731173-34a1b19356503d10.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="6、HTML计算机代码元素"><a href="#6、HTML计算机代码元素" class="headerlink" title="6、HTML计算机代码元素"></a>6、HTML计算机代码元素</h4><p><img src="http://upload-images.jianshu.io/upload_images/4731173-c697f7bf65925c25.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;code&gt; 元素不保留多余的空格和折行,如需空格和折行，必须在 &lt;pre&gt; 元素中包围代码。</div></pre></td></tr></table></figure></p>
+<h4 id="7、HTML-CSS"><a href="#7、HTML-CSS" class="headerlink" title="7、HTML CSS"></a>7、HTML CSS</h4><p><img src="http://upload-images.jianshu.io/upload_images/4731173-10e4f1d4c003f9c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h6 id="1、外部样式表"><a href="#1、外部样式表" class="headerlink" title="1、外部样式表"></a>1、外部样式表</h6><p>当样式需要被应用到很多页面的时候，外部样式表将是理想的选择。使用外部样式表，你就可以通过更改<strong>一个文件</strong>来改变整个站点的外观。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;mystyle.css&quot;&gt;</div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure></p>
+<h6 id="2、内部样式表"><a href="#2、内部样式表" class="headerlink" title="2、内部样式表"></a>2、内部样式表</h6><p>当单个文件需要特别样式时，就可以使用内部样式表。你可以<strong> 在head 部分通过 &lt; style&gt; 标签</strong>定义内部样式表。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">body &#123;background-color: red&#125;</div><div class="line">p &#123;margin-left: 20px&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure>
+<h6 id="3、内联样式"><a href="#3、内联样式" class="headerlink" title="3、内联样式"></a>3、内联样式</h6><p>当特殊的样式需要应用到个别元素时，就可以使用内联样式。 使用内联样式的方法是<strong>在相关的标签中使用样式属性</strong>。样式属性可以包含任何 CSS 属性。以下实例显示出如何改变段落的颜色和左外边距。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;p style=&quot;color: red; margin-left: 20px&quot;&gt;</div><div class="line">This is a paragraph</div><div class="line">&lt;/p&gt;</div></pre></td></tr></table></figure></p>
+<h4 id="8、HTML超链接"><a href="#8、HTML超链接" class="headerlink" title="8、HTML超链接"></a>8、HTML超链接</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">通过使用 &lt;a&gt; 标签在 HTML 中创建链接。</div><div class="line">有两种使用 &lt;a&gt; 标签的方式：</div><div class="line">       1、通过使用 href 属性 - 创建指向另一个文档的链接</div><div class="line">       2、通过使用 name 属性 - 创建文档内的书签（锚）</div></pre></td></tr></table></figure>
+<h6 id="HTML-链接-target-属性："><a href="#HTML-链接-target-属性：" class="headerlink" title="HTML 链接 - target 属性："></a>HTML 链接 - <strong>target 属性</strong>：</h6><p>使用 Target 属性，你可以定义被链接的文档在何处显示。下面的这行会在新窗口打开文档：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a href=&quot;http://www.baidu.com/&quot; target=&quot;_blank&quot;&gt;Visit Baidu!&lt;/a&gt;</div></pre></td></tr></table></figure></p>
+<h6 id="HTML-链接-name-属性"><a href="#HTML-链接-name-属性" class="headerlink" title="HTML 链接 - name 属性"></a>HTML 链接 - name 属性</h6><p>name 属性规定<strong>锚</strong>（anchor）的名称。可以使用 name 属性创建 HTML 页面中的书签。命名锚的语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;a name=&quot;label&quot;&gt;锚（显示在页面上的文本）&lt;/a&gt;</div><div class="line"> //可以使用 id 属性来替代 name 属性，命名锚同样有效</div></pre></td></tr></table></figure></p>
+<p>首先，我们在 HTML 文档中对锚进行命名（创建一个书签）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">首先，我们在 HTML 文档中对锚进行命名（创建一个书签）：</div><div class="line">       &lt;a name=&quot;tips&quot;&gt; TIPS &lt;/a&gt;</div><div class="line">然后，在同一个文档中创建指向该锚的链接：</div><div class="line">       &lt;a href=&quot;#tips&quot;&gt;点击跳转到TIPS&lt;/a&gt;</div><div class="line">也可以在其他页面中创建指向该锚的链接，将 # 符号和锚名称添加到 URL 的末端，就可以直接链接到这个锚了：</div><div class="line">       &lt;a href=&quot;页面链接#tips&quot;&gt;点击跳转到TIPS&lt;/a&gt;</div></pre></td></tr></table></figure></p>
+<h6 id="发送邮件"><a href="#发送邮件" class="headerlink" title="发送邮件"></a>发送邮件</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a href=&quot;mailto:someone@microsoft.com?subject=Hello%20again&quot;&gt;发送邮件&lt;/a&gt;</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-79ca5a428da08575.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="9、HTML图像"><a href="#9、HTML图像" class="headerlink" title="9、HTML图像"></a>9、HTML图像</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;img&gt; 是空标签，它只包含属性，并且没有闭合标签。</div><div class="line">   1、要在页面上显示图像，需要使用源属性src。源属性的值是图像的 URL 地址。</div><div class="line">   2、alt 属性用来为图像定义一串预备的可替换的文本。</div><div class="line">      在浏览器无法载入图像时，替换文本属性指定告诉用户的信息。</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-be530ad61f356abe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 
           
         
@@ -1732,7 +1149,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/24/Javayufa/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/21/Struts2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Aeris">
@@ -1751,7 +1168,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/07/24/Javayufa/" itemprop="url">标识符、数据类型、常量变量、内存分析</a></h1>
+                <a class="post-title-link" href="/2016/10/21/Struts2/" itemprop="url">Struts2</a></h1>
         
 
         <div class="post-meta">
@@ -1761,10 +1178,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-24T14:34:00+08:00">
-                2016-07-24
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-21T16:28:00+08:00">
+                2016-10-21
               </time>
             
 
@@ -1782,7 +1199,185 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">In</span>
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java进阶/" itemprop="url" rel="index">
+                    <span itemprop="name">Java进阶</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>简单来说，Struts2的作用就是把请求和结果分开，即提高可扩展性，使得更加灵活。</p>
+<h4 id="一、struts2的基本配置"><a href="#一、struts2的基本配置" class="headerlink" title="一、struts2的基本配置"></a>一、struts2的基本配置</h4><h6 id="新建一个web-project项目，下载struts2，配置Strusts2环境。"><a href="#新建一个web-project项目，下载struts2，配置Strusts2环境。" class="headerlink" title="新建一个web project项目，下载struts2，配置Strusts2环境。"></a>新建一个web project项目，下载struts2，配置Strusts2环境。</h6><ul>
+<li>1<strong>配置struts.xml文件。</strong><br>将struts-2.1.6目录中的apps中的struts2-blank.war文件解压，打开WEB-INF———classes——–struts.xml文件拷贝到新建项目的src目录下。</li>
+</ul>
+<p>【struts-2.1.6\apps\struts2-blank-2.1.6-\WEB-INF\classes\struts.xml】</p>
+<ul>
+<li>2<strong>配置struts2所需的jar包。</strong><br>将【struts-2.1.6\apps\struts2-blank-2.1.6-\WEB-INF\lib】下的jar包拷贝到 项目的WebRoot—–WEB-INF<br>—-lib目录下。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-dfa663408098a2e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li>3<strong>配置web.xml文件。</strong><br>将示例web.xml文件中关于struts2的<strong>filter标签</strong>配置复制到项目的web.xml中。</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-048628628bbc3ba3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">1.源码和javadoc的设置：</div><div class="line">【可查阅struts2源码，按F1可查阅javadoc】</div><div class="line">    在jar包上右键---properties---Java Source Attachment/Java Doc Location:</div><div class="line"></div><div class="line">    【struts2的Java Source源码路径为：</div><div class="line">         \struts-2.3.16.1\src\core\src\main\java</div><div class="line">      struts2的Java Doc路径为：</div><div class="line">          \struts-2.3.16.1\docs\struts2-core\apidocs】</div><div class="line">2.xml文件自动提示设置</div><div class="line">Window----Preferences----输入catalog----XML catalog----Add---设置dtd文档location、keyType和key</div><div class="line"></div><div class="line">【Location：选择dtd文档位置。</div><div class="line">      解压 struts-2.3.16.1\lib\ 目录下的struts2-core-2.3.16.1.jar文件，选择struts-2.0.dtd文件位置。</div><div class="line">  Key Type：URL</div><div class="line">  Key：输入dtd的URL地址，在struts.xml文件的上部的DOCTYPE标签中定义的   &quot;http://struts.apache.org/dtds/struts-2.0.dtd&quot;】</div></pre></td></tr></table></figure></p>
+<ul>
+<li>4<strong>配置action。</strong><br>简化struts.xml中package标签中的内容。</li>
+</ul>
+<blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-ab6987515420b632.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;constant&gt;标签：struts.devMode为true时，为开发模式，可更改action的name且不用重启tomcat</div><div class="line">&lt;package&gt;标签：包名，设置namespace。类似java项目中的包名，起到防止action重名的作用。</div><div class="line">&lt;action&gt;标签：设置action的name，设置相应result路径。</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="二、Struts2运行机制"><a href="#二、Struts2运行机制" class="headerlink" title="二、Struts2运行机制"></a>二、Struts2运行机制</h4><h5 id="Struts2的作用：把请求和视图分开，增强项目的可扩展性。"><a href="#Struts2的作用：把请求和视图分开，增强项目的可扩展性。" class="headerlink" title="Struts2的作用：把请求和视图分开，增强项目的可扩展性。"></a>Struts2的作用：把请求和视图分开，增强项目的可扩展性。</h5><p><a href="http://duanxx.iteye.com/blog/1662918" target="_blank" rel="external">struts2的原理</a></p>
+<h6 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程:"></a>工作流程:</h6><p>1、客户端浏览器发出HTTP请求.</p>
+<p>2、根据web.xml配置，该请求被FilterDispatcher接收</p>
+<p>3、根据struts.xml配置，找到需要调用的Action类和方法， 并通过IoC方式，将值注入给Aciton</p>
+<p>4、Action调用业务逻辑组件处理业务逻辑，这一步包含表单验证。</p>
+<p>5、Action执行完毕，根据struts.xml中的配置找到对应的返回结果result，并跳转到相应页面</p>
+<p>6、返回HTTP响应到客户端浏览器</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-4f2648de3809941f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="1、namespace：action访问路径"><a href="#1、namespace：action访问路径" class="headerlink" title="1、namespace：action访问路径"></a>1、namespace：action访问路径</h4><p><img src="http://upload-images.jianshu.io/upload_images/4731173-b09c1047c35c68cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="2、用户自定义Action"><a href="#2、用户自定义Action" class="headerlink" title="2、用户自定义Action"></a>2、用户自定义Action</h4><h6 id="1-IndexAction中有execute-方法，返回“success”字符串，struts-xml的action标签中定义class。"><a href="#1-IndexAction中有execute-方法，返回“success”字符串，struts-xml的action标签中定义class。" class="headerlink" title="1.IndexAction中有execute()方法，返回“success”字符串，struts.xml的action标签中定义class。"></a>1.IndexAction中有execute()方法，返回“success”字符串，struts.xml的action标签中定义class。</h6><p>当struts2的filter读到struts.xml中的action是一个class时，每次访问struts2都会调用createMessage()方法，new一个新的action的class对象，调用execute()方法，不会出现线程同步的问题。【而struts1每次访问时会访问可能用的是同一个对象，会出现线程同步的问题。】</p>
+<h6 id="2-当action中不配置class时，可以使IndexAction继承Action接口，实现execute-方法，返回SUCCESS常量。"><a href="#2-当action中不配置class时，可以使IndexAction继承Action接口，实现execute-方法，返回SUCCESS常量。" class="headerlink" title="2.当action中不配置class时，可以使IndexAction继承Action接口，实现execute()方法，返回SUCCESS常量。"></a>2.当action中不配置class时，可以使IndexAction继承Action接口，实现execute()方法，返回SUCCESS常量。</h6><h6 id="3-当action中不配置class时，可以使IndexAction继承ActionSupport类，重写execute方法，返回SUCCESS常量。"><a href="#3-当action中不配置class时，可以使IndexAction继承ActionSupport类，重写execute方法，返回SUCCESS常量。" class="headerlink" title="3.当action中不配置class时，可以使IndexAction继承ActionSupport类，重写execute方法，返回SUCCESS常量。"></a>3.当action中不配置class时，可以使IndexAction继承ActionSupport类，重写execute方法，返回SUCCESS常量。</h6><h6 id="——————————日常开发使用第三种方法。"><a href="#——————————日常开发使用第三种方法。" class="headerlink" title="——————————日常开发使用第三种方法。"></a>——————————日常开发使用第三种方法。</h6><h4 id="3、路径问题"><a href="#3、路径问题" class="headerlink" title="3、路径问题"></a>3、路径问题</h4><p><img src="http://upload-images.jianshu.io/upload_images/4731173-d34a95b1b44737dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="4、Action–method"><a href="#4、Action–method" class="headerlink" title="4、Action–method"></a>4、Action–method</h4><p>Action执行的时候并不一定要执行execute()方法<br>（1）可以在struts.xml配置文件中配置Action的时候用<strong>“method=要执行的方法”</strong>，并在对应的Action中实现该方法。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-706e15ef00394c79.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-00d02467bec28e29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>（2）也可以在url地址中动态指定（动态方法调用DMI）【推荐】<br>不指定method，在调用时通过在action后添加“!方法名”的方式调用Action中的方法。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-ba33aa846a2fb35a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-3dd3095a9f830061.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="5、Action—通配符"><a href="#5、Action—通配符" class="headerlink" title="5、Action—通配符"></a>5、Action—通配符</h4><p>使用通配符，可将配置量降到最低。但一定要遵守“约定优于配置”的原则。</p>
+<blockquote>
+<p>通过Studentadd访问action<br><img src="http://upload-images.jianshu.io/upload_images/4731173-df3c6c91995ef2ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>在action配置中没有对应的Studentadd的action，但有Student<em>。result中{1}与</em>表示的内容相同。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-563baf92863be5cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/16/List、Set、Map/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aeris">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aeris‘s">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/16/List、Set、Map/" itemprop="url">List、Set、Map</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-16T11:08:00+08:00">
+                2016-10-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -1825,94 +1420,349 @@
       
         
           
-            <h3 id="二、-基础语法"><a href="#二、-基础语法" class="headerlink" title="二、    基础语法"></a>二、    基础语法</h3><p>第一段程序：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">public class HelloWorld&#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		System.out.println(“Hello World!”);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>1、标识符：</strong></p>
+            <h4 id="1、区别"><a href="#1、区别" class="headerlink" title="1、区别"></a>1、区别</h4><p><strong>Collection：</strong></p>
+<p><strong>List :</strong>有序 、可重复</p>
+<p><strong>Set:</strong>无序、不可重复</p>
+<p><strong>Map:</strong>有序、不可重复（键值对）</p>
+<h4 id="2、方法"><a href="#2、方法" class="headerlink" title="2、方法"></a>2、方法</h4><p><strong>Collection接口方法：</strong><br><img src="http://upload-images.jianshu.io/upload_images/4731173-b786bfa970b7eb97.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>Set相关方法</strong>与Collection接口方法一样。</p>
+<p><strong>List</strong>由于是有序的，多了以下几种与索引有关的方法：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-2483e3acecf2b0e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><strong>Map相关方法</strong>：<br><img src="http://upload-images.jianshu.io/upload_images/4731173-a5b9d38c99f94271.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="3、特点"><a href="#3、特点" class="headerlink" title="3、特点"></a>3、特点</h4><p><strong> List:</strong></p>
 <ul>
-<li>Java中凡是需要取名字的地方都叫做标识符。</li>
-<li>标识符可以由字母、数字、下划线、和美元符号组成。</li>
-<li>标识符的首字母不能是数字，且标识符是区分大小写的。</li>
-<li>标识符不能包含空格，不能包含@#等特殊符号。</li>
-<li>Java中定义的关键字、保留字不能作为标识符但可以包含如：class private static public void。</li>
-<li>类名的每个单词的首字母大写：方法名、变量名第一个单词的首字母小写，其他单词的首字母大写。</li>
+<li>ArrayList:  底层用数组实现的List,<br>特点：查询效率高 ，增删效率低，不安全。</li>
+<li>LinkedList:底层是双向链表实现的List,<br>特点：查询效率低，增删效率高，线程不安全。</li>
+<li>Vector:底层用数组实现的List,<br>特点：线程安全.</li>
 </ul>
-<p><strong>2、数据类型</strong></p>
-<p><strong>(1)基本数据类型：四类八种</strong><br><img src="http://upload-images.jianshu.io/upload_images/4731173-63b582b0412d705f?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<ul>
-<li><p>整型：</p>
-<ul>
-<li>byte:8位，范围：-128（-2<sup>7</sup>）~127（2<sup>7</sup>-1），默认为0<br>【强制转换：byte number=(byte)128;】</li>
-<li>short：16位，范围：-2<sup>15</sup>~2<sup>15</sup>-1； </li>
-<li>int：32位，范围：-2<sup>31</sup>~2<sup>31</sup>-1</li>
-<li>long：64位，范围：-2<sup>63</sup>~2<sup>63</sup>-1  <strong>数据后面需要加L.</strong></li>
+<p>线程安全用Vector。<br>线程不安全，查找较多用ArrayList，增加或删除元素较多用LinkedList.</p>
+<p><strong>Set：</strong></p>
+<p>Set接口的实现类常用的有HashSet。</p>
+<p>特点是：没有是顺序，不可以重复，重复的元素添加进行会出现覆盖的现象。</p>
+<p><strong>Iterator接口：</strong></p>
+<p>   所有实现了Collection接口的容器类都有一个iterator方法用以返回一个实现Iterator接口的对象<br>Iterator对象称作为<strong>迭代器</strong>，用以方便的对容器内元素的遍历操作，Iterator接口定义了如下方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">boolean hashNext();//判断是否有元素没有被遍历</div><div class="line">Object next();//返回游标当前位置的元素并将游标移动到下一个位置</div><div class="line">void remove();//删除游标左边的元素，在执行完next之后该操作只能执行一次。</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/15/Java常见类/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aeris">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aeris‘s">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/15/Java常见类/" itemprop="url">Java常见类</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-15T10:53:00+08:00">
+                2016-10-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1、String-StringBuilder-StringBuffer"><a href="#1、String-StringBuilder-StringBuffer" class="headerlink" title="1、String ,StringBuilder,StringBuffer"></a>1、String ,StringBuilder,StringBuffer</h3><ul>
+<li>不可变字符序列：String</li>
+<li>可变字符序列：StringBuilder(线程不安全，效率高)<br>　　　　　　　StringBuffer(线程安全，效率低)  【synchronized】</li>
 </ul>
+<h6 id="可变字符序列"><a href="#可变字符序列" class="headerlink" title="可变字符序列"></a>可变字符序列</h6><ul>
+<li>初始化时，会把字符序列放在一个数组中，如果不定义长度的话默认长度为16个字节，如果定义则按照定义的字符序列长度+16个字节。</li>
+<li><strong>append：可变字符序列扩展长度的原理是，当添加的字符序列的长度超过原初始化长度的话，则创建一个新的数组，扩展长度，将原数组复制过去。</strong><br>【不可变字符序列String初始化时，会把字符序列放在一个长度为final常量的数组中，因此长度不可变。】</li>
+<li><strong>delete(start,end)</strong>：删除，包头不包尾</li>
+<li><strong>reverse()</strong>：翻转字符序列</li>
+</ul>
+<hr>
+<hr>
+<h3 id="2、Date"><a href="#2、Date" class="headerlink" title="2、Date"></a>2、Date</h3><p><img src="http://upload-images.jianshu.io/upload_images/4731173-af2ac4fdfdec3d5a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li><h5 id="java-util-Date：long类型数字"><a href="#java-util-Date：long类型数字" class="headerlink" title="java.util.Date：long类型数字"></a>java.util.Date：long类型数字</h5></li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-fdd4f905ac12cb26.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li><h5 id="日期格式化：long类型数字-lt-—-gt-日期字符串"><a href="#日期格式化：long类型数字-lt-—-gt-日期字符串" class="headerlink" title="日期格式化：long类型数字&lt;—&gt;日期字符串"></a>日期格式化：long类型数字&lt;—&gt;日期字符串</h5><p><img src="http://upload-images.jianshu.io/upload_images/4731173-9c944a030e803ef1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 </li>
-<li><p>字符型：</p>
-<ul>
-<li>char<br>表示单个字母，字符敞亮必须使用单引号‘‘括起来，如：‘A’;<br>[字符串string不是基本数据类型，是引用数据类型]</li>
+<li><h5 id="日历：long类型数字-lt-—-gt-日期"><a href="#日历：long类型数字-lt-—-gt-日期" class="headerlink" title="日历：long类型数字&lt;—&gt;日期"></a>日历：long类型数字&lt;—&gt;日期</h5></li>
 </ul>
-</li>
-<li>浮点型：<ul>
-<li>float  ：    <strong>float类型数据需要在后边加上f</strong></li>
-<li>double</li>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-b2aba0f7826ea53b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-892429a18fdf3134.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<hr>
+<hr>
+<h3 id="3、File类"><a href="#3、File类" class="headerlink" title="3、File类"></a>3、File类</h3><p><img src="http://upload-images.jianshu.io/upload_images/4731173-388067d09052ffa3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>输出树状文件目录，递归调用：<br><img src="http://upload-images.jianshu.io/upload_images/4731173-de725eff9d74dae3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="4、Exception"><a href="#4、Exception" class="headerlink" title="4、Exception"></a>4、Exception</h3><h6 id="常见异常："><a href="#常见异常：" class="headerlink" title="常见异常："></a>常见异常：</h6><ul>
+<li>ArithmeticException</li>
+<li>NullPointerException</li>
+<li>ClassCastException</li>
+<li>ArrayIndexOutOfBoundsException</li>
+<li>NumberFormatException</li>
 </ul>
-</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/4731173-bbd8afcfdcbe1b95.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<ul>
-<li>布尔型：<ul>
-<li>boolean（true /false）默认为false</li>
-</ul>
-</li>
-</ul>
-<p><strong>（2）数据类型排序：</strong><br><img src="http://upload-images.jianshu.io/upload_images/4731173-e9c7d2c54112b634?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><strong>（3）类型转换：</strong></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4731173-50f609446951d16b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<ul>
-<li>自动数据类型转换：系统支持直接把某种数据类型的值直接赋给另外一种数据类型。</li>
-<li>强制类型转换：如果要把上图右边的数据类型转换为左边数据类型，则需要强制类型转换。强制类型转换格式为：（数据类型）值。例如：(int)size<br>【强制类型转换应数以溢出，精度丢失（double转int，int转byte）】</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">//TestConvert</div><div class="line">public class TestConvert &#123;</div><div class="line">    public static void main(String arg[]) &#123;</div><div class="line">        int i1 = 123; </div><div class="line">        int i2 = 456;</div><div class="line">        double d1 = (i1+i2)*1.2;//系统将转换为double型运算</div><div class="line">        float f1 = (float)((i1+i2)*1.2);//需要加强制转换符</div><div class="line">        byte b1 = 67; </div><div class="line">        byte b2 = 89;</div><div class="line">        byte b3 = (byte)(b1+b2);//系统将转换为int型运算，需</div><div class="line">                                //要强制转换符</div><div class="line">        System.out.println(b3);</div><div class="line">        double d2 = 1e200;</div><div class="line">        float f2 = (float)d2;//会产生溢出</div><div class="line">        System.out.println(f2);</div><div class="line"></div><div class="line">        float f3 = 1.23f;//必须加f</div><div class="line">        long l1 = 123;</div><div class="line">        long l2 = 30000000000L;//必须加l</div><div class="line">        float f = l1+l2+f3;//系统将转换为float型计算</div><div class="line">        long l = (long)f;//强制转换会舍去小数部分（不是四舍五入）</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>修正下列代码中的编译错误或者可能产生的溢出：</strong></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4731173-c192c0a9b81ec765?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">//TestConvert2</div><div class="line">public class TestConvert2 &#123;</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">   </div><div class="line">    int i=1,j=12;</div><div class="line">    float f1=(float)0.1;  //0.1f  0.1是double类型，需要强制类型转换</div><div class="line">    float f2=123;</div><div class="line">    long l1 = 12345678,l2=8888888888L;//l2必须加L,否则会产生溢出</div><div class="line">    double d1 = 2e20,d2=124;</div><div class="line">    byte b1 = 1,b2 = 2,b3 = 127;//byte类型的范围是（-128~127）</div><div class="line">    j = j+10;//变量必须赋值才能使用</div><div class="line">    i = i/10;</div><div class="line">    i = (int)(i*0.1);//运算后为double类型，需要强制类型转换</div><div class="line">    char c1=&apos;a&apos;,c2=125;</div><div class="line">    byte b = (byte)(b1-b2);//运算后为int类型，需要强制类型转换</div><div class="line">    char c = (char)(c1+c2-1);////运算后为int类型，需要强制类型转换</div><div class="line">    float f3 = f1+f2;</div><div class="line">    float f4 = (float)(f1+f2*0.1);//运算后为double类型，需要强制类型转换</div><div class="line">    double d = d1*i+j;</div><div class="line">    float f = (float)(d1*5+d2);</div><div class="line"></div><div class="line"></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><strong>3、常量、变量</strong></p>
-<p><strong>（1）常量：</strong></p>
-<p>常量是在程序运行中，值不能改变的量。用final定义。<br>语法：final&lt;数据类型&gt;&lt;常量名&gt;=&lt;初始值&gt;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">整型常量：123</div><div class="line">实型常量：3.14</div><div class="line">字符常量:&apos;a&apos;</div><div class="line">字符串常量:&quot;helloworld&quot;</div><div class="line">逻辑常量：true、false</div></pre></td></tr></table></figure>
-<p><strong>（2）变量：</strong></p>
-<p>从本质上讲，变量其实是内存中的一小块区域，使用变量名来访问这块区域。因此，没一个变量使用前必须要先声明，然后进行赋值，才能使用。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4731173-e3ba3351a77e224c?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><strong><a href="http://www.tudou.com/programs/view/BTOBFGfOAVg/%20%E8%A7%86%E9%A2%91%E8%AE%B2%E8%A7%A3" target="_blank" rel="external">4、内存分析（←点击看视频讲解）</a></strong></p>
-<p>内存分为堆、栈、方法区。</p>
-<ul>
-<li>栈（stack）：<ul>
-<li><strong>存放局部变量。</strong></li>
-<li>线程私有，不能实现线程间的共享。</li>
-<li>先进后出。自动分配，连续内存空间，效率高。</li>
-</ul>
-</li>
-<li>堆：<ul>
-<li><strong>存放new出来的对象。</strong></li>
-<li>不连续内存空间，分配灵活，效率低。</li>
-</ul>
-</li>
-<li>方法区：<ul>
-<li>存放永远不变而且唯一的文件。（<strong>类代码信息、静态变量、字符串常量</strong>）</li>
-<li>被所有线程共享。</li>
-<li>不连续内存空间，分配灵活，效率低</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">//内存分析</div><div class="line">public class Test&#123;</div><div class="line">	public static void main(String [] args)&#123;</div><div class="line">	Car c1=new Car();</div><div class="line">	c1.changeColor(&quot;红色&quot;);</div><div class="line">	c1.showColor();</div><div class="line">	System.out.println(Car.typeNum);</div><div class="line">	System.out.println(c1.typeNum);</div><div class="line"></div><div class="line">	Car c2=new Cae();</div><div class="line">	Engine e=new Engine();</div><div class="line">	e.speed=1000;</div><div class="line">	e.weight=e;</div><div class="line">	c2.engine=e;</div><div class="line">	c2.color=&quot;黑色&quot;;</div><div class="line"></div><div class="line">	c2.typeNum=10;</div><div class="line">	System.out.println(c1.typeNum);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Car&#123;</div><div class="line">	static int typeNum=4;</div><div class="line">	Engine enging;</div><div class="line">	String color;</div><div class="line"></div><div class="line">	void changeColor(String c)&#123;</div><div class="line">		color=c;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	void showColor()&#123;</div><div class="line">		System.out.println(&quot;我的颜色是：&quot;+color);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Engine&#123;</div><div class="line">	int speed;</div><div class="line">	int weight;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>内存分析图：<br><img src="http://upload-images.jianshu.io/upload_images/4731173-e420e5992e4ff86c?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>####——-static变量和方法内存分析———</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4731173-342a803fb1b9a389.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<ul>
-<li><h6 id="static变量和方法存放在方法区内-属性ss和方法printSs-，从属于类，只能调用同为static的变量和方法。调用static变量和方法时，直接调用类。"><a href="#static变量和方法存放在方法区内-属性ss和方法printSs-，从属于类，只能调用同为static的变量和方法。调用static变量和方法时，直接调用类。" class="headerlink" title="static变量和方法存放在方法区内 [ 属性ss和方法printSs() ] ，从属于类，只能调用同为static的变量和方法。调用static变量和方法时，直接调用类。"></a>static变量和方法存放在方法区内 <strong>[ </strong>属性ss和方法printSs()<strong> ] </strong>，从属于类，只能调用同为static的变量和方法。调用static变量和方法时，直接调用类。</h6></li>
-<li><h6 id="而非static变量和非static方法存放在堆中-属性name，id和方法study-，sayHello-，调用时必须先实例化对象-new-，同时加载类信息，可以调用static变量和方法。"><a href="#而非static变量和非static方法存放在堆中-属性name，id和方法study-，sayHello-，调用时必须先实例化对象-new-，同时加载类信息，可以调用static变量和方法。" class="headerlink" title="而非static变量和非static方法存放在堆中 [ 属性name，id和方法study()，sayHello() ] ，调用时必须先实例化对象[ new ] ，同时加载类信息，可以调用static变量和方法。"></a>而非static变量和非static方法存放在堆中 <strong>[ </strong>属性name，id和方法study()，sayHello()<strong> ] </strong>，调用时必须先实例化对象<strong>[ </strong>new<strong> ] </strong>，同时加载类信息，可以调用static变量和方法。</h6></li>
-</ul>
-<h4 id="——-this关键字——"><a href="#——-this关键字——" class="headerlink" title="——-this关键字——"></a>——-this关键字——</h4><p><img src="http://upload-images.jianshu.io/upload_images/4731173-8725de10aba17a00.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>构造方法中，this是隐式参数，this.name指向括号中的name对象：<br><img src="http://upload-images.jianshu.io/upload_images/4731173-19d71061067b2cc5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>this不能用于static方法，因为static方法不指向对象。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-52caf5bd05454e1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>所有不是Runtime Exception的异常，统称为<strong>Checked Exception</strong>.<br>Java语言将派生于RuntimeException类或Error类的所有异常称为“未检查异常”,<strong>Unchecked Exception</strong>。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/08/过滤器/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aeris">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aeris‘s">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/08/过滤器/" itemprop="url">过滤器生命周期，执行</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-08T10:51:00+08:00">
+                2016-10-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://upload-images.jianshu.io/upload_images/4731173-5b5d48817c47c9df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-44b1090a0fed882f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-3c6896520305563a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-a1ad25f9c26b30ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 
           
         
@@ -1952,7 +1802,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1997,8 +1847,8 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">42</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-count">57</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -2009,7 +1859,7 @@
             <div class="site-state-item site-state-categories">
               
                 <span class="site-state-item-count">6</span>
-                <span class="site-state-item-name">categories</span>
+                <span class="site-state-item-name">Kategorien</span>
               
             </div>
           
@@ -2019,8 +1869,8 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">39</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">Tags</span>
               
             </div>
           
@@ -2071,7 +1921,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a></div>
 
   <span class="post-meta-divider">|</span>
 

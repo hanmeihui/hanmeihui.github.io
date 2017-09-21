@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh_Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Java," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="作者：刘铁猛    编辑：张·布兰登   翻译：九幽科技  当我写这个话题的时候，我感觉我正在和整个世界对话，就像我在写我的第一个程序“Hello,World”。希望这个话题可以帮助那些想学编程的人（包括你自己）获得一个良好的开端。 关于我 我的名字叫刘铁猛，如果你愿意可以叫我蒂姆。当我在大学的时候，才开始学习计算机编程，在此之前，电脑对我来说就仅仅是一台打印机或者游戏机。但是，当我开始编程，三个">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【转】如何快而好的学习编程">
+<meta property="og:url" content="http://yoursite.com/2017/04/10/【转】如何快而好的学习编程/index.html">
+<meta property="og:site_name" content="Aeris‘s">
+<meta property="og:description" content="作者：刘铁猛    编辑：张·布兰登   翻译：九幽科技  当我写这个话题的时候，我感觉我正在和整个世界对话，就像我在写我的第一个程序“Hello,World”。希望这个话题可以帮助那些想学编程的人（包括你自己）获得一个良好的开端。 关于我 我的名字叫刘铁猛，如果你愿意可以叫我蒂姆。当我在大学的时候，才开始学习计算机编程，在此之前，电脑对我来说就仅仅是一台打印机或者游戏机。但是，当我开始编程，三个">
+<meta property="og:locale" content="zh_Hans">
+<meta property="og:updated_time" content="2017-09-21T01:59:53.503Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【转】如何快而好的学习编程">
+<meta name="twitter:description" content="作者：刘铁猛    编辑：张·布兰登   翻译：九幽科技  当我写这个话题的时候，我感觉我正在和整个世界对话，就像我在写我的第一个程序“Hello,World”。希望这个话题可以帮助那些想学编程的人（包括你自己）获得一个良好的开端。 关于我 我的名字叫刘铁猛，如果你愿意可以叫我蒂姆。当我在大学的时候，才开始学习计算机编程，在此之前，电脑对我来说就仅仅是一台打印机或者游戏机。但是，当我开始编程，三个">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/10/【转】如何快而好的学习编程/"/>
+
+
+
+
+
+  <title>【转】如何快而好的学习编程 | Aeris‘s</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Aeris‘s</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/10/【转】如何快而好的学习编程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aeris">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aeris‘s">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">【转】如何快而好的学习编程</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-10T09:58:00+08:00">
+                2017-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工作笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">工作笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>作者：刘铁猛    编辑：张·布兰登   翻译：九幽科技</strong></p>
+<p> 当我写这个话题的时候，我感觉我正在和整个世界对话，就像我在写我的第一个程序“Hello,World”。希望这个话题可以帮助那些想学编程的人（包括你自己）获得一个良好的开端。</p>
+<h5 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h5><p> 我的名字叫刘铁猛，如果你愿意可以叫我蒂姆。当我在大学的时候，才开始学习计算机编程，在此之前，电脑对我来说就仅仅是一台打印机或者游戏机。但是，当我开始编程，三个因素使我在计算机领域中受益匪浅。分别是：</p>
+<p>1.相当迅速地打字</p>
+<p> 2.知道一些磁盘操作系统命令，并且知道一些编程语言：Basic和Pascal</p>
+<p> 3.一些热爱电脑的志同道合者</p>
+<p> 我为什么要提这个？因为这些使我不再对电脑有一种恐惧感，也不再害怕和其他人互动。我依稀记得，当我还是一个小男孩，做在一个不是很舒服的椅子上，面对着屏幕，完全不知所措。那是一种多么怪异而别扭的糟糕感觉！所以，当你决定学习编程的时候，问你自己一个简单的问题–你对电脑有多熟悉？你经常使用电脑吗？你能熟练地运行Windows/Linux系统吗？你可以使用多少软件？当然，即使你不是非常熟悉电脑，这也不意味着你不能学习编程。不过，在你征服计算机的旅途中，无论在心理上还是生理上都应该会比那些已经熟悉计算机操作的人来说，遇到的困难多得多了。</p>
+<p> 我在大学自学了VB，Delphi和Flash编程。在我毕业之后，我成为了一名软件工程师。然后，有机会去教大学生。也许因为我父母都是老师的原因，我总能非常轻松地将事物有逻辑而清楚地描述出来。所以，学生都非常喜欢我的课。这也鼓励我一步一步地走得越来越远。我开始翻译并写书，出版在线的培训视频等。之后，我搬到了美国，我开始做一些小业务来帮助更多的人来学习电脑编程。到现在为止，我已经在美国教了上百人如何来学习编程。所以，我认为这是一个非常好的时间点来总结一些我的经验并分享给大家！</p>
+<p> 在这些年的教学中，我主要的教学理念就是如何快而好的学习编程。你必须从“心理学之路”和“求知之路”做好准备。</p>
+<h5 id="心理学之路"><a href="#心理学之路" class="headerlink" title="心理学之路"></a>心理学之路</h5><p> 最近，我进行了一个学习实验：如何快速地学习编程语言？当我说到“学习”，我的意思是这门语言必须足够强大到可以通过有下面三个话题类型的面试：</p>
+<p> 1.征服语言本身，比如：语法，关键字，运算符和表达式，语句，面向对象，基本库等等。</p>
+<p> 2.算法知识，比如：常用的集合和算法（排序，递归）。这包括了经典的算法问题，比如动态规划</p>
+<p> 3.面向对象的知识和技能，比如网页和移动开发（基于这种语言的），工具和框架</p>
+<p> 最后，我发现大概还需要6个小时来完成项目1，另外的6个小时来完成项目2。我没有测试项目3，因为当你获得该企业的职位后，他们大多都愿意给你机会来学习这些东西。<br> 我一共要花12个小时–是不是相当快？我猜想你一定迫切想知道我是如何做到的–在这个过程中，如下的三个重要的事情早已刻在了我的脑海中了：</p>
+<p> 1,主动学习–我对要学习的编程语言充满了好奇与兴趣，并对它发自内心的热爱。不管怎样，要确保你自己是主动来学习的。有时候，压力的确可以促进学习，但是它不可以持续很长时间也不可以使你快速掌握该语言。</p>
+<p> 2，明白我要学习什么–我没有老师，没有练习资料，也没有考试，但是我可以测试我自己来看自己有没有理解正在学习的内容。我知道在新的领域，有很多限制，所以我在笔记本上写下了一些问题，在以后再回答他们（一般都是几个小时后）。你会发现记笔记，进行网络搜索，尽可能的收集参考书等对你的学习是非常有帮助的。</p>
+<p> 3，迁移知识–因为我是一个非常有经验的软件工程师，我可以迁移老知识来帮助我理解新的语言。在大多数情况下，都可以行的通，尤其对算法和理念屡试不爽。但是有些情况，知识迁移是错的，我必须做一个“迁移-&gt;测试（代码）-&gt;理解”的检查。</p>
+<p> 现在该你上场了！即使你没有任何的编程经验，也需要准确无误地进行下面的三样事。</p>
+<p> 1，成为一个主动学习者–不管什么原因，你就是想学习这些语言。我认为你对这个科目的喜爱，你想成为一个专业人士，或者你仅仅是好奇，都是非常好的理由。它们会确保你不会退缩。因为学习这条路，并不是一条康庄大道，会被各种障碍堵塞。各种曲折困难在这路上，包括难以理解的各种复杂内容，有待解决的大难问题，被人嘲笑等等。通过我多年的经验，我发现保持高度的自信是保持主动性的最好方法。我有三分之二的学生没有编程经验，变成主动学习者之后，却做得非常好。而且，我发现那些表现非常好的学生往往都有一个积极乐观的亲密伙伴（妻子/丈夫/男朋友/女朋友）。因为他们鼓励我的学生留在了正确的轨道上，这将最终使他们在计算机领域中取得成功！</p>
+<p> 2，通过请教老师，做练习，海量敲代码等，确保你可以完全理解。编程是一个特殊的技能，你所有的知识在编码中都有作用和价值–如果你不知道如何写代码，那么你什么也没学到。衡量你已经学到了多少最有效的方法是–在写代码的时候能够有多顺畅，你就学到了多少。顺便说一下，通过我的观察，当为自己不能理解知识点而感到内疚的学生在最后反而取得更多的成就。这是因为他们会更倾向于理解，同时更加努力去实现他们的目标。</p>
+<p> 3，迁移你的知识–我知道你还没有任何的编程知识来转移，但是不要担心忧虑。编程语言只是一种简单的自然语言，被用来描述我们看到的世界。除非你刚刚从其他星系着陆到地球，否则一切在你大脑里面的东西都可以转化为计算机编程语言！对于一个新的学习者，知识转移还有另一个功能，你可以使用你刚刚学到的知识来解决你从未遇到的问题。这是非常常见的，尤其当你遇见一个算法问题的时候。你很快就会发现，理解和迁移知识总是绑在一起的。简单地说，理解知识就是迁移知识，反之亦然。</p>
+<p>#####求知之路</p>
+<p> 老是有人问我“学习编程难吗？”，我的回答是：不知道。这是因为不同的人在学习的过程会遇到不同难度的问题。当我还是学生的时候，常常会觉得无聊或者感兴趣，沮丧或者开心等等。但是，从来不会觉得难。我的一些学生认为编程非常简单，然而有些学生认为非常难。在整个学习的过程中，学生很难改变他们的最初对编程的观念（简单或难），即使材料变得越来越复杂了。这是什么意思呢？就是编程取决你的态度。简单的说，知识就是知识，你的态度决定了难易程度。</p>
+<p> 学习任何知识体系，我们必须遵循一些顺序。如果你遵循了这些顺序，你最终将在你的大脑里，建立起属于你自己的结构化的信息系统。在我15年的软件工程职业生涯和10年的编程培训师生涯，我一直在微调这些顺序。我使用这个顺序已经教了成千上万的学生，包括我自己，仍然在不断在改进它。下面就是这个顺序的简介：</p>
+<p> 1.准备一个相对好的运行速度快的电脑，然后安装一个操作系统（建议Windows操作系统）。不要让一台速度缓慢的电脑浪费你的时间。</p>
+<p> 2.选择一个正确的打字指法。此外，还要熟悉一些Windows快捷键和文本编辑器。</p>
+<p> 3.学习计算机科学，第一步就是学习一门编程语言。下面就是这种语言的利弊：</p>
+<p> a.C语言<br> 【优点】：你可以学习到许多底层的知识，给你夯实基础。<br> 【缺点】：C语言不支持面向对象编程，你很难使用它直接找到一份工作</p>
+<p> b.C++<br> 【优点】：很多用法和C一样，但是却支持面向对象编程<br> 【缺点】：有太多的知识点要学习，相对比较复杂的语言，有多个版本要选择</p>
+<p> c.Java/C#/Python/JavaScript<br> 【优点】：简单的语法，隐藏了低层次的知识点，可读性强，学好它容易找工作<br> 【缺点】：你将丢失很多底层的知识点</p>
+<p> d.HTML和CSS不是编程语言</p>
+<p> e.汇编语言不适合初学者</p>
+<p> 4.如果你想选择一门语言的话，我建议你选择Java/C#/Python。你只要选择一个并学好它，那么其他的语言你将在一个月之内学成。</p>
+<p> 5.找到一个老师或者一个导师。他们至少要具备5年以上的经验。</p>
+<p> 6.找到官方语言来规范你的语言，和所有相关书籍。但要确保你不是在盲目花钱</p>
+<p> 7.要注意什么时候去阅读书籍或者文档，什么时候去搜索，什么时候去写代码或者调试Bug,什么时候并如何请教老师（导师）。千万不要把你的老师或者导师当成你的“bug调试小能手”。</p>
+<p> 8.当你学习语言的时候要使用并遵循如下顺序：</p>
+<p><strong>a.这门语言支持多少种数据类型？它们的文字值是什么样的？</strong></p>
+<p><strong>b.如何声明变量和常量？数组怎么定义？</strong></p>
+<p><strong>c.如何调用和声明一个函数？</strong></p>
+<p><strong>d.学习一点库函数，比如输入和输出</strong></p>
+<p><strong>e.有多少操作系统支持这个语言？如何使用它们来构建表达式？</strong></p>
+<p><strong>f.什么是判断语句和循环语句？如何把它们放在一起使用？</strong></p>
+<p><strong>g.这个语言支持面向对象吗？如果支持，你如何建立一个类，并封装成员（变量和函数）？</strong></p>
+<p><strong>h.这门语言支持多少个标准形式的集合？（数组，列表，栈，队列，集合等等）</strong></p>
+<p><strong>i.这门语言如何实现继承和多态？</strong></p>
+<p><strong>j.如何实现接口和SOLID法则是什么？</strong></p>
+<p><strong>k.如何实现回调函数？</strong></p>
+<p><strong>l.是否支持函数型程序设计法？</strong></p>
+<p><strong>m.尽可能的多熟悉标准库。不同的语言有不同的库函数，所以在这点上请教专业人士</strong></p>
+<p><strong>n.使用这门语言来学习算法。实现经典算法，并破解难题</strong></p>
+<p><strong>o.使用这门语言来写像网站，手机app等软件</strong></p>
+<p> 9.全日制学生通常花3个月的时间完成a到m，再花2个月的时间完成n。这个完全取决于你对之前的项目的理解。如果你发现你卡在一个项目上，然后重新回过来理解一下。记住要有耐心。</p>
+<p> 10.一旦你学习了新的知识点，写代码，一定要联网保存在Visual Studio的GitHub上。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/14/图表优化/" rel="next" title="图表优化">
+                <i class="fa fa-chevron-left"></i> 图表优化
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/27/Untitled/" rel="prev" title="安装配置MyEclipse+SVN+Maven+VPN环境">
+                安装配置MyEclipse+SVN+Maven+VPN环境 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <p class="site-author-name" itemprop="name">Aeris</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">57</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">Kategorien</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">Tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#关于我"><span class="nav-number">1.</span> <span class="nav-text">关于我</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#心理学之路"><span class="nav-number">2.</span> <span class="nav-text">心理学之路</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Aeris</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
