@@ -219,6 +219,173 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/01/Java读取XML文件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aeris">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aeris‘s">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/01/Java读取XML文件/" itemprop="url">Java读取XML文件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-01T17:40:00+08:00">
+                2017-03-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工作笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">工作笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="Java读取Xml文件-【视频】"><a href="#Java读取Xml文件-【视频】" class="headerlink" title="Java读取Xml文件 【视频】"></a><a href="http://www.imooc.com/learn/171" target="_blank" rel="external">Java读取Xml文件</a> 【视频】</h5><p>有四种方法：DOM、SAX、DOM4J、JDOM</p>
+<h5 id="1、DOM读取："><a href="#1、DOM读取：" class="headerlink" title="1、DOM读取："></a>1、DOM读取：</h5><p><strong>1、准备阶段：</strong></p>
+<p>DocumentBuilderFactory&gt;&gt;&gt;DocumentBulder&gt;&gt;&gt;Document&gt;加载xml文件</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-a9b219f892ba71f4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>2、获取并遍历节点</strong></p>
+<p>（1）通过document对象的getElementByTagName()方法获取节点集合NodeList【即几本书的集合】；</p>
+<p>循环遍历，通过NodeList的item(index)方法获取每个节点<strong>Node</strong>【每本书】；</p>
+<p>通过Node的getAttributes()方法获取节点的属性集合<strong>NamedNodeMap</strong>【书的属性集合：id】</p>
+<p>循环遍历，通过NamedNodeMapd的item(index)方法获取每个属性节点Node【id】</p>
+<p>通过Node的getNodeName()和getNodeValue()方法获取属性值【例如：id–1】</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-58083d3d59be4ab8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/4731173-e9d5a45861600b62.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>（2）在已知book节点只有一个id属性时，可用以下方法。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-b17385367de7aa20.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>3、获取并遍历子节点</strong></p>
+<p>通过Node的getChildNodes()方法获取到子节点集合<strong>NodeList</strong>【书名/作者/日期等】</p>
+<p>循环遍历，NodeList的item(index)方法可分别获取到每一个Node，然后通过getNodeName(),getNodeValue()方法可获取到该子节点的节点名和节点值。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-6f577683e5669011.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h5 id="此处注意："><a href="#此处注意：" class="headerlink" title="此处注意："></a>此处注意：</h5><p><strong>常用的节点类型有Element、Attr、Text三种类型。</strong></p>
+<p><strong>当使用getLength()方法时，解析器会把Xml文件中的空格以及换行符当做一个Text节点记入length。</strong></p>
+<p><strong>如果直接使用getNodeValue()方法，若节点为Element类型（例如：<code>&lt;author&gt;金庸&lt;/author&gt;</code>），则返回值为null。因此先通过getFirstChild()方法获取到Text节点（金庸），才能通过getNodeValue()方法获取节点值。</strong></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-ccc990fe06b45078.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>通过<strong>getTextContent()</strong>方法可以获取到节点中的Text文字。</p>
+<p>【当节点中既有Element节点又有Text节点时：（例如：<code>&lt;author&gt;&lt;a&gt;aa&lt;/a&gt;金庸&lt;/author&gt;</code>）</p>
+<p><strong>getTextContent()：</strong>获取到所有文本信息.（aa金庸）</p>
+<p><strong>getFirstChild().getNodeValue:</strong>获取到第一个子节点的文本信息.（aa）】</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-59a2858529470b37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/28/按日期和关键词筛选数据，并用FusionChart显示图表/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1625,193 +1792,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/10/Hibernate/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Aeris">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aeris‘s">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/11/10/Hibernate/" itemprop="url">Hibernate</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-10T15:30:00+08:00">
-                2016-11-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">in</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java基础/" itemprop="url" rel="index">
-                    <span itemprop="name">Java基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="一、Hibernate基础知识"><a href="#一、Hibernate基础知识" class="headerlink" title="一、Hibernate基础知识"></a>一、Hibernate基础知识</h4><h5 id="1-【ORM—对象-关系映射】"><a href="#1-【ORM—对象-关系映射】" class="headerlink" title="1.【ORM—对象/关系映射】"></a>1.【ORM—对象/关系映射】</h5><h6 id="ORM-Object-Relationship-Mapping"><a href="#ORM-Object-Relationship-Mapping" class="headerlink" title="ORM(Object/Relationship Mapping)"></a>ORM(Object/Relationship Mapping)</h6><p>利用面向对象思想编写的数据库应用程序最终都是把对象信息保存在关系型数据库中，但编写很多和底层数据库相关的sql语句与面向对象思想格格不入。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4731173-bd89aaf8b4c0c4e2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h5 id="2-【主流的ORM框架技术】"><a href="#2-【主流的ORM框架技术】" class="headerlink" title="2.【主流的ORM框架技术】"></a>2.【主流的ORM框架技术】</h5><ul>
-<li>Hibernate</li>
-<li>MyBatis：前身就是著名的iBatis</li>
-<li>Toplink：后被Oracle收购，重新包装为Oracle AS TopLink</li>
-<li>EJB：本身是javaee的规范</li>
-</ul>
-<h5 id="3、Hibernate"><a href="#3、Hibernate" class="headerlink" title="3、Hibernate"></a>3、Hibernate</h5><p>对JDBC进行了非常轻量级的对象封装。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-e70047f5fcd18bee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h4 id="创建Hibernate实例步骤："><a href="#创建Hibernate实例步骤：" class="headerlink" title="创建Hibernate实例步骤："></a>创建Hibernate实例步骤：</h4><p><img src="http://upload-images.jianshu.io/upload_images/4731173-6579cc545127b5db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h5 id="1-创建工程，导入相关jar包。"><a href="#1-创建工程，导入相关jar包。" class="headerlink" title="1.创建工程，导入相关jar包。"></a>1.创建工程，导入相关jar包。</h5><p>Preferences—Java—Build Path—User Libraries—添加自定义类库<br><img src="http://upload-images.jianshu.io/upload_images/4731173-28c640160e76875b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>右键工程—Preferences—Java—Build Path—Libraries—Add Library—User Library—选择刚创建的自定义类库。</p>
-<p>可设置以下路径的dtd文档支持xml的<strong>自动提示功能</strong>。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4731173-8ef0ef8e214a27ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><strong>创建Hibernate的配置文件hibernate.cfg.xml。</strong>以下五个标签是hibernate.cfg.xml文件基本的属性标签，包括数据库的用户名、密码、驱动、地址、数据库方言。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-2bdd294a40313b82.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h5 id="2-创建持久化类【即Java-Bean】"><a href="#2-创建持久化类【即Java-Bean】" class="headerlink" title="2.创建持久化类【即Java Bean】"></a>2.创建持久化类【即Java Bean】</h5><p><img src="http://upload-images.jianshu.io/upload_images/4731173-e1bce13608c793d5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h5 id="3-创建对象-关系映射文件"><a href="#3-创建对象-关系映射文件" class="headerlink" title="3.创建对象-关系映射文件"></a>3.创建对象-关系映射文件</h5><p>右键src—new—other—Hibernate—Hibernate XML Mapping file（hbm.xml），创建对象-关系映射文件hibernate.cfg.xml。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-a803c3c9e92345c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>同时，在hibernate.cfg.xml文件中声明mapping标签。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-efbf7cd3a8ca3b98.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h5 id="4通过Hibernate-API编写访问数据库的代码"><a href="#4通过Hibernate-API编写访问数据库的代码" class="headerlink" title="4通过Hibernate API编写访问数据库的代码"></a>4通过Hibernate API编写访问数据库的代码</h5><p><img src="http://upload-images.jianshu.io/upload_images/4731173-4b9b106585e47c29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/4731173-244d3fd7d2c2e229.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4731173-9eb4dfe2961fe9ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h4 id="二、Hibernate进阶"><a href="#二、Hibernate进阶" class="headerlink" title="二、Hibernate进阶"></a>二、Hibernate进阶</h4><h5 id="1-hibernate-cfg-xml常用配置"><a href="#1-hibernate-cfg-xml常用配置" class="headerlink" title="1.hibernate.cfg.xml常用配置"></a>1.hibernate.cfg.xml常用配置</h5><p><img src="http://upload-images.jianshu.io/upload_images/4731173-aff38b990d8a99e4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h5 id="2-session"><a href="#2-session" class="headerlink" title="2.session"></a>2.session</h5><p><strong>Session可以理解为操作数据库的对象。</strong>不建议直接使用jdbc的connection操作数据库，而是通过使用session操作数据库。<br>session与connection是多对一的关系，每个session都有一个与之对应的connection，一个connection不同时刻可以供多个session使用。<br><strong>把对象保存在关系数据库中需要调用session的各种方法，如：save(),update(),delete(),createQuery()等。</strong></p>
-<h5 id="3-Transaction事务"><a href="#3-Transaction事务" class="headerlink" title="3.Transaction事务"></a>3.Transaction事务</h5><ul>
-<li>Hibernate对数据的操作都是封装在事务当中，并且默认是非自动提交的方式。所以用session保存对象时，如果不开启事务，并且<strong>手工提交事务</strong>，对象并不会真正保存在数据库中。</li>
-<li>如果想要实现hibernate像jdbc那样<strong>自动提交事务</strong>，必须调用session对象的<strong>doWork()</strong>方法，获得jdbc的connection后，设置其为自动提交事务模式。如下：（通常并不推荐这样做）<br><img src="http://upload-images.jianshu.io/upload_images/4731173-2831c00af0aa466a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-</ul>
-<h5 id="4-session详解"><a href="#4-session详解" class="headerlink" title="4.session详解"></a>4.session详解</h5><p><strong>获得session对象有两种方法：</strong></p>
-<ul>
-<li>1）openSession</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/4731173-50d0ba2443ae7d99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<ul>
-<li>2）getCurrentSession</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/4731173-e0302ae74b33fcf3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4731173-78ebef352686fa1b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/4731173-f3b037784fae4530.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><strong>openSession与getCurrentSession的区别：</strong><br>（1）getCurrentSession在事物提交或者回滚之后会自动关闭，而openSession需要手动关闭。如果使用openSession而没有手动关闭，多次之后会导致连接池溢出。<br>（2）openSession每次创建新的session对象，getCurrentSession使用现有的session对象。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4731173-95c713d10af6da1d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4731173-abde2ce715360326.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h5 id="5-hbm配置文件常用设置"><a href="#5-hbm配置文件常用设置" class="headerlink" title="5.hbm配置文件常用设置"></a>5.hbm配置文件常用设置</h5><p><img src="http://upload-images.jianshu.io/upload_images/4731173-aade886351fdacba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/4731173-3fd77318a912f3b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/4731173-9e28ddc6e56718c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/4731173-0f7e0bbccb7e4f9c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h4 id="三、Hibernate单表操作"><a href="#三、Hibernate单表操作" class="headerlink" title="三、Hibernate单表操作"></a>三、Hibernate单表操作</h4><h5 id="1、单一主键"><a href="#1、单一主键" class="headerlink" title="1、单一主键"></a>1、单一主键</h5><p>以mysql为例，常见有两种主键生成策略：</p>
-<ul>
-<li><strong>assigned：</strong>手工赋值方式。由java应用程序负责生成。</li>
-<li><strong>native：</strong>自动生成方式。由底层数据库自动生成标示符，如果是MySQL就是increment策略，如果是Oracle就是sequence策略，等等。<h5 id="2-Hibernate基本类型"><a href="#2-Hibernate基本类型" class="headerlink" title="2.Hibernate基本类型"></a>2.Hibernate基本类型</h5>在hibernate.hbm.xml中，指定数据类型时，可以使用<strong>Hibernate映射类型</strong>，也可以使用<strong>java类型</strong>。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-0ab25abfcd2613f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-<li>date：年月日</li>
-<li>time：时分秒</li>
-<li>timestamp：年月日时分秒<h5 id="3-Hibernate对象类型"><a href="#3-Hibernate对象类型" class="headerlink" title="3.Hibernate对象类型"></a>3.Hibernate对象类型</h5><img src="http://upload-images.jianshu.io/upload_images/4731173-9c4f29feabd3c700.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1861,7 +1841,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">57</span>
+                <span class="site-state-item-count">58</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>

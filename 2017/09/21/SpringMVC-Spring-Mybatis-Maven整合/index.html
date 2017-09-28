@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh_Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="MySQL数据库安装与配置详解 30分钟带你快速入门MySQL教程 1.使用的工具 MyEclipse   Tomcat   JDK   Mybatis generator    2.Generator工具的使用 新建一个文件夹，命名src 打开mybatis_generator中的generatorConfig.xml文件，根据注释修改数据库驱动、数据库链接URL，用户名、密码、生成模型、映射文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringMVC+Spring+Mybatis+Maven整合">
+<meta property="og:url" content="http://yoursite.com/2017/09/21/SpringMVC-Spring-Mybatis-Maven整合/index.html">
+<meta property="og:site_name" content="Aeris‘s">
+<meta property="og:description" content="MySQL数据库安装与配置详解 30分钟带你快速入门MySQL教程 1.使用的工具 MyEclipse   Tomcat   JDK   Mybatis generator    2.Generator工具的使用 新建一个文件夹，命名src 打开mybatis_generator中的generatorConfig.xml文件，根据注释修改数据库驱动、数据库链接URL，用户名、密码、生成模型、映射文">
+<meta property="og:locale" content="zh_Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-2ad3fc55f08cc57c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-496bbf88ac154cf7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-d07a801e820b1cea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-530f20f8847525b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-afe345c58ef44d49.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-7ef69c0bad2a572e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-6cebd9e7b7007ff0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-f86b0626d24159cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-21e5f5da9d80fabd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-c50b88554da67091.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-09-28T09:22:36.097Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SpringMVC+Spring+Mybatis+Maven整合">
+<meta name="twitter:description" content="MySQL数据库安装与配置详解 30分钟带你快速入门MySQL教程 1.使用的工具 MyEclipse   Tomcat   JDK   Mybatis generator    2.Generator工具的使用 新建一个文件夹，命名src 打开mybatis_generator中的generatorConfig.xml文件，根据注释修改数据库驱动、数据库链接URL，用户名、密码、生成模型、映射文">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4731173-2ad3fc55f08cc57c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/21/SpringMVC-Spring-Mybatis-Maven整合/"/>
+
+
+
+
+
+  <title>SpringMVC+Spring+Mybatis+Maven整合 | Aeris‘s</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Aeris‘s</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/21/SpringMVC-Spring-Mybatis-Maven整合/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aeris">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aeris‘s">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SpringMVC+Spring+Mybatis+Maven整合</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-21T14:03:00+08:00">
+                2017-09-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java进阶/" itemprop="url" rel="index">
+                    <span itemprop="name">Java进阶</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="http://www.cnblogs.com/sshoub/p/4321640.html" target="_blank" rel="external">MySQL数据库安装与配置详解</a></p>
+<p><a href="http://www.linuxidc.com/Linux/2016-02/128127.htm" target="_blank" rel="external">30分钟带你快速入门MySQL教程</a></p>
+<h4 id="1-使用的工具"><a href="#1-使用的工具" class="headerlink" title="1.使用的工具"></a>1.使用的工具</h4><ul>
+<li>MyEclipse  </li>
+<li>Tomcat  </li>
+<li>JDK  </li>
+<li>Mybatis generator  </li>
+</ul>
+<h4 id="2-Generator工具的使用"><a href="#2-Generator工具的使用" class="headerlink" title="2.Generator工具的使用"></a>2.Generator工具的使用</h4><ul>
+<li>新建一个文件夹，命名src</li>
+<li>打开mybatis_generator中的generatorConfig.xml文件，根据注释修改<strong>数据库驱动、数据库链接URL，用户名、密码、生成模型、映射文件和dao的包名和位置</strong>等数据项。（在src中）<br><img src="http://upload-images.jianshu.io/upload_images/4731173-2ad3fc55f08cc57c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-496bbf88ac154cf7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li>在mybatis_generator的lib目录里下，打开命令行，执行以下脚本：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -jar mybatis-generator-core-1.3.2.jar -configfile generatorConfig.xml -overwrite</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>出现“MyBatis Generator finished successfully.”时，表示编译成功。此时，指定的src目录中<strong>自动生成数据库表对应的dao、mapping、model文件</strong>。</p>
+<h4 id="3-引入spring和mybatis需要的包"><a href="#3-引入spring和mybatis需要的包" class="headerlink" title="3.引入spring和mybatis需要的包"></a>3.引入spring和mybatis需要的包</h4><ul>
+<li>新建Maven Project，由于要创建的是web项目，因此要设置Filter为maven-archetype-webapp。</li>
+<li>创建出的项目没有显示src/main/java目录。<ul>
+<li>1、右键项目Properties—Project Facets，设置java版本（1.5以上），</li>
+<li>2、设置Java Build Path的Libraries的jre，以及JavaCompiler的版本一致。</li>
+</ul>
+</li>
+<li>在pom.xml中添加jar包依赖。进入search.maven.org网页，搜索jar包，找到相应的xml代码。需要添加以下依赖：spring-core、mybatis、mybatis-spring、mysql-connector-java、junit、druid、aspectj等。</li>
+<li>在src/main/resources中创建或引入spring.xml,spinrg-mybatis.xml,spring-mvc.xml,log4j.properties,config.properties配置文件。</li>
+</ul>
+<h4 id="4-引入spring-mvc需要的包"><a href="#4-引入spring-mvc需要的包" class="headerlink" title="4.引入spring mvc需要的包"></a>4.引入spring mvc需要的包</h4><p> 【参考文章:<a href="http://blog.csdn.net/fox_lht/article/details/16952683" target="_blank" rel="external">使用maven一步一步构建spring mvc项目</a>】</p>
+<ul>
+<li><p>在pom.xml文件中引入spring-webmvc的依赖</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;dependency&gt;</div><div class="line"> &lt;groupId&gt;org.springframework&lt;/groupId&gt;</div><div class="line"> &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;</div><div class="line"> &lt;version&gt;3.2.0.RELEASE&lt;/version&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>在web.xml文件中编写servlet和servlet-mapping标签<br><img src="http://upload-images.jianshu.io/upload_images/4731173-d07a801e820b1cea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+<li><p>修改spring-mvc.xml文件，扫描controller包下的所有类、 启动Spring MVC的注解功能、启用对模型视图名称的解析等<br><img src="http://upload-images.jianshu.io/upload_images/4731173-530f20f8847525b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+</ul>
+<h4 id="5-测试"><a href="#5-测试" class="headerlink" title="5.测试"></a>5.测试</h4><p><strong>①Junit4测试</strong></p>
+<ul>
+<li>添加junit4依赖</li>
+<li>在src/main/test中编写测试代码，以@Test标识测试方法<br><img src="http://upload-images.jianshu.io/upload_images/4731173-afe345c58ef44d49.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+<p><strong>②spring-test</strong></p>
+<ul>
+<li>添加spring-test依赖</li>
+<li>可通过注解<strong>@ContextConfiguration</strong>获得ApplicationContext的信息，通过<strong>@Autowired</strong>自动注入UserService<br><img src="http://upload-images.jianshu.io/upload_images/4731173-7ef69c0bad2a572e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+<p><strong>③编写Controller，运行网页</strong></p>
+<ul>
+<li>在Controller类中通过注解指定@Controller和@RequestMapping<br><img src="http://upload-images.jianshu.io/upload_images/4731173-6cebd9e7b7007ff0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li>编写与Controller方法返回字符串相同名称的jsp页面<br><img src="http://upload-images.jianshu.io/upload_images/4731173-f86b0626d24159cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li><p>运行链接<a href="http://localhost:8080/testssm/userController/showUser?id=0" target="_blank" rel="external">http://localhost:8080/testssm/userController/showUser?id=0</a></p>
+<p><strong>url访问方式：</strong></p>
+<ul>
+<li>①</li>
+</ul>
+<p><a href="http://localhost:8080/testssm/userController/showUser?id=0" target="_blank" rel="external">http://localhost:8080/testssm/userController/showUser?id=0</a></p>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-21e5f5da9d80fabd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li><p>②【推荐】</p>
+<p><a href="http://localhost:8080/testssm/userController/showUser/0" target="_blank" rel="external">http://localhost:8080/testssm/userController/showUser/0</a></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-c50b88554da67091.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+</ul>
+<h4 id="6-打印sql"><a href="#6-打印sql" class="headerlink" title="6.打印sql"></a>6.打印sql</h4><h4 id="7-STS编译Maven项目需要注意的问题"><a href="#7-STS编译Maven项目需要注意的问题" class="headerlink" title="7.STS编译Maven项目需要注意的问题"></a>7.STS编译Maven项目需要注意的问题</h4>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/10/编写发布博客/" rel="next" title="编写发布博客">
+                <i class="fa fa-chevron-left"></i> 编写发布博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <p class="site-author-name" itemprop="name">Aeris</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">58</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">Kategorien</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">Tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-使用的工具"><span class="nav-number">1.</span> <span class="nav-text">1.使用的工具</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Generator工具的使用"><span class="nav-number">2.</span> <span class="nav-text">2.Generator工具的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-引入spring和mybatis需要的包"><span class="nav-number">3.</span> <span class="nav-text">3.引入spring和mybatis需要的包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-引入spring-mvc需要的包"><span class="nav-number">4.</span> <span class="nav-text">4.引入spring mvc需要的包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-测试"><span class="nav-number">5.</span> <span class="nav-text">5.测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-打印sql"><span class="nav-number">6.</span> <span class="nav-text">6.打印sql</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-STS编译Maven项目需要注意的问题"><span class="nav-number">7.</span> <span class="nav-text">7.STS编译Maven项目需要注意的问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Aeris</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
