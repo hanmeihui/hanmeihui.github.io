@@ -6,29 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>SpringMVC+Spring+Mybatis+Maven整合 | Aeris‘s</title>
+  <title>SpringMVC+Spring+Mybatis+Maven整合（一） | Aeris‘s</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="MySQL数据库安装与配置详解 30分钟带你快速入门MySQL教程 1.使用的工具 MyEclipse   Tomcat   JDK   Mybatis generator    2.Generator工具的使用 新建一个文件夹，命名src 打开mybatis_generator中的generatorConfig.xml文件，根据注释修改数据库驱动、数据库链接URL，用户名、密码、生成模型、映射文">
+  <meta name="description" content="MySQL数据库安装与配置详解 30分钟带你快速入门MySQL教程 1.使用的工具 MyEclipse   Tomcat   JDK   Mybatis generator    2.使用mybatis_generator自动生成数据库表对应的dao、mapping、model文件 下载mybatis_generator，打开generatorConfig.xml文件，根据注释修改数据库、生成mo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringMVC+Spring+Mybatis+Maven整合">
+<meta property="og:title" content="SpringMVC+Spring+Mybatis+Maven整合（一）">
 <meta property="og:url" content="http://yoursite.com/2017/09/21/SpringMVC-Spring-Mybatis-Maven整合/index.html">
 <meta property="og:site_name" content="Aeris‘s">
-<meta property="og:description" content="MySQL数据库安装与配置详解 30分钟带你快速入门MySQL教程 1.使用的工具 MyEclipse   Tomcat   JDK   Mybatis generator    2.Generator工具的使用 新建一个文件夹，命名src 打开mybatis_generator中的generatorConfig.xml文件，根据注释修改数据库驱动、数据库链接URL，用户名、密码、生成模型、映射文">
+<meta property="og:description" content="MySQL数据库安装与配置详解 30分钟带你快速入门MySQL教程 1.使用的工具 MyEclipse   Tomcat   JDK   Mybatis generator    2.使用mybatis_generator自动生成数据库表对应的dao、mapping、model文件 下载mybatis_generator，打开generatorConfig.xml文件，根据注释修改数据库、生成mo">
 <meta property="og:locale" content="zh_Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-2ad3fc55f08cc57c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-496bbf88ac154cf7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-ad2c98a5cb000c6f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-d07a801e820b1cea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-530f20f8847525b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-afe345c58ef44d49.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-7ef69c0bad2a572e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-6cebd9e7b7007ff0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-f86b0626d24159cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-21e5f5da9d80fabd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4731173-c50b88554da67091.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-09-28T09:22:36.097Z">
+<meta property="og:updated_time" content="2017-10-12T08:07:07.066Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SpringMVC+Spring+Mybatis+Maven整合">
-<meta name="twitter:description" content="MySQL数据库安装与配置详解 30分钟带你快速入门MySQL教程 1.使用的工具 MyEclipse   Tomcat   JDK   Mybatis generator    2.Generator工具的使用 新建一个文件夹，命名src 打开mybatis_generator中的generatorConfig.xml文件，根据注释修改数据库驱动、数据库链接URL，用户名、密码、生成模型、映射文">
+<meta name="twitter:title" content="SpringMVC+Spring+Mybatis+Maven整合（一）">
+<meta name="twitter:description" content="MySQL数据库安装与配置详解 30分钟带你快速入门MySQL教程 1.使用的工具 MyEclipse   Tomcat   JDK   Mybatis generator    2.使用mybatis_generator自动生成数据库表对应的dao、mapping、model文件 下载mybatis_generator，打开generatorConfig.xml文件，根据注释修改数据库、生成mo">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4731173-2ad3fc55f08cc57c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="Aeris‘s" type="application/atom+xml">
@@ -172,7 +167,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      SpringMVC+Spring+Mybatis+Maven整合
+      SpringMVC+Spring+Mybatis+Maven整合（一）
     </h1>
   
 
@@ -193,25 +188,28 @@
 <li>JDK  </li>
 <li>Mybatis generator  </li>
 </ul>
-<h4 id="2-Generator工具的使用"><a href="#2-Generator工具的使用" class="headerlink" title="2.Generator工具的使用"></a>2.Generator工具的使用</h4><ul>
-<li>新建一个文件夹，命名src</li>
-<li>打开mybatis_generator中的generatorConfig.xml文件，根据注释修改<strong>数据库驱动、数据库链接URL，用户名、密码、生成模型、映射文件和dao的包名和位置</strong>等数据项。（在src中）<br><img src="http://upload-images.jianshu.io/upload_images/4731173-2ad3fc55f08cc57c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<h4 id="2-使用mybatis-generator自动生成数据库表对应的dao、mapping、model文件"><a href="#2-使用mybatis-generator自动生成数据库表对应的dao、mapping、model文件" class="headerlink" title="2.使用mybatis_generator自动生成数据库表对应的dao、mapping、model文件"></a>2.使用mybatis_generator自动生成数据库表对应的dao、mapping、model文件</h4><ul>
+<li>下载mybatis_generator，打开generatorConfig.xml文件，根据注释修改<strong>数据库、生成model、mappinng和dao的包名和位置</strong>等数据项。如下：<br><img src="http://upload-images.jianshu.io/upload_images/4731173-2ad3fc55f08cc57c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
 </ul>
 <p><img src="http://upload-images.jianshu.io/upload_images/4731173-496bbf88ac154cf7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <ul>
 <li>在mybatis_generator的lib目录里下，打开命令行，执行以下脚本：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -jar mybatis-generator-core-1.3.2.jar -configfile generatorConfig.xml -overwrite</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>出现“MyBatis Generator finished successfully.”时，表示编译成功。此时，指定的src目录中<strong>自动生成数据库表对应的dao、mapping、model文件</strong>。</p>
-<h4 id="3-引入spring和mybatis需要的包"><a href="#3-引入spring和mybatis需要的包" class="headerlink" title="3.引入spring和mybatis需要的包"></a>3.引入spring和mybatis需要的包</h4><ul>
-<li>新建Maven Project，由于要创建的是web项目，因此要设置Filter为maven-archetype-webapp。</li>
-<li>创建出的项目没有显示src/main/java目录。<ul>
+<p>出现“MyBatis Generator finished successfully.”时，表示编译成功。此时，指定的文件目录中<strong>自动生成数据库表对应的dao、mapping、model文件</strong>。</p>
+<h4 id="3-通过maven引入spring和mybatis需要的包"><a href="#3-通过maven引入spring和mybatis需要的包" class="headerlink" title="3.通过maven引入spring和mybatis需要的包"></a>3.通过maven引入spring和mybatis需要的包</h4><ul>
+<li>新建Maven Project，由于要创建的是web项目，因此要设置Filter为<strong>maven-archetype-webapp</strong>。<ul>
+<li>如果创建出的项目没有显示src/main/java目录。<ul>
 <li>1、右键项目Properties—Project Facets，设置java版本（1.5以上），</li>
 <li>2、设置Java Build Path的Libraries的jre，以及JavaCompiler的版本一致。</li>
 </ul>
 </li>
-<li>在pom.xml中添加jar包依赖。进入search.maven.org网页，搜索jar包，找到相应的xml代码。需要添加以下依赖：spring-core、mybatis、mybatis-spring、mysql-connector-java、junit、druid、aspectj等。</li>
-<li>在src/main/resources中创建或引入spring.xml,spinrg-mybatis.xml,spring-mvc.xml,log4j.properties,config.properties配置文件。</li>
+</ul>
+</li>
+<li><p>在pom.xml中添加jar包依赖。进入search.maven.org网页，搜索jar包，找到相应的xml代码。添加需要的jar包依赖，如：<br><img src="http://upload-images.jianshu.io/upload_images/4731173-ad2c98a5cb000c6f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+<li><p>在src/main/resources中创建或引入spring.xml,spinrg-mybatis.xml,spring-mvc.xml,log4j.properties,config.properties配置文件。</p>
+</li>
 </ul>
 <h4 id="4-引入spring-mvc需要的包"><a href="#4-引入spring-mvc需要的包" class="headerlink" title="4.引入spring mvc需要的包"></a>4.引入spring mvc需要的包</h4><p> 【参考文章:<a href="http://blog.csdn.net/fox_lht/article/details/16952683" target="_blank" rel="external">使用maven一步一步构建spring mvc项目</a>】</p>
 <ul>
@@ -223,36 +221,7 @@
 <li><p>修改spring-mvc.xml文件，扫描controller包下的所有类、 启动Spring MVC的注解功能、启用对模型视图名称的解析等<br><img src="http://upload-images.jianshu.io/upload_images/4731173-530f20f8847525b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 </li>
 </ul>
-<h4 id="5-测试"><a href="#5-测试" class="headerlink" title="5.测试"></a>5.测试</h4><p><strong>①Junit4测试</strong></p>
-<ul>
-<li>添加junit4依赖</li>
-<li>在src/main/test中编写测试代码，以@Test标识测试方法<br><img src="http://upload-images.jianshu.io/upload_images/4731173-afe345c58ef44d49.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-</ul>
-<p><strong>②spring-test</strong></p>
-<ul>
-<li>添加spring-test依赖</li>
-<li>可通过注解<strong>@ContextConfiguration</strong>获得ApplicationContext的信息，通过<strong>@Autowired</strong>自动注入UserService<br><img src="http://upload-images.jianshu.io/upload_images/4731173-7ef69c0bad2a572e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-</ul>
-<p><strong>③编写Controller，运行网页</strong></p>
-<ul>
-<li>在Controller类中通过注解指定@Controller和@RequestMapping<br><img src="http://upload-images.jianshu.io/upload_images/4731173-6cebd9e7b7007ff0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-<li>编写与Controller方法返回字符串相同名称的jsp页面<br><img src="http://upload-images.jianshu.io/upload_images/4731173-f86b0626d24159cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-<li><p>运行链接<a href="http://localhost:8080/testssm/userController/showUser?id=0" target="_blank" rel="external">http://localhost:8080/testssm/userController/showUser?id=0</a></p>
-<p><strong>url访问方式：</strong></p>
-<ul>
-<li>①</li>
-</ul>
-<p><a href="http://localhost:8080/testssm/userController/showUser?id=0" target="_blank" rel="external">http://localhost:8080/testssm/userController/showUser?id=0</a></p>
-</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/4731173-21e5f5da9d80fabd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<ul>
-<li><p>②【推荐】</p>
-<p><a href="http://localhost:8080/testssm/userController/showUser/0" target="_blank" rel="external">http://localhost:8080/testssm/userController/showUser/0</a></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4731173-c50b88554da67091.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-</li>
-</ul>
-<h4 id="6-打印sql"><a href="#6-打印sql" class="headerlink" title="6.打印sql"></a>6.打印sql</h4><h4 id="7-STS编译Maven项目需要注意的问题"><a href="#7-STS编译Maven项目需要注意的问题" class="headerlink" title="7.STS编译Maven项目需要注意的问题"></a>7.STS编译Maven项目需要注意的问题</h4>
+
       
 
       
@@ -355,6 +324,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/10/12/SpringMVC-Spring-Mybatis-Maven整合（二）/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          SpringMVC+Spring+Mybatis+Maven整合（二）
+        
+      </div>
+    </a>
   
   
     <a href="/2017/08/10/编写发布博客/" id="article-nav-older" class="article-nav-link-wrap">
@@ -484,19 +462,19 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">cookie,session</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">EL表达式,JavaWeb</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">FusionCharts</a>
+                <a href="javascript:void(0)" class="js-tag color5">cookie,session</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">FusionCHarts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">FusionCharts</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -592,11 +570,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">while循环,数组,Arrays</a>
+                <a href="javascript:void(0)" class="js-tag color3">sql,知识点</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">sql,知识点</a>
+                <a href="javascript:void(0)" class="js-tag color3">while循环,数组,Arrays</a>
               </li>
              
               <li class="article-tag-list-item">

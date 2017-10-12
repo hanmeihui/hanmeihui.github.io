@@ -152,6 +152,127 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java常见类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/15/Java常见类/">Java常见类</a>
+    </h1>
+  
+
+        
+        <a href="/2016/10/15/Java常见类/" class="archive-article-date">
+  	<time datetime="2016-10-15T02:53:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、String-StringBuilder-StringBuffer"><a href="#1、String-StringBuilder-StringBuffer" class="headerlink" title="1、String ,StringBuilder,StringBuffer"></a>1、String ,StringBuilder,StringBuffer</h3><ul>
+<li>不可变字符序列：String</li>
+<li>可变字符序列：StringBuilder(线程不安全，效率高)<br>　　　　　　　StringBuffer(线程安全，效率低)  【synchronized】</li>
+</ul>
+<h6 id="可变字符序列"><a href="#可变字符序列" class="headerlink" title="可变字符序列"></a>可变字符序列</h6><ul>
+<li>初始化时，会把字符序列放在一个数组中，如果不定义长度的话默认长度为16个字节，如果定义则按照定义的字符序列长度+16个字节。</li>
+<li><strong>append：可变字符序列扩展长度的原理是，当添加的字符序列的长度超过原初始化长度的话，则创建一个新的数组，扩展长度，将原数组复制过去。</strong><br>【不可变字符序列String初始化时，会把字符序列放在一个长度为final常量的数组中，因此长度不可变。】</li>
+<li><strong>delete(start,end)</strong>：删除，包头不包尾</li>
+<li><strong>reverse()</strong>：翻转字符序列</li>
+</ul>
+<hr>
+<hr>
+<h3 id="2、Date"><a href="#2、Date" class="headerlink" title="2、Date"></a>2、Date</h3><p><img src="http://upload-images.jianshu.io/upload_images/4731173-af2ac4fdfdec3d5a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li><h5 id="java-util-Date：long类型数字"><a href="#java-util-Date：long类型数字" class="headerlink" title="java.util.Date：long类型数字"></a>java.util.Date：long类型数字</h5></li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-fdd4f905ac12cb26.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li><h5 id="日期格式化：long类型数字-lt-—-gt-日期字符串"><a href="#日期格式化：long类型数字-lt-—-gt-日期字符串" class="headerlink" title="日期格式化：long类型数字&lt;—&gt;日期字符串"></a>日期格式化：long类型数字&lt;—&gt;日期字符串</h5><p><img src="http://upload-images.jianshu.io/upload_images/4731173-9c944a030e803ef1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+<li><h5 id="日历：long类型数字-lt-—-gt-日期"><a href="#日历：long类型数字-lt-—-gt-日期" class="headerlink" title="日历：long类型数字&lt;—&gt;日期"></a>日历：long类型数字&lt;—&gt;日期</h5></li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-b2aba0f7826ea53b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-892429a18fdf3134.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<hr>
+<hr>
+<h3 id="3、File类"><a href="#3、File类" class="headerlink" title="3、File类"></a>3、File类</h3><p><img src="http://upload-images.jianshu.io/upload_images/4731173-388067d09052ffa3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>输出树状文件目录，递归调用：<br><img src="http://upload-images.jianshu.io/upload_images/4731173-de725eff9d74dae3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="4、Exception"><a href="#4、Exception" class="headerlink" title="4、Exception"></a>4、Exception</h3><h6 id="常见异常："><a href="#常见异常：" class="headerlink" title="常见异常："></a>常见异常：</h6><ul>
+<li>ArithmeticException</li>
+<li>NullPointerException</li>
+<li>ClassCastException</li>
+<li>ArrayIndexOutOfBoundsException</li>
+<li>NumberFormatException</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-52caf5bd05454e1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>所有不是Runtime Exception的异常，统称为<strong>Checked Exception</strong>.<br>Java语言将派生于RuntimeException类或Error类的所有异常称为“未检查异常”,<strong>Unchecked Exception</strong>。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">String,Data,File,Exception,常见类</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Java基础//" class="article-tag-list-link color2">Java基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/10/15/Java常见类/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-过滤器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1179,156 +1300,6 @@
 
 
   
-    <article id="post-while循环、一维数组、Arrays类方法及练习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/31/while循环、一维数组、Arrays类方法及练习/">while循环、一维数组、Arrays类方法及练习</a>
-    </h1>
-  
-
-        
-        <a href="/2016/07/31/while循环、一维数组、Arrays类方法及练习/" class="archive-article-date">
-  	<time datetime="2016-07-31T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-07-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>9、循环结构</strong><br>循环结构就是在满足某种条件的情况下不断重复的执行某段代码，我们需要在适当的时候将条件变成假以此来结束循环，避免死循环。</p>
-<p><strong>While循环</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">while(条件)&#123;</div><div class="line">	语句;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>While循环也是可以省略括号()的，但不建议。</li>
-<li><p>While循环一定要保证循环有变为false的时候，避免造成死循环。<br>##二、数组<br><strong>1、数组定义</strong></p>
-</li>
-<li><p>数组是一种类型，属于引用数据类型</p>
-</li>
-<li>数组中的所有元素数据类型要一样</li>
-<li>Java中数组既可以存储基本数据类型也可以存储引用数据类型。</li>
-<li>数组中也可以放自定义的数据类型（可以包含父类和子类，因为父类和子类其实是一种数据类型）</li>
-<li>数组在内存中是一块连续的空间。</li>
-<li>数组的空间要在定义的时候被确定，一旦确定不能改变，即使数组中的数据被清楚数组在内存中的空间依然被保存依然属于数组，数组长度依然不变。</li>
-</ul>
-<p><strong>（2）    一维数组</strong></p>
-<p>1)定义</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">①int  arr1[]=new int[5];</div><div class="line">②int  arr2[]=&#123;1，2，3&#125;;</div><div class="line">③int  arr3[]=new int[]&#123;1,2,3&#125;;</div></pre></td></tr></table></figure>
-<p>2)获取取长度：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">System.out.println(arr3.length);</div></pre></td></tr></table></figure>
-<p>　　① java中的<strong>length</strong>属性是针对数组说的,比如说你声明了一个数组,想知道这个数组的长度则用到了length这个属性.<br>　　②java中的<strong>length()</strong>方法是针对字符串String说的,如果想看这个字符串的长度则用到length()这个方法.<br>　　③java中的<strong>size()</strong>方法是针对泛型集合说的,如果想看这个泛型有多少个元素,就调用此方法来查看!</p>
-<p>3)遍历数组：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">for(int  i=0;i&lt;arr2.length;i++)&#123;</div><div class="line">	System.out.println(arr2[i]);</div><div class="line">&#125;</div><div class="line"></div><div class="line">//增强for循环</div><div class="line">for(int  a:arr)&#123;</div><div class="line">	System.out.println(a);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>4)初始化</p>
-<ul>
-<li><p>静态初始化：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">①int  arr1[]=new int[5];</div><div class="line">②int  arr2[]=&#123;1，2，3&#125;;</div><div class="line">③int  arr3[]=new int[]&#123;1,2,3&#125;;</div></pre></td></tr></table></figure>
-</li>
-<li><p>动态初始化：  </p>
-<ul>
-<li>byte、short、int、long默认为0；</li>
-<li>float、double默认为0.0；</li>
-<li>char默认为\u00001,也就是空格；</li>
-<li>boolean默认为false；</li>
-<li>引用数据类型默认为null；</li>
-</ul>
-</li>
-</ul>
-<p>5)易错点</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">int  arr[]= new int[2]&#123;1,2&#125;；  //错误</div></pre></td></tr></table></figure>
-<p>6）Array类常用方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">import java.util.Arrays;</div><div class="line"></div><div class="line">public class ArrayExercise &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		int arr1[]=&#123;1,2&#125;;</div><div class="line">		int arr2[]=&#123;11,2,33,1,5&#125;;</div><div class="line">		String []season=&#123;&quot;春&quot;,&quot;夏&quot;,&quot;秋&quot;,&quot;冬&quot;&#125;;</div><div class="line">		arr1=arr2; //数组赋值</div><div class="line">		//遍历数组</div><div class="line">		System.out.println(&quot;1、遍历arr1：&quot;);</div><div class="line">		for(int i:arr1)&#123;</div><div class="line">			System.out.print(i+&quot;\t&quot;);</div><div class="line">		&#125;</div><div class="line">		System.out.println();</div><div class="line">		</div><div class="line">		//Arrays类的方法</div><div class="line">		//判断两数组是否相等</div><div class="line">		System.out.println(&quot;2、判断arr1、arr2是否相等：&quot;);</div><div class="line">		System.out.println(Arrays.equals(arr1, arr2));</div><div class="line">		</div><div class="line">		//快速排序法</div><div class="line">		System.out.println(&quot;3、快速排序法：&quot;);</div><div class="line">		Arrays.sort(arr2);</div><div class="line">		for(int i:arr2)&#123;</div><div class="line">			System.out.print(i+&quot;\t&quot;);</div><div class="line">		&#125;</div><div class="line">		System.out.println();</div><div class="line">		</div><div class="line">		//产生数组的string表示</div><div class="line">		System.out.println(&quot;4、产生数组的string表示：&quot;);</div><div class="line">		System.out.println(Arrays.deepToString(season));</div><div class="line">		System.out.println(Arrays.toString(arr2));</div><div class="line">		//搜索指定数组的指定对象的索引</div><div class="line">		System.out.println(&quot;5、搜索指定数组的指定对象的索引:&quot;);</div><div class="line">		Arrays.sort(arr2);</div><div class="line">		System.out.println(Arrays.binarySearch(arr2, 2));</div><div class="line">		//复制数组方法</div><div class="line">		System.out.println(&quot;6、复制数组：&quot;);</div><div class="line">		int arr3[]=Arrays.copyOf(arr2, 3);</div><div class="line">		for (int i = 0; i &lt; arr3.length; i++) &#123;</div><div class="line">			System.out.print(arr3[i]+&quot;\t&quot;);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//运行结果：</div><div class="line"></div><div class="line">1、遍历arr1：</div><div class="line">11	2	33	1	5	</div><div class="line">2、判断arr1、arr2是否相等：</div><div class="line">true</div><div class="line">3、快速排序法：</div><div class="line">1	2	5	11	33	</div><div class="line">4、产生数组的string表示：</div><div class="line">[春, 夏, 秋, 冬]</div><div class="line">[1, 2, 5, 11, 33]</div><div class="line">5、搜索指定数组的指定对象的索引:</div><div class="line">1</div><div class="line">6、复制数组：</div><div class="line">1	2	5</div></pre></td></tr></table></figure>
-<hr>
-<h3 id="Test"><a href="#Test" class="headerlink" title="Test:"></a>Test:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">//1、数组定义、获取长度、遍历、初始化练习</div><div class="line"></div><div class="line">public class textArr &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		//数组的定义</div><div class="line">		int[] arr1=new int[5];</div><div class="line">		int[] arr2=&#123;1,2,3&#125;;</div><div class="line">		int[] arr3=new int[]&#123;1,2,3,4&#125;;</div><div class="line">		String[] strs=new String[3];</div><div class="line">		//获取数组长度：</div><div class="line">		System.out.println(&quot;arr3数组的长度为：&quot;+arr3.length);</div><div class="line">		//遍历数组</div><div class="line">		System.out.println(&quot;arr2数组的内容为：&quot;);</div><div class="line">		for(int i=0;i&lt;arr2.length;i++)&#123;</div><div class="line">			//访问数组元素的方式为：arr[i]</div><div class="line">			System.out.print(arr2[i]+&quot;\t&quot;);</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		//int数组动态初始化</div><div class="line">		System.out.println();</div><div class="line">		System.out.println(&quot;arr1数组的内容为：&quot;);</div><div class="line">		for(int i=0;i&lt;arr1.length;i++)&#123;</div><div class="line">			System.out.print(arr1[i]+&quot;\t&quot;);</div><div class="line">		&#125;</div><div class="line">		//String数组动态初始化</div><div class="line">		System.out.println();</div><div class="line">		System.out.println(&quot;strs数组的内容为：&quot;);</div><div class="line">		for(int i=0;i&lt;strs.length;i++)&#123;</div><div class="line">			System.out.print(strs[i]+&quot;\t&quot;);</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//运行结果：</div><div class="line"></div><div class="line">arr3数组的长度为：4</div><div class="line">arr2数组的内容为：</div><div class="line">1	2	3	</div><div class="line">arr1数组的内容为：</div><div class="line">0	0	0	0	0	</div><div class="line">strs数组的内容为：</div><div class="line">null	null	null</div></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">//2、动态给数组赋值、遍历、增强for循环</div><div class="line"></div><div class="line">import java.util.*;</div><div class="line"></div><div class="line">public class ArrayInta &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		int[] arr=new int[5];</div><div class="line">		//动态给数组赋值</div><div class="line">		Scanner scanner = new Scanner(System.in);</div><div class="line">		for(int i=0;i&lt;arr.length;i++)&#123;</div><div class="line">			System.out.print(&quot;请给数组的第&quot;+(i+1)+&quot;个元素赋值：&quot;);</div><div class="line">			arr[i]=scanner.nextInt();</div><div class="line">		&#125;</div><div class="line">		//遍历数组元素</div><div class="line">		System.out.println(&quot;遍历数组元素：&quot;);</div><div class="line">		for(int i=0;i&lt;arr.length;i++)&#123;</div><div class="line">			System.out.print(arr[i]+&quot;\t&quot;);</div><div class="line">		&#125;</div><div class="line">		//增强for循环</div><div class="line">		System.out.println();</div><div class="line">		System.out.println(&quot;增强for循环遍历：&quot;);</div><div class="line">		for(int a:arr)&#123;</div><div class="line">			System.out.print(a+&quot;\t&quot;);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//运行结果：</div><div class="line"></div><div class="line">请给数组的第1个元素赋值：2</div><div class="line">请给数组的第2个元素赋值：	5</div><div class="line">请给数组的第3个元素赋值：	7</div><div class="line">请给数组的第4个元素赋值：	1</div><div class="line">请给数组的第5个元素赋值：	3</div><div class="line">遍历数组元素：</div><div class="line">2	5	7	1	3	</div><div class="line">增强for循环遍历：</div><div class="line">2	5	7	1	3</div></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//3、倒序输出一组char类型的数组。</div><div class="line"></div><div class="line">public class ArrayReverse &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		char []cha=&#123;&apos;d&apos;,&apos;o&apos;,&apos;g&apos;&#125;;</div><div class="line">		System.out.print(&quot;数组cha&#123;&apos;d&apos;,&apos;o&apos;,&apos;g&apos;&#125;的倒序为：&quot;);</div><div class="line">		for(int i=cha.length;i&gt;0;i--)&#123;</div><div class="line">			System.out.print(cha[i-1]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//运行结果：</div><div class="line"></div><div class="line">数组cha&#123;&apos;d&apos;,&apos;o&apos;,&apos;g&apos;&#125;的倒序为：god</div></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//4、求数组&#123;1,4,2,6,7,3,5&#125;和值为8的数对</div><div class="line"></div><div class="line">public class MateNum &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		int[] arr=&#123;1,4,2,6,7,3,5&#125;;</div><div class="line">		int n=8;</div><div class="line">		System.out.println(&quot;数组&#123;1,4,2,6,7,3,5&#125;和值为8的数对为&quot;);</div><div class="line">		for(int i=0;i&lt;arr.length;i++)&#123;</div><div class="line">			System.out.print(&quot;&#123;&quot;+arr[i]+&quot;,&quot;+n+&quot;&#125;&quot;+&quot;\t&quot;);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//运行结果：</div><div class="line"></div><div class="line">数组&#123;1,4,2,6,7,3,5&#125;和值为8的数对为</div><div class="line">&#123;1,8&#125;	&#123;4,8&#125;	&#123;2,8&#125;	&#123;6,8&#125;	&#123;7,8&#125;	&#123;3,8&#125;	&#123;5,8&#125;</div></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">//5、动态赋值，找出数组中奇数出现的次数.</div><div class="line"></div><div class="line">import java.util.*;</div><div class="line"></div><div class="line">public class OddNum &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		int sum;</div><div class="line">		int oddNum=0;</div><div class="line">		//动态给数组赋值</div><div class="line">		Scanner scanner = new Scanner(System.in);</div><div class="line">		System.out.print(&quot;请输入数组的长度:&quot;);</div><div class="line">		sum=scanner.nextInt();</div><div class="line">		int[] arr=new int[sum];</div><div class="line">		for(int i=0;i&lt;arr.length;i++)&#123;</div><div class="line">			System.out.print(&quot;请给数组的第&quot;+(i+1)+&quot;个元素赋值：&quot;);</div><div class="line">			arr[i]=scanner.nextInt();</div><div class="line">		&#125;</div><div class="line">		//遍历数组</div><div class="line">		System.out.println(&quot;您输入的数组为：&quot;);</div><div class="line">		for(int i=0;i&lt;arr.length;i++)&#123;</div><div class="line">			System.out.print(arr[i]+&quot;\t&quot;);</div><div class="line">		&#125;</div><div class="line">		System.out.println();</div><div class="line">		//计算奇数个数</div><div class="line">		System.out.print(&quot;您输入的数组中奇数出现的次数为：&quot;);</div><div class="line">		for(int i=0;i&lt;arr.length;i++)&#123;</div><div class="line">			if(arr[i]%2==1)&#123;</div><div class="line">				oddNum++;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		System.out.print(oddNum);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//运行结果:</div><div class="line"></div><div class="line">请输入数组的长度:5</div><div class="line">请给数组的第1个元素赋值：	2</div><div class="line">请给数组的第2个元素赋值：	5</div><div class="line">请给数组的第3个元素赋值：	3</div><div class="line">请给数组的第4个元素赋值：	7</div><div class="line">请给数组的第5个元素赋值：	4</div><div class="line">您输入的数组为：</div><div class="line">2	5	3	7	4	</div><div class="line">您输入的数组中奇数出现的次数为：3</div></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">//6、给定一个数组a打印出所有元素的m位随机组合。</div><div class="line"></div><div class="line">public class RandmComb &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		int[] a=&#123;1,2,3,4,5&#125;;</div><div class="line">		int m=3;</div><div class="line">		System.out.println(&quot;数组a=&#123;1,2,3,4,5&#125;的所有3位随机组合为：&quot;);</div><div class="line">		for(int i=0;i&lt;a.length;i++)&#123;</div><div class="line">			for(int j=i+1;j&lt;a.length;j++)&#123;</div><div class="line">				for(int k=j+1;k&lt;a.length;k++)&#123;</div><div class="line">					System.out.print(a[i]+&quot; &quot;+a[j]+&quot; &quot;+a[k]);</div><div class="line">					System.out.print(&quot;,&quot;);</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		System.out.println();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//运行结果：</div><div class="line"></div><div class="line">数组a=&#123;1,2,3,4,5&#125;的所有3位随机组合为：</div><div class="line">1 2 3,1 2 4,1 2 5,1 3 4,1 3 5,1 4 5,</div><div class="line">2 3 4,2 3 5,2 4 5,</div><div class="line">3 4 5,</div></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">//7、输出两个数组中的相同元素。</div><div class="line"></div><div class="line">import java.util.*;</div><div class="line"></div><div class="line">public class Same &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		int arr1[]=&#123;2,4,6,8,10&#125;;</div><div class="line">		int arr2[]=&#123;4,8,10,16,20&#125;;</div><div class="line">		System.out.println(&quot;两个数组的相同元素为：&quot;);</div><div class="line">		if(arr1.length&gt;=arr2.length)&#123;</div><div class="line">			for(int i=0;i&lt;arr1.length;i++)&#123;</div><div class="line">				for(int j=0;j&lt;arr2.length;j++)&#123;</div><div class="line">					if(arr1[i]==arr2[j])&#123;</div><div class="line">						System.out.println(arr1[i]);</div><div class="line">					&#125;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;else&#123;</div><div class="line">			for(int i=0;i&lt;arr2.length;i++)&#123;</div><div class="line">				for(int j=0;j&lt;arr1.length;j++)&#123;</div><div class="line">					if(arr1[i]==arr2[j])&#123;</div><div class="line">						System.out.println(arr1[i]);</div><div class="line">					&#125;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//运行结果：</div><div class="line"></div><div class="line">两个数组的相同元素为：</div><div class="line">4</div><div class="line">8</div><div class="line">10</div></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">//8、动态录入成绩并计算班级平均分。</div><div class="line"></div><div class="line">import java.util.*;</div><div class="line"></div><div class="line">public class ScoreAvg &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		Scanner scanner=new Scanner(System.in);</div><div class="line">		int StudentSum;</div><div class="line">		double ScoreSum=0;</div><div class="line">		System.out.println(&quot;***********成绩录入系统***********&quot;);</div><div class="line">		System.out.print(&quot;请输入学生总数：&quot;);</div><div class="line">		StudentSum=scanner.nextInt();</div><div class="line">		double[] score=new double[StudentSum];</div><div class="line">		//成绩录入</div><div class="line">		for(int i=0;i&lt;score.length;i++)&#123;</div><div class="line">			System.out.print(&quot;请输入第&quot;+(i+1)+&quot;个学生的成绩:&quot;);</div><div class="line">			score[i]=scanner.nextDouble();</div><div class="line">		&#125;</div><div class="line">		//计算总成绩：</div><div class="line">		for(int i=0;i&lt;score.length;i++)&#123;</div><div class="line">			ScoreSum+=score[i];</div><div class="line">		&#125;</div><div class="line">		System.out.println(&quot;班级成绩平均分为：&quot;+ScoreSum/StudentSum);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//运行结果：</div><div class="line"></div><div class="line">***********成绩录入系统***********</div><div class="line">请输入学生总数：3</div><div class="line">请输入第1个学生的成绩:	98</div><div class="line">请输入第2个学生的成绩:	86</div><div class="line">请输入第3个学生的成绩:	79</div><div class="line">班级成绩平均分为：87.66666666666667</div></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">while循环,数组,Arrays</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java基础//" class="article-tag-list-link color2">Java基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/07/31/while循环、一维数组、Arrays类方法及练习/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
@@ -1426,19 +1397,19 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">cookie,session</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">EL表达式,JavaWeb</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">FusionCharts</a>
+                <a href="javascript:void(0)" class="js-tag color5">cookie,session</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">FusionCHarts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">FusionCharts</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1534,11 +1505,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">while循环,数组,Arrays</a>
+                <a href="javascript:void(0)" class="js-tag color3">sql,知识点</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">sql,知识点</a>
+                <a href="javascript:void(0)" class="js-tag color3">while循环,数组,Arrays</a>
               </li>
              
               <li class="article-tag-list-item">

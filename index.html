@@ -152,65 +152,27 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-SpringMVC-Spring-Mybatis-Maven整合" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-SpringMVC-Spring-Mybatis-Maven整合（二）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/21/SpringMVC-Spring-Mybatis-Maven整合/">SpringMVC+Spring+Mybatis+Maven整合</a>
+      <a class="article-title" href="/2017/10/12/SpringMVC-Spring-Mybatis-Maven整合（二）/">SpringMVC+Spring+Mybatis+Maven整合（二）</a>
     </h1>
   
 
         
-        <a href="/2017/09/21/SpringMVC-Spring-Mybatis-Maven整合/" class="archive-article-date">
-  	<time datetime="2017-09-21T06:03:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-21</time>
+        <a href="/2017/10/12/SpringMVC-Spring-Mybatis-Maven整合（二）/" class="archive-article-date">
+  	<time datetime="2017-10-12T08:07:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://www.cnblogs.com/sshoub/p/4321640.html" target="_blank" rel="external">MySQL数据库安装与配置详解</a></p>
-<p><a href="http://www.linuxidc.com/Linux/2016-02/128127.htm" target="_blank" rel="external">30分钟带你快速入门MySQL教程</a></p>
-<h4 id="1-使用的工具"><a href="#1-使用的工具" class="headerlink" title="1.使用的工具"></a>1.使用的工具</h4><ul>
-<li>MyEclipse  </li>
-<li>Tomcat  </li>
-<li>JDK  </li>
-<li>Mybatis generator  </li>
-</ul>
-<h4 id="2-Generator工具的使用"><a href="#2-Generator工具的使用" class="headerlink" title="2.Generator工具的使用"></a>2.Generator工具的使用</h4><ul>
-<li>新建一个文件夹，命名src</li>
-<li>打开mybatis_generator中的generatorConfig.xml文件，根据注释修改<strong>数据库驱动、数据库链接URL，用户名、密码、生成模型、映射文件和dao的包名和位置</strong>等数据项。（在src中）<br><img src="http://upload-images.jianshu.io/upload_images/4731173-2ad3fc55f08cc57c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/4731173-496bbf88ac154cf7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<ul>
-<li>在mybatis_generator的lib目录里下，打开命令行，执行以下脚本：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -jar mybatis-generator-core-1.3.2.jar -configfile generatorConfig.xml -overwrite</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>出现“MyBatis Generator finished successfully.”时，表示编译成功。此时，指定的src目录中<strong>自动生成数据库表对应的dao、mapping、model文件</strong>。</p>
-<h4 id="3-引入spring和mybatis需要的包"><a href="#3-引入spring和mybatis需要的包" class="headerlink" title="3.引入spring和mybatis需要的包"></a>3.引入spring和mybatis需要的包</h4><ul>
-<li>新建Maven Project，由于要创建的是web项目，因此要设置Filter为maven-archetype-webapp。</li>
-<li>创建出的项目没有显示src/main/java目录。<ul>
-<li>1、右键项目Properties—Project Facets，设置java版本（1.5以上），</li>
-<li>2、设置Java Build Path的Libraries的jre，以及JavaCompiler的版本一致。</li>
-</ul>
-</li>
-<li>在pom.xml中添加jar包依赖。进入search.maven.org网页，搜索jar包，找到相应的xml代码。需要添加以下依赖：spring-core、mybatis、mybatis-spring、mysql-connector-java、junit、druid、aspectj等。</li>
-<li>在src/main/resources中创建或引入spring.xml,spinrg-mybatis.xml,spring-mvc.xml,log4j.properties,config.properties配置文件。</li>
-</ul>
-<h4 id="4-引入spring-mvc需要的包"><a href="#4-引入spring-mvc需要的包" class="headerlink" title="4.引入spring mvc需要的包"></a>4.引入spring mvc需要的包</h4><p> 【参考文章:<a href="http://blog.csdn.net/fox_lht/article/details/16952683" target="_blank" rel="external">使用maven一步一步构建spring mvc项目</a>】</p>
-<ul>
-<li><p>在pom.xml文件中引入spring-webmvc的依赖</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;dependency&gt;</div><div class="line"> &lt;groupId&gt;org.springframework&lt;/groupId&gt;</div><div class="line"> &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;</div><div class="line"> &lt;version&gt;3.2.0.RELEASE&lt;/version&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p>在web.xml文件中编写servlet和servlet-mapping标签<br><img src="http://upload-images.jianshu.io/upload_images/4731173-d07a801e820b1cea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-</li>
-<li><p>修改spring-mvc.xml文件，扫描controller包下的所有类、 启动Spring MVC的注解功能、启用对模型视图名称的解析等<br><img src="http://upload-images.jianshu.io/upload_images/4731173-530f20f8847525b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-</li>
-</ul>
-<h4 id="5-测试"><a href="#5-测试" class="headerlink" title="5.测试"></a>5.测试</h4><p><strong>①Junit4测试</strong></p>
+        <h4 id="5-测试"><a href="#5-测试" class="headerlink" title="5.测试"></a>5.测试</h4><p><strong>①Junit4测试</strong></p>
 <ul>
 <li>添加junit4依赖</li>
 <li>在src/main/test中编写测试代码，以@Test标识测试方法<br><img src="http://upload-images.jianshu.io/upload_images/4731173-afe345c58ef44d49.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
@@ -239,7 +201,171 @@
 <p><img src="http://upload-images.jianshu.io/upload_images/4731173-c50b88554da67091.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 </li>
 </ul>
-<h4 id="6-打印sql"><a href="#6-打印sql" class="headerlink" title="6.打印sql"></a>6.打印sql</h4><h4 id="7-STS编译Maven项目需要注意的问题"><a href="#7-STS编译Maven项目需要注意的问题" class="headerlink" title="7.STS编译Maven项目需要注意的问题"></a>7.STS编译Maven项目需要注意的问题</h4>
+<h4 id="6-打印sql"><a href="#6-打印sql" class="headerlink" title="6.打印sql"></a>6.打印sql</h4><ul>
+<li><p>在pom.xml中添加log4j的jar包依赖。</p>
+</li>
+<li><p>在src/main/resources中添加log4j.properties配置文件，设置相应属性。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-3b91e4dbdec92692.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+<li><p>运行test文件，控制台打印了sql语句执行的过程。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-e0b96061d7532c0e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+<li><p>使用logger插件，输出对象格式的数据，可以转换为json格式的字符串。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-8f067ed605669a25.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+</ul>
+<h4 id="7-表关联问题"><a href="#7-表关联问题" class="headerlink" title="7.表关联问题"></a>7.表关联问题</h4><p><img src="http://upload-images.jianshu.io/upload_images/4731173-4189812bf4bddc37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>通过mybatis_generator自动生成的文件，可解决基础的增删改查功能。但如果更改需求，就需要编写UserMapping.xml文件了，通常为如下结构。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-192597018ad0c812.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h5 id="（1）获取所有user信息。"><a href="#（1）获取所有user信息。" class="headerlink" title="（1）获取所有user信息。"></a>（1）获取所有user信息。</h5><ul>
+<li><p>①若想要获取user对应的那几个role信息，则需要在User类中添加一个UserRole类型的List。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-e4c1aa2bc12de556.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+<li><p>②配置UserMapping.xml文件，写一个getAll方法。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-3b0f300176504abd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+<li><p>③在UserMapping.java、UserService.java、UserServiceImpl.java文件中依次添加getAll方法，并在TestSsm.java文件中编写@Test测试方法。</p>
+</li>
+<li><p>④控制台输出执行的sql语句及查询结果<br><img src="http://upload-images.jianshu.io/upload_images/4731173-c455abf3318a499e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>这种方法需要执行两个sql语句，效率比较低，而且仅显示了user对应role的个数，未包含所需的role信息。</strong></p>
+<h5 id="（2）获取所有user信息，包括user-role表中的信息"><a href="#（2）获取所有user信息，包括user-role表中的信息" class="headerlink" title="（2）获取所有user信息，包括user_role表中的信息"></a>（2）获取所有user信息，包括user_role表中的信息</h5></li>
+<li>①在UserMapping.xml文件中，写一个getAll2方法。在<strong>collection标签</strong>中指定resultMap中包含为UserRole类型的对象，其属性与sql语句中的列别名相对应。</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-a4d7d87df7ca4599.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li><p>②编写相应方法，并测试。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-0e19be95d1cfd24c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>这种方法仅执行一个sql语句，显示了user对应的userRole相关信息。但仍未包含role信息。</strong></p>
+</li>
+</ul>
+<h5 id="（3）获取所有user信息，包括对应的role信息"><a href="#（3）获取所有user信息，包括对应的role信息" class="headerlink" title="（3）获取所有user信息，包括对应的role信息"></a>（3）获取所有user信息，包括对应的role信息</h5><ul>
+<li><p>①在UserMapping.xml文件中，写一个getAll2方法。<br>在<strong>association标签</strong>中指定resultMap中包含的UserRole中相应roleId的Role对象类型，其属性与sql语句中的列别名相对应。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-e6afc29848e579d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+<li><p>②编写相应方法，并测试。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-faa51a9ff2e011f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>这种方法仅执行一个sql语句，通过user查询到userRole，进而查询到Role的信息。</strong></p>
+</li>
+</ul>
+<h5 id="（4）—-比（3）简便的方法"><a href="#（4）—-比（3）简便的方法" class="headerlink" title="（4）— 比（3）简便的方法"></a>（4）— 比（3）简便的方法</h5><ul>
+<li><p>①直接通过在User类中包含类型为Role的List<br><img src="http://upload-images.jianshu.io/upload_images/4731173-c8f467aeec664a9d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+<li><p>②修改resultMap。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-429876becc56d2ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+<li><p>③测试。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-7a10f2453e5759ce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>这种方法仍是通过user查询到userRole，进而查询到Role的信息。但不显示中间表userRole的信息。既满足了查询的需求，又减少了冗余。</strong></p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Java进阶//" class="article-tag-list-link color2">Java进阶</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/12/SpringMVC-Spring-Mybatis-Maven整合（二）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-SpringMVC-Spring-Mybatis-Maven整合" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/21/SpringMVC-Spring-Mybatis-Maven整合/">SpringMVC+Spring+Mybatis+Maven整合（一）</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/21/SpringMVC-Spring-Mybatis-Maven整合/" class="archive-article-date">
+  	<time datetime="2017-09-21T06:03:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.cnblogs.com/sshoub/p/4321640.html" target="_blank" rel="external">MySQL数据库安装与配置详解</a></p>
+<p><a href="http://www.linuxidc.com/Linux/2016-02/128127.htm" target="_blank" rel="external">30分钟带你快速入门MySQL教程</a></p>
+<h4 id="1-使用的工具"><a href="#1-使用的工具" class="headerlink" title="1.使用的工具"></a>1.使用的工具</h4><ul>
+<li>MyEclipse  </li>
+<li>Tomcat  </li>
+<li>JDK  </li>
+<li>Mybatis generator  </li>
+</ul>
+<h4 id="2-使用mybatis-generator自动生成数据库表对应的dao、mapping、model文件"><a href="#2-使用mybatis-generator自动生成数据库表对应的dao、mapping、model文件" class="headerlink" title="2.使用mybatis_generator自动生成数据库表对应的dao、mapping、model文件"></a>2.使用mybatis_generator自动生成数据库表对应的dao、mapping、model文件</h4><ul>
+<li>下载mybatis_generator，打开generatorConfig.xml文件，根据注释修改<strong>数据库、生成model、mappinng和dao的包名和位置</strong>等数据项。如下：<br><img src="http://upload-images.jianshu.io/upload_images/4731173-2ad3fc55f08cc57c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-496bbf88ac154cf7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li>在mybatis_generator的lib目录里下，打开命令行，执行以下脚本：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -jar mybatis-generator-core-1.3.2.jar -configfile generatorConfig.xml -overwrite</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>出现“MyBatis Generator finished successfully.”时，表示编译成功。此时，指定的文件目录中<strong>自动生成数据库表对应的dao、mapping、model文件</strong>。</p>
+<h4 id="3-通过maven引入spring和mybatis需要的包"><a href="#3-通过maven引入spring和mybatis需要的包" class="headerlink" title="3.通过maven引入spring和mybatis需要的包"></a>3.通过maven引入spring和mybatis需要的包</h4><ul>
+<li>新建Maven Project，由于要创建的是web项目，因此要设置Filter为<strong>maven-archetype-webapp</strong>。<ul>
+<li>如果创建出的项目没有显示src/main/java目录。<ul>
+<li>1、右键项目Properties—Project Facets，设置java版本（1.5以上），</li>
+<li>2、设置Java Build Path的Libraries的jre，以及JavaCompiler的版本一致。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>在pom.xml中添加jar包依赖。进入search.maven.org网页，搜索jar包，找到相应的xml代码。添加需要的jar包依赖，如：<br><img src="http://upload-images.jianshu.io/upload_images/4731173-ad2c98a5cb000c6f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+<li><p>在src/main/resources中创建或引入spring.xml,spinrg-mybatis.xml,spring-mvc.xml,log4j.properties,config.properties配置文件。</p>
+</li>
+</ul>
+<h4 id="4-引入spring-mvc需要的包"><a href="#4-引入spring-mvc需要的包" class="headerlink" title="4.引入spring mvc需要的包"></a>4.引入spring mvc需要的包</h4><p> 【参考文章:<a href="http://blog.csdn.net/fox_lht/article/details/16952683" target="_blank" rel="external">使用maven一步一步构建spring mvc项目</a>】</p>
+<ul>
+<li><p>在pom.xml文件中引入spring-webmvc的依赖</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;dependency&gt;</div><div class="line"> &lt;groupId&gt;org.springframework&lt;/groupId&gt;</div><div class="line"> &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;</div><div class="line"> &lt;version&gt;3.2.0.RELEASE&lt;/version&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>在web.xml文件中编写servlet和servlet-mapping标签<br><img src="http://upload-images.jianshu.io/upload_images/4731173-d07a801e820b1cea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+<li><p>修改spring-mvc.xml文件，扫描controller包下的所有类、 启动Spring MVC的注解功能、启用对模型视图名称的解析等<br><img src="http://upload-images.jianshu.io/upload_images/4731173-530f20f8847525b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+</ul>
+
       
 
       
@@ -1042,92 +1168,6 @@
 
 
   
-    <article id="post-Maven" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/27/Maven/">Maven</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/27/Maven/" class="archive-article-date">
-  	<time datetime="2017-05-27T02:01:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>Maven是基于项目对象模型（POM），可以通过一小段描述信息来管理项目的构建、报告和文档的软件项目管理工具。可以更有效的管理项目。</strong></p>
-<h5 id="Maven安装和配置"><a href="#Maven安装和配置" class="headerlink" title="Maven安装和配置"></a>Maven安装和配置</h5><p>Maven3.2.3需要Java1.7的配置</p>
-<ul>
-<li>MAVEN_HOME：maven路径</li>
-<li>PATH：maven路径\bin;</li>
-</ul>
-<h6 id="测试："><a href="#测试：" class="headerlink" title="测试："></a>测试：</h6><p>在window—运行—cmd中输入mvn -v可查询到maven和java等版本信息，即表名maven安装成功。</p>
-<h5 id="Maven目录结构："><a href="#Maven目录结构：" class="headerlink" title="Maven目录结构："></a>Maven目录结构：</h5><p><img src="http://upload-images.jianshu.io/upload_images/4731173-13ad63d0ac793e3e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h5 id="aven常用构建命令："><a href="#aven常用构建命令：" class="headerlink" title="aven常用构建命令："></a>aven常用构建命令：</h5><p>mvn -v ：查看maven版本<br>mvn compile：编译<br>mvn test：测试，生成target文件夹<br>mvn package：打包项目到target中<br>mvn clean：删除target<br>mvn install：安装jar包到本地仓库中</p>
-<h5 id="Maven自动创建目录骨架"><a href="#Maven自动创建目录骨架" class="headerlink" title="Maven自动创建目录骨架"></a>Maven自动创建目录骨架</h5><p>archetype插件用于创建符合maven规定的目录骨架。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4731173-4de11ebcbd4a8e48.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4731173-f2df121654b6e1dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>OR<br><img src="http://upload-images.jianshu.io/upload_images/4731173-51f109213a702258.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>就创建好了。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-defe122b6a6a5f1f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h5 id="Maven的坐标和仓库"><a href="#Maven的坐标和仓库" class="headerlink" title="Maven的坐标和仓库"></a>Maven的坐标和仓库</h5>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/工作笔记//" class="article-tag-list-link color5">工作笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/27/Maven/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1225,19 +1265,19 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">cookie,session</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">EL表达式,JavaWeb</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">FusionCharts</a>
+                <a href="javascript:void(0)" class="js-tag color5">cookie,session</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">FusionCHarts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">FusionCharts</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1333,11 +1373,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">while循环,数组,Arrays</a>
+                <a href="javascript:void(0)" class="js-tag color3">sql,知识点</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">sql,知识点</a>
+                <a href="javascript:void(0)" class="js-tag color3">while循环,数组,Arrays</a>
               </li>
              
               <li class="article-tag-list-item">
