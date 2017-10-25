@@ -5,14 +5,14 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://yoursite.com">
+  <link rel="dns-prefetch" href="https://hanmeihui.github.io">
   <title>List、Set、Map | Aeris‘s</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="1、区别Collection： List :有序 、可重复 Set:无序、不可重复 Map:有序、不可重复（键值对） 2、方法Collection接口方法： Set相关方法与Collection接口方法一样。 List由于是有序的，多了以下几种与索引有关的方法： Map相关方法： 3、特点 List:  ArrayList:  底层用数组实现的List,特点：查询效率高 ，增删效率低，不安全。 L">
 <meta name="keywords" content="list,set,map">
 <meta property="og:type" content="article">
 <meta property="og:title" content="List、Set、Map">
-<meta property="og:url" content="http://yoursite.com/2016/10/16/List、Set、Map/index.html">
+<meta property="og:url" content="https://hanmeihui.github.io/2016/10/16/List、Set、Map/index.html">
 <meta property="og:site_name" content="Aeris‘s">
 <meta property="og:description" content="1、区别Collection： List :有序 、可重复 Set:无序、不可重复 Map:有序、不可重复（键值对） 2、方法Collection接口方法： Set相关方法与Collection接口方法一样。 List由于是有序的，多了以下几种与索引有关的方法： Map相关方法： 3、特点 List:  ArrayList:  底层用数组实现的List,特点：查询效率高 ，增删效率低，不安全。 L">
 <meta property="og:locale" content="zh_Hans">
@@ -51,12 +51,14 @@
 <div class="overlay" style="background: #4d4d4d"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
-		<a href="" class="profilepic">
+		<a href="/" class="profilepic">
 			<img src="" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="">Aeris</a></h1>
+		  <h1 class="header-author"><a href="/">Aeris</a></h1>
 		</hgroup>
+		
+		<p class="header-subtitle">素质和修养，追求与勇气。</p>
 		
 
 		<nav class="header-menu">
@@ -64,7 +66,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/archives">目录</a></li>
 	        
 			</ul>
 		</nav>
@@ -75,8 +77,6 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
-    			
             
     			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
@@ -86,13 +86,11 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/hanmeihui" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="mail" target="_blank" href="mailto:rose_mia@163.com" title="mail"><i class="icon-mail"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="jianshu" target="_blank" href="http://www.jianshu.com/u/c812fe9aca81" title="jianshu"><i class="icon-jianshu"></i></a>
 		        
 			</div>
 		</nav>
@@ -116,6 +114,8 @@
 			  <h1 class="header-author js-header-author">Aeris</h1>
 			</hgroup>
 			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>素质和修养，追求与勇气。<i class="icon icon-quo-right"></i></p>
+			
 			
 			
 				
@@ -127,13 +127,11 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/hanmeihui" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="mail" target="_blank" href="mailto:rose_mia@163.com" title="mail"><i class="icon-mail"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="jianshu" target="_blank" href="http://www.jianshu.com/u/c812fe9aca81" title="jianshu"><i class="icon-jianshu"></i></a>
 			        
 				</div>
 			</nav>
@@ -144,7 +142,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/archives">目录</a></li>
 		        
 				</ul>
 			</nav>
@@ -300,7 +298,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2016/10/16/List、Set、Map/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://hanmeihui.github.io/2016/10/16/List、Set、Map/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -409,8 +407,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
       
     
       
-      
-      
     
       
       
@@ -422,15 +418,13 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -451,11 +445,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">EL表达式,JavaWeb</a>
+                <a href="javascript:void(0)" class="js-tag color5">cookie,session</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">cookie,session</a>
+                <a href="javascript:void(0)" class="js-tag color4">EL表达式,JavaWeb</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -611,11 +605,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">filter,生命周期,过滤器链</a>
+                <a href="javascript:void(0)" class="js-tag color1">数据,js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">数据,js</a>
+                <a href="javascript:void(0)" class="js-tag color2">filter,生命周期,过滤器链</a>
               </li>
             
             <div class="clearfix"></div>
@@ -662,43 +656,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
     
 
     
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
-    
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">加油~~&lt;br&gt;&lt;br&gt;博客持续更新&lt;br&gt;&lt;br&gt;嘿咻嘿咻&lt;br&gt;&lt;br&gt;感谢关注~！</div>
   	  	
     	</section>
     

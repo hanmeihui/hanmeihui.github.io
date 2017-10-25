@@ -5,12 +5,12 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://yoursite.com">
+  <link rel="dns-prefetch" href="https://hanmeihui.github.io">
   <title>Aeris‘s</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Aeris‘s">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="https://hanmeihui.github.io/index.html">
 <meta property="og:site_name" content="Aeris‘s">
 <meta property="og:locale" content="zh_Hans">
 <meta name="twitter:card" content="summary">
@@ -42,12 +42,14 @@
 <div class="overlay" style="background: #4d4d4d"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
-		<a href="" class="profilepic">
+		<a href="/" class="profilepic">
 			<img src="" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="">Aeris</a></h1>
+		  <h1 class="header-author"><a href="/">Aeris</a></h1>
 		</hgroup>
+		
+		<p class="header-subtitle">素质和修养，追求与勇气。</p>
 		
 
 		<nav class="header-menu">
@@ -55,7 +57,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/archives">目录</a></li>
 	        
 			</ul>
 		</nav>
@@ -66,8 +68,6 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
-    			
             
     			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
@@ -77,13 +77,11 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/hanmeihui" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="mail" target="_blank" href="mailto:rose_mia@163.com" title="mail"><i class="icon-mail"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="jianshu" target="_blank" href="http://www.jianshu.com/u/c812fe9aca81" title="jianshu"><i class="icon-jianshu"></i></a>
 		        
 			</div>
 		</nav>
@@ -107,6 +105,8 @@
 			  <h1 class="header-author js-header-author">Aeris</h1>
 			</hgroup>
 			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>素质和修养，追求与勇气。<i class="icon icon-quo-right"></i></p>
+			
 			
 			
 				
@@ -118,13 +118,11 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/hanmeihui" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="mail" target="_blank" href="mailto:rose_mia@163.com" title="mail"><i class="icon-mail"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="jianshu" target="_blank" href="http://www.jianshu.com/u/c812fe9aca81" title="jianshu"><i class="icon-jianshu"></i></a>
 			        
 				</div>
 			</nav>
@@ -135,7 +133,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/archives">目录</a></li>
 		        
 				</ul>
 			</nav>
@@ -151,6 +149,179 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-Redis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/25/Redis/">Redis</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/25/Redis/" class="archive-article-date">
+  	<time datetime="2017-10-25T08:07:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="Redis安装"><a href="#Redis安装" class="headerlink" title="Redis安装"></a>Redis安装</h5><p>1、下载Redis安装包，解压</p>
+<p><a href="https://cloud.github.com/downloads/dmajkic/redis/redis-2.4.5-win32-win64.zip" target="_blank" rel="external">https://cloud.github.com/downloads/dmajkic/redis/redis-2.4.5-win32-win64.zip</a></p>
+<p>2、<strong>打开服务端：</strong>打开一个cmd 窗口，使用cd命令切换目录到安装目录下，运行以下命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">redis-server.exe redis.conf</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-98492acc628f2b19.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>3、<strong>打开客户端：</strong>启动另一个cmd窗口，原来的不要关闭，不然就无法访问服务端了。</p>
+<p>切换到redis目录下运行以下命令。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">redis-cli.exe -h 127.0.0.1 -p 6379</div></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-80e5849fb99af3bc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>4、<strong>测试Redis：</strong></p>
+<p>—–<strong>set test abc</strong> 设置以key=”test” value=”abc”的键值对</p>
+<p>—–<strong>get test </strong> 取出key=”test”的值。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4731173-1f18cb9c4315634c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<hr>
+<h5 id="Redis-配置"><a href="#Redis-配置" class="headerlink" title="Redis 配置"></a>Redis 配置</h5><p>Redis 的配置文件名为 redis.conf。可通过CONFIG 命令查看或设置配置项。</p>
+<p>1、查看配置项，格式如下：<strong>CONFIG GET CONFIG_SETTING_NAME</strong>。<br>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">redis 127.0.0.1:6379&gt; CONFIG GET loglevel</div><div class="line"></div><div class="line">1) &quot;loglevel&quot;</div><div class="line">2) &quot;notice&quot;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">redis 127.0.0.1:6379&gt; CONFIG GET *</div><div class="line">...</div><div class="line">...</div></pre></td></tr></table></figure>
+<p>2、修改配置项，格式如下：<strong>CONFIG SET CONFIG_SETTING_NAME NEW_CONFIG_VALUE</strong>。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">redis 127.0.0.1:6379&gt; CONFIG SET loglevel &quot;notice&quot;</div><div class="line">OK</div><div class="line">redis 127.0.0.1:6379&gt; CONFIG GET loglevel</div><div class="line"></div><div class="line">1) &quot;loglevel&quot;</div><div class="line">2) &quot;notice&quot;</div></pre></td></tr></table></figure></p>
+<hr>
+<h5 id="Redis数据类型"><a href="#Redis数据类型" class="headerlink" title="Redis数据类型"></a>Redis数据类型</h5><p>Redis支持五种数据类型：string（字符串），hash（哈希），list（列表），set（集合）及zset(sorted set：有序集合)。</p>
+<p>【懒得写了了】</p>
+<p>教程1：<a href="http://www.yiibai.com/redis/" target="_blank" rel="external">http://www.yiibai.com/redis/</a></p>
+<p>教程2：<br><a href="http://www.runoob.com/redis/redis-tutorial.html" target="_blank" rel="external">http://www.runoob.com/redis/redis-tutorial.html</a></p>
+<p>以上两个教程很详细。钦此。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/25/Redis/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-运行项目常见问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/25/运行项目常见问题/">运行项目常见问题</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/25/运行项目常见问题/" class="archive-article-date">
+  	<time datetime="2017-10-25T08:03:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>1、Source not found for WebappClassLoader.loadClass(String)</strong></p>
+<p>导错包了</p>
+<hr>
+<p><strong>2、Communications link failure </strong></p>
+<p>进入到Myeclipse Database Exploer，在数据库连接上右键，reconnect</p>
+<hr>
+<p><strong>3、Maven项目pom.xml文件报错【ArtifactDescriptorException】</strong></p>
+<p>1、进入到maven的repository文件夹，进入org/apache/maven/plugins/maven-resources-plugin,将其中的以lastUpdated结尾的文件都删掉。</p>
+<p>2、切换到外网，进入项目右键，Maven-Update Project,勾选update project configuration from pom.xml，点击Finish。</p>
+<hr>
+<p><strong>4、run as 没有myeclipse server选项</strong></p>
+<p>由于缺少插件，myeclipse检测不到该maven项目为web project，要安装插件。<br>右键项目，myeclipse–project facets–install dynamic web module facet</p>
+<hr>
+<p><strong>5、tomcat成功启动，但项目404</strong></p>
+<p>右键properties—myeclipse—Deployment Assembly,点击add—Java Build Path Entries—Maven Dependencies</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/工作笔记//" class="article-tag-list-link color5">工作笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/25/运行项目常见问题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-SpringMVC-Spring-Mybatis-Maven整合（二）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1019,158 +1190,9 @@
 
 
   
-    <article id="post-数据传输过程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/05/数据传输过程/">数据传输过程</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/05/数据传输过程/" class="archive-article-date">
-  	<time datetime="2017-06-05T02:03:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h6 id="首页使用RequestMapping注解拼写出链接到各个模块的地址："><a href="#首页使用RequestMapping注解拼写出链接到各个模块的地址：" class="headerlink" title="首页使用RequestMapping注解拼写出链接到各个模块的地址："></a>首页使用RequestMapping注解拼写出链接到各个模块的地址：</h6><p>1.在首页中各个模块的链接使用已标注的RequestMapping拼写，例如<br><img src="http://upload-images.jianshu.io/upload_images/4731173-a42909ae75aeefc9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>这里的链接使用controller层中的RequestMapping注解，,如下：<br><img src="http://upload-images.jianshu.io/upload_images/4731173-e9edb266f7e4d135.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>2.在consumableInfo中，return后的字符串要与链接的模块地址jsp页面名称一样。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-1f836f0b716747df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h6 id="后台响应的数据通过Model类来传输到前台。"><a href="#后台响应的数据通过Model类来传输到前台。" class="headerlink" title="后台响应的数据通过Model类来传输到前台。"></a>后台响应的数据通过<a href="http://www.cnblogs.com/chenghu/p/4511800.html" target="_blank" rel="external">Model类</a>来传输到前台。</h6><p>1.在controller层中，相应方法获取数据后以键值对的方式存入model，用于传输数据，跳转到相应的jsp页面。<br>2.在页面中，通过model的键获取相应的值。<br><img src="http://upload-images.jianshu.io/upload_images/4731173-16cb8d40e54acbde.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/工作笔记//" class="article-tag-list-link color5">工作笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/05/数据传输过程/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-转-RequestMapping-用法详解之地址映射" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/02/转-RequestMapping-用法详解之地址映射/">[转]@RequestMapping 用法详解之地址映射</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/02/转-RequestMapping-用法详解之地址映射/" class="archive-article-date">
-  	<time datetime="2017-06-02T02:02:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://www.cnblogs.com/qq78292959/p/3760560.html" target="_blank" rel="external">http://www.cnblogs.com/qq78292959/p/3760560.html</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/工作笔记//" class="article-tag-list-link color5">工作笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/02/转-RequestMapping-用法详解之地址映射/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -1223,8 +1245,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
       
     
       
-      
-      
     
       
       
@@ -1236,15 +1256,13 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -1265,11 +1283,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">EL表达式,JavaWeb</a>
+                <a href="javascript:void(0)" class="js-tag color5">cookie,session</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">cookie,session</a>
+                <a href="javascript:void(0)" class="js-tag color4">EL表达式,JavaWeb</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1425,11 +1443,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">filter,生命周期,过滤器链</a>
+                <a href="javascript:void(0)" class="js-tag color1">数据,js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">数据,js</a>
+                <a href="javascript:void(0)" class="js-tag color2">filter,生命周期,过滤器链</a>
               </li>
             
             <div class="clearfix"></div>
@@ -1476,43 +1494,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
     
 
     
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
-    
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">加油~~&lt;br&gt;&lt;br&gt;博客持续更新&lt;br&gt;&lt;br&gt;嘿咻嘿咻&lt;br&gt;&lt;br&gt;感谢关注~！</div>
   	  	
     	</section>
     
